@@ -384,6 +384,7 @@ function renderTabela() {
   var html = '';
   for (var i = 0; i < slice.length; i++) {
     var r = slice[i];
+    var idx = (pagina - 1) * POR_PAGINA + i;
     var nf = r['Nome Fantasia'] ? '<div class="nome-fantasia">' + r['Nome Fantasia'] + '</div>' : '';
     var email = r['Email'] ? '<a href="mailto:' + r['Email'] + '">' + r['Email'] + '</a>' : 'N/I';
     var tel = r['Telefone'] || 'N/I';
@@ -404,7 +405,7 @@ function renderTabela() {
       '<td>' + dis + '</td>' +
       '<td style="max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;color:var(--muted)" title="' + (r['Tags'] || '') + '">' + (r['Tags'] || 'N/I') + '</td>' +
       '<td style="font-size:11px;color:var(--muted)">' + vend + '</td>' +
-      '<td><span class="tag-qtd">' + r['Qtd Titulos'] + '</span></td>' +
+      '<td style="cursor:pointer;text-align:center" onclick="expandirTitulos(this,idx)"><span class="tag-qtd" title="Clique para ver boletos">' + r['Qtd Titulos'] + '</span></td>' +
       '<td class="valor-cell">' + fmt(r['Valor Atrasado (R$)']) + '</td>' +
       '<td><span class="dias-cell ' + classDias(dias) + '">' + dias + 'd</span></td>' +
       '<td style="font-size:11px;color:var(--muted);white-space:nowrap">' + (r['Vencimento Mais Antigo'] || 'N/I') + '</td>' +
@@ -547,6 +548,51 @@ function popularFiltros() {
     opt.value = m; opt.textContent = m;
     selMod.appendChild(opt);
   });
+}
+
+function expandirTitulos(cell, idx) {
+  var tr = cell.closest('tr');
+  var next = tr.nextElementSibling;
+
+  if (next && next.classList.contains('expand-row')) {
+    next.remove();
+    return;
+  }
+
+  var r = filtrado[idx];
+  var titulos = r['titulos'] || [];
+  var cols = tr.querySelectorAll('td').length;
+
+  var linhas = '';
+  if (!titulos.length) {
+    linhas = '<tr><td colspan="4" style="padding:12px 24px;color:var(--muted)">Detalhes dos boletos nao disponiveis. Rode o script com a opcao de titulos detalhados.</td></tr>';
+  } else {
+    titulos.forEach(function(t) {
+      var dias = t['dias_atraso'] || 0;
+      var cor = dias > 90 ? 'var(--red)' : dias > 30 ? 'var(--amber)' : 'var(--blue)';
+      linhas += '<tr style="border-top:1px solid var(--border)">' +
+        '<td style="padding:8px 24px;font-size:12px">' + (t['numero_documento'] || t['nIdTitulo'] || 'N/I') + '</td>' +
+        '<td style="padding:8px 24px;font-size:12px">' + (t['data_vencimento'] || 'N/I') + '</td>' +
+        '<td style="padding:8px 24px;font-size:12px;font-weight:700;color:' + cor + '">' + dias + ' dias</td>' +
+        '<td style="padding:8px 24px;font-size:12px;font-weight:800;color:var(--red)">R$ ' + Number(t['valor_documento'] || 0).toLocaleString("pt-BR", {minimumFractionDigits:2}) + '</td>' +
+        '</tr>';
+    });
+  }
+
+  var expandRow = document.createElement('tr');
+  expandRow.className = 'expand-row';
+  expandRow.innerHTML = '<td colspan="' + cols + '" style="padding:0;background:var(--thead)">' +
+    '<table style="width:100%;border-collapse:collapse">' +
+    '<thead><tr style="background:var(--border)">' +
+    '<th style="padding:8px 24px;text-align:left;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase">Documento</th>' +
+    '<th style="padding:8px 24px;text-align:left;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase">Vencimento</th>' +
+    '<th style="padding:8px 24px;text-align:left;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase">Dias em Atraso</th>' +
+    '<th style="padding:8px 24px;text-align:left;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase">Valor</th>' +
+    '</tr></thead>' +
+    '<tbody>' + linhas + '</tbody>' +
+    '</table></td>';
+
+  tr.after(expandRow);
 }
 
 function iniciar() {
