@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club&Casa — Dashboard de Inadimplência</title>
+<style>
+  /* ── TEMAS ── */
+  :root[data-theme="light"] {
+    --bg: #f4f6fb;
+    --card: #ffffff;
+    --card2: #f0f2f8;
+    --border: #e2e6f0;
+    --accent: #5b52e8;
+    --red: #e53935;
+    --amber: #e65100;
+    --green: #1b7a50;
+    --blue: #1565c0;
+    --text: #1a1a2e;
+    --muted: #6b7080;
+    --thead: #f0f2f8;
+    --row-hover: #f7f8fc;
+    --shadow: 0 1px 4px rgba(0,0,0,.08);
+    --toggle-bg: #e2e6f0;
+    --bar-track: #e2e6f0;
+    --tag-bg: #eef0fa;
+    --tag-text: #5b52e8;
+    --tag-reg-bg: #e3f0fb;
+    --tag-reg-text: #1565c0;
+    --tag-mod-bg: #f3e8ff;
+    --tag-mod-text: #7c3aed;
+    --chip-bg: #fff3e0;
+    --chip-text: #e65100;
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f0f1a;
+    --card: #1a1a2e;
+    --card2: #16163a;
+    --border: #2a2a4a;
+    --accent: #6c63ff;
+    --red: #ff6b6b;
+    --amber: #ffb347;
+    --green: #00c896;
+    --blue: #4fc3f7;
+    --text: #e0e0f0;
+    --muted: #8888aa;
+    --thead: #16163a;
+    --row-hover: #1e1e38;
+    --shadow: 0 1px 4px rgba(0,0,0,.3);
+    --toggle-bg: #2a2a4a;
+    --bar-track: #2a2a4a;
+    --tag-bg: #2a2a4a;
+    --tag-text: #a89fff;
+    --tag-reg-bg: #1a2a3a;
+    --tag-reg-text: #4fc3f7;
+    --tag-mod-bg: #2a1a3a;
+    --tag-mod-text: #c084fc;
+    --chip-bg: #2a1a0a;
+    --chip-text: #ffb347;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; transition:background .2s,color .2s,border-color .2s; }
+  body { background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,sans-serif; min-height:100vh; }
+
+  /* ── HEADER ── */
+  .header {
+    background:var(--card);
+    border-bottom:1px solid var(--border);
+    padding:16px 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:var(--shadow);
+    position:sticky; top:0; z-index:100;
+  }
+  .header-left { display:flex; align-items:center; gap:16px; }
+  .logo { width:36px; height:36px; background:var(--accent); border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:800; color:#fff; font-size:16px; }
+  .header h1 { font-size:18px; font-weight:700; }
+  .header h1 span { color:var(--accent); }
+  .header small { color:var(--muted); font-size:11px; display:block; margin-top:2px; }
+  .header-right { display:flex; align-items:center; gap:12px; }
+  .badge { background:var(--accent); color:#fff; padding:5px 14px; border-radius:20px; font-size:12px; font-weight:600; }
+
+  /* ── TOGGLE TEMA ── */
+  .theme-toggle {
+    background:var(--toggle-bg);
+    border:none;
+    border-radius:20px;
+    padding:6px 12px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:13px;
+    color:var(--text);
+    font-family:inherit;
+  }
+  .theme-toggle:hover { border:1px solid var(--accent); }
+
+  /* ── MAIN ── */
+  .main { padding:24px 32px; max-width:1600px; margin:0 auto; }
+
+  /* ── STATS ── */
+  .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:24px; }
+  .stat {
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:20px 24px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  .stat::before {
+    content:'';
+    position:absolute;
+    top:0; left:0; right:0;
+    height:3px;
+  }
+  .stat.red::before { background:var(--red); }
+  .stat.amber::before { background:var(--amber); }
+  .stat.blue::before { background:var(--blue); }
+  .stat.green::before { background:var(--green); }
+  .stat .label { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.6px; margin-bottom:10px; font-weight:600; }
+  .stat .value { font-size:26px; font-weight:800; letter-spacing:-.5px; }
+  .stat .sub { font-size:11px; color:var(--muted); margin-top:6px; }
+  .stat.red .value { color:var(--red); }
+  .stat.amber .value { color:var(--amber); }
+  .stat.green .value { color:var(--green); }
+  .stat.blue .value { color:var(--blue); }
+
+  /* ── CHARTS ── */
+  .charts { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px; }
+  .chart-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:24px; box-shadow:var(--shadow); }
+  .chart-card h3 { font-size:12px; font-weight:700; margin-bottom:18px; color:var(--muted); text-transform:uppercase; letter-spacing:.6px; }
+  .bar-item { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+  .bar-label { font-size:12px; width:155px; flex-shrink:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color:var(--text); }
+  .bar-track { flex:1; background:var(--bar-track); border-radius:4px; height:7px; }
+  .bar-fill { height:7px; border-radius:4px; background:var(--accent); }
+  .bar-val { font-size:11px; color:var(--muted); width:90px; text-align:right; flex-shrink:0; font-weight:600; }
+
+  /* ── CONTROLS ── */
+  .controls { display:flex; gap:10px; margin-bottom:14px; flex-wrap:wrap; align-items:center; }
+  .search {
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:9px 14px;
+    color:var(--text);
+    font-size:13px;
+    width:260px;
+    outline:none;
+    font-family:inherit;
+    box-shadow:var(--shadow);
+  }
+  .search:focus { border-color:var(--accent); }
+  select {
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:9px 14px;
+    color:var(--text);
+    font-size:13px;
+    outline:none;
+    cursor:pointer;
+    font-family:inherit;
+    box-shadow:var(--shadow);
+  }
+  select:focus { border-color:var(--accent); }
+  .count { color:var(--muted); font-size:12px; margin-left:auto; font-weight:600; }
+
+  /* ── TABLE ── */
+  .table-wrap { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; box-shadow:var(--shadow); }
+  table { width:100%; border-collapse:collapse; font-size:12.5px; }
+  thead th {
+    background:var(--thead);
+    padding:11px 14px;
+    text-align:left;
+    font-size:11px;
+    font-weight:700;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    white-space:nowrap;
+    cursor:pointer;
+    user-select:none;
+    border-bottom:1px solid var(--border);
+  }
+  thead th:hover { color:var(--text); }
+  thead th.sorted { color:var(--accent); }
+  tbody tr { border-top:1px solid var(--border); }
+  tbody tr:hover { background:var(--row-hover); }
+  tbody td { padding:11px 14px; vertical-align:middle; }
+  .nome { font-weight:600; max-width:200px; }
+  .nome small { display:block; color:var(--muted); font-weight:400; font-size:11px; margin-top:1px; }
+  .valor { font-weight:800; color:var(--red); white-space:nowrap; }
+  .dias { font-weight:700; font-size:12px; padding:3px 8px; border-radius:6px; display:inline-block; }
+  .dias.critico { background:#ffebee; color:#c62828; }
+  .dias.alto { background:#fff3e0; color:#e65100; }
+  .dias.medio { background:#e3f0fb; color:#1565c0; }
+  [data-theme="dark"] .dias.critico { background:#2a1a1a; color:#ff6b6b; }
+  [data-theme="dark"] .dias.alto { background:#2a1a0a; color:#ffb347; }
+  [data-theme="dark"] .dias.medio { background:#1a2a3a; color:#4fc3f7; }
+  .tag { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:600; background:var(--tag-bg); color:var(--tag-text); }
+  .tag.regiao { background:var(--tag-reg-bg); color:var(--tag-reg-text); }
+  .tag.modelo { background:var(--tag-mod-bg); color:var(--tag-mod-text); }
+  .chip-qtd { background:var(--chip-bg); color:var(--chip-text); padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+
+  /* ── PAGINATION ── */
+  .pagination { display:flex; align-items:center; justify-content:center; gap:6px; padding:14px; border-top:1px solid var(--border); }
+  .page-btn { background:var(--card); border:1px solid var(--border); color:var(--text); padding:5px 12px; border-radius:6px; cursor:pointer; font-size:12px; font-family:inherit; }
+  .page-btn:hover { border-color:var(--accent); color:var(--accent); }
+  .page-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+  .page-btn:disabled { opacity:.35; cursor:not-allowed; }
+
+  .loading { text-align:center; padding:60px; color:var(--muted); }
+  .error { background:#fff5f5; border:1px solid #fca5a5; border-radius:8px; padding:20px; color:#c62828; font-size:13px; line-height:1.6; }
+  [data-theme="dark"] .error { background:#2a1a1a; border-color:#ff6b6b; color:#ff6b6b; }
+  .empty { text-align:center; padding:40px; color:var(--muted); font-size:13px; }
+
+  @media(max-width:900px) {
+    .stats { grid-template-columns:1fr 1fr; }
+    .charts { grid-template-columns:1fr; }
+    .main { padding:16px; }
+    .header { padding:14px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="logo">C&</div>
+    <div>
+      <h1>Club<span>&</span>Casa Design</h1>
+      <small id="gerado-em">Carregando...</small>
+    </div>
+  </div>
+  <div class="header-right">
+    <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">🌙 Modo escuro</button>
+    <span class="badge">Dashboard de Inadimplência</span>
+  </div>
+</div>
+
+<div class="main">
+  <div class="stats">
+    <div class="stat red">
+      <div class="label">Valor Total Atrasado</div>
+      <div class="value" id="stat-valor">—</div>
+      <div class="sub">total consolidado</div>
+    </div>
+    <div class="stat amber">
+      <div class="label">Lojistas Inadimplentes</div>
+      <div class="value" id="stat-clientes">—</div>
+      <div class="sub">clientes únicos</div>
+    </div>
+    <div class="stat blue">
+      <div class="label">Títulos em Aberto</div>
+      <div class="value" id="stat-titulos">—</div>
+      <div class="sub">boletos vencidos</div>
+    </div>
+    <div class="stat green">
+      <div class="label">Ticket Médio</div>
+      <div class="value" id="stat-ticket">—</div>
+      <div class="sub">por inadimplente</div>
+    </div>
+  </div>
+
+  <div class="charts">
+    <div class="chart-card">
+      <h3>Top Regiões — Valor Atrasado</h3>
+      <div id="chart-regioes"><div class="loading">Carregando...</div></div>
+    </div>
+    <div class="chart-card">
+      <h3>Distribuição por Faixa de Atraso</h3>
+      <div id="chart-faixas"><div class="loading">Carregando...</div></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <input class="search" id="search" type="text" placeholder="🔍  Buscar nome, CNPJ ou email...">
+    <select id="filter-regiao"><option value="">Todas as regiões</option><option value="__sem__">Sem região</option></select>
+    <select id="filter-modelo"><option value="">Todos os modelos</option></select>
+    <select id="filter-faixa">
+      <option value="">Todos os atrasos</option>
+      <option value="1-30">1 a 30 dias</option>
+      <option value="31-90">31 a 90 dias</option>
+      <option value="91-180">91 a 180 dias</option>
+      <option value="181+">Mais de 180 dias</option>
+    </select>
+    <select id="filter-distrato">
+      <option value="">Todos</option>
+      <option value="Sim">⚠️ Distrato</option>
+      <option value="Não">Sem distrato</option>
+    </select>
+    <span class="count" id="count-label"></span>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th onclick="sortBy('Razao Social')">Nome / Fantasia</th>
+          <th onclick="sortBy('CNPJ/CPF')">CNPJ/CPF</th>
+          <th onclick="sortBy('Email')">Email</th>
+          <th onclick="sortBy('Telefone')">Telefone</th>
+          <th onclick="sortBy('Regiao')">Região</th>
+          <th onclick="sortBy('Modelo de Negocio')">Modelo</th>
+          <th onclick="sortBy('Vendedor')">Vendedor</th>
+          <th onclick="sortBy('Distrato')">Distrato</th>
+          <th onclick="sortBy('Qtd Titulos')">Títulos</th>
+          <th onclick="sortBy('Valor Atrasado (R$)')" class="sorted">Valor ▼</th>
+          <th onclick="sortBy('Dias em Atraso')">Dias Atraso</th>
+          <th onclick="sortBy('Vencimento Mais Antigo')">Venc. Antigo</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div class="pagination" id="pagination"></div>
+  </div>
+</div>
+
+<script>
+let DATA = [], filtered = [];
+let sortCol = 'Valor Atrasado (R$)', sortAsc = false;
+let page = 1;
+const PER_PAGE = 50;
+
+// Tema
+function toggleTheme() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  document.getElementById('theme-btn').textContent = isDark ? '🌙 Modo escuro' : '☀️ Modo claro';
+  localStorage.setItem('theme', isDark ? 'light' : 'dark');
+}
+// Inicia sempre no claro
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', savedTheme);
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('theme-btn');
+  if (btn) btn.textContent = savedTheme === 'dark' ? '☀️ Modo claro' : '🌙 Modo escuro';
+});
+
+function fmt(v) {
+  return 'R$ ' + Number(v).toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2});
+}
+function diasClass(d) {
+  if (d > 180) return 'critico';
+  if (d > 90) return 'alto';
+  return 'medio';
+}
+
+function render() {
+  const tbody = document.getElementById('tbody');
+  const slice = filtered.slice((page-1)*PER_PAGE, page*PER_PAGE);
+  if (!slice.length) {
+    tbody.innerHTML = '<tr><td colspan="13"><div class="empty">Nenhum resultado encontrado</div></td></tr>';
+    document.getElementById('pagination').innerHTML = '';
+    return;
+  }
+  tbody.innerHTML = slice.map(r => `
+    <tr>
+      <td class="nome">${r['Razao Social']}<small>${r['Nome Fantasia'] || ''}</small></td>
+      <td style="font-size:11px;white-space:nowrap">${r['CNPJ/CPF'] || '—'}</td>
+      <td style="font-size:11px">${r['Email'] ? `<a href="mailto:${r['Email']}">${r['Email']}</a>` : '—'}</td>
+      <td style="white-space:nowrap">${r['Telefone'] || '—'}</td>
+      <td>${r['Regiao'] ? `<span class="tag regiao">${r['Regiao']}</span>` : '—'}</td>
+      <td>${r['Modelo de Negocio'] ? `<span class="tag modelo">${r['Modelo de Negocio']}</span>` : '—'}</td>
+      <td style="color:var(--muted);font-size:12px">${r['Vendedor'] || '—'}</td>
+      <td>${r['Distrato'] === 'Sim' ? '<span style="background:#ffebee;color:#c62828;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">⚠️ Sim</span>' : '<span style="color:var(--muted);font-size:12px">Não</span>'}</td>
+      <td><span class="chip-qtd">${r['Qtd Titulos']}</span></td>
+      <td class="valor">${fmt(r['Valor Atrasado (R$)'])}</td>
+      <td><span class="dias ${diasClass(r['Dias em Atraso'])}">${r['Dias em Atraso']}d</span></td>
+      <td style="color:var(--muted);font-size:12px;white-space:nowrap">${r['Vencimento Mais Antigo'] || '—'}</td>
+    </tr>
+  `).join('');
+  renderPagination();
+}
+
+function renderPagination() {
+  const total = Math.ceil(filtered.length / PER_PAGE);
+  const pag = document.getElementById('pagination');
+  if (total <= 1) { pag.innerHTML = ''; return; }
+  let html = `<button class="page-btn" onclick="goPage(${page-1})" ${page===1?'disabled':''}>← Ant</button>`;
+  const s = Math.max(1,page-2), e = Math.min(total,page+2);
+  if (s>1) html += `<button class="page-btn" onclick="goPage(1)">1</button>${s>2?'<span style="color:var(--muted);padding:0 4px">…</span>':''}`;
+  for(let i=s;i<=e;i++) html += `<button class="page-btn ${i===page?'active':''}" onclick="goPage(${i})">${i}</button>`;
+  if(e<total) html += `${e<total-1?'<span style="color:var(--muted);padding:0 4px">…</span>':''}<button class="page-btn" onclick="goPage(${total})">${total}</button>`;
+  html += `<button class="page-btn" onclick="goPage(${page+1})" ${page===total?'disabled':''}>Próx →</button>`;
+  pag.innerHTML = html;
+}
+
+function goPage(p) { page=p; render(); window.scrollTo(0,0); }
+
+function applyFilters() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const reg = document.getElementById('filter-regiao').value;
+  const mod = document.getElementById('filter-modelo').value;
+  const faixa = document.getElementById('filter-faixa').value;
+  filtered = DATA.filter(r => {
+    if (q && !r['Razao Social'].toLowerCase().includes(q) && !r['CNPJ/CPF'].includes(q) && !(r['Email']||'').toLowerCase().includes(q)) return false;
+    if (reg === '__sem__' && r['Regiao']) return false;
+    if (reg && reg !== '__sem__' && r['Regiao'] !== reg) return false;
+    if (mod && r['Modelo de Negocio'] !== mod) return false;
+    const distrato = document.getElementById('filter-distrato').value;
+    if (distrato && r['Distrato'] !== distrato) return false;
+    if (faixa) {
+      const d = r['Dias em Atraso'];
+      if (faixa==='1-30' && (d<1||d>30)) return false;
+      if (faixa==='31-90' && (d<31||d>90)) return false;
+      if (faixa==='91-180' && (d<91||d>180)) return false;
+      if (faixa==='181+' && d<=180) return false;
+    }
+    return true;
+  });
+  sortData(); page=1;
+  document.getElementById('count-label').textContent = `${filtered.length.toLocaleString('pt-BR')} de ${DATA.length.toLocaleString('pt-BR')} lojistas`;
+  render();
+}
+
+function sortBy(col) {
+  if (sortCol===col) sortAsc=!sortAsc; else { sortCol=col; sortAsc=false; }
+  document.querySelectorAll('thead th').forEach(th=>th.classList.remove('sorted'));
+  sortData(); page=1; render();
+}
+
+function sortData() {
+  filtered.sort((a,b) => {
+    let va=a[sortCol], vb=b[sortCol];
+    if (typeof va==='number') return sortAsc?va-vb:vb-va;
+    return sortAsc?String(va).localeCompare(String(vb)):String(vb).localeCompare(String(va));
+  });
+}
+
+function renderCharts() {
+  const regMap={};
+  DATA.forEach(r=>{ const k=r['Regiao']||'Sem região'; regMap[k]=(regMap[k]||0)+r['Valor Atrasado (R$)']; });
+  const regs=Object.entries(regMap).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  const maxR=regs[0]?.[1]||1;
+  document.getElementById('chart-regioes').innerHTML = regs.map(([l,v])=>`
+    <div class="bar-item">
+      <div class="bar-label" title="${l}">${l}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${(v/maxR*100).toFixed(1)}%"></div></div>
+      <div class="bar-val">${fmt(v)}</div>
+    </div>`).join('');
+
+  const faixas=[
+    {label:'1-30 dias',min:1,max:30,color:'#4fc3f7'},
+    {label:'31-90 dias',min:31,max:90,color:'#ffb347'},
+    {label:'91-180 dias',min:91,max:180,color:'#ff8c42'},
+    {label:'+180 dias',min:181,max:99999,color:'#ff6b6b'},
+  ];
+  const fd=faixas.map(f=>({...f,
+    count:DATA.filter(r=>r['Dias em Atraso']>=f.min&&r['Dias em Atraso']<=f.max).length,
+    valor:DATA.filter(r=>r['Dias em Atraso']>=f.min&&r['Dias em Atraso']<=f.max).reduce((s,r)=>s+r['Valor Atrasado (R$)'],0)
+  }));
+  const maxF=Math.max(...fd.map(f=>f.valor))||1;
+  document.getElementById('chart-faixas').innerHTML = fd.map(f=>`
+    <div class="bar-item">
+      <div class="bar-label">${f.label} <span style="color:var(--muted)">(${f.count})</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:${(f.valor/maxF*100).toFixed(1)}%;background:${f.color}"></div></div>
+      <div class="bar-val">${fmt(f.valor)}</div>
+    </div>`).join('');
+}
+
+function populateFilters() {
+  const regs=[...new Set(DATA.map(r=>r['Regiao']).filter(Boolean))].sort();
+  const mods=[...new Set(DATA.map(r=>r['Modelo de Negocio']).filter(Boolean))].sort();
+  regs.forEach(r=>document.getElementById('filter-regiao').innerHTML+=`<option value="${r}">${r}</option>`);
+  mods.forEach(m=>document.getElementById('filter-modelo').innerHTML+=`<option value="${m}">${m}</option>`);
+}
+
+async function loadData() {
+  try {
+    const resp = await fetch('inadimplentes.json');
+    if (!resp.ok) throw new Error('Arquivo inadimplentes.json não encontrado. Execute primeiro: python gerar-relatorio-completo.py');
+    const json = await resp.json();
+    DATA = json.inadimplentes || [];
+    filtered = [...DATA];
+    document.getElementById('gerado-em').textContent = `Atualizado em ${json.gerado_em} · ${DATA.length} lojistas · ${json.total_titulos} títulos`;
+    document.getElementById('stat-valor').textContent = fmt(json.valor_total);
+    document.getElementById('stat-clientes').textContent = DATA.length.toLocaleString('pt-BR');
+    document.getElementById('stat-titulos').textContent = json.total_titulos.toLocaleString('pt-BR');
+    document.getElementById('stat-ticket').textContent = fmt(json.valor_total/DATA.length);
+    document.getElementById('count-label').textContent = `${DATA.length.toLocaleString('pt-BR')} lojistas`;
+    sortData(); populateFilters(); renderCharts(); render();
+  } catch(e) {
+    document.getElementById('tbody').innerHTML = `<tr><td colspan="13"><div class="error">⚠️ ${e.message}</div></td></tr>`;
+    document.getElementById('gerado-em').textContent = 'Erro ao carregar dados';
+  }
+}
+
+document.getElementById('search').addEventListener('input', applyFilters);
+document.getElementById('filter-regiao').addEventListener('change', applyFilters);
+document.getElementById('filter-modelo').addEventListener('change', applyFilters);
+document.getElementById('filter-faixa').addEventListener('change', applyFilters);
+document.getElementById('filter-distrato').addEventListener('change', applyFilters);
+
+loadData();
+</script>
+</body>
+</html>
