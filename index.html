@@ -21,16 +21,6 @@
   --hover: #f7f8fc;
   --shadow: 0 1px 3px rgba(0,0,0,.08);
   --bar-bg: #e2e6f0;
-  --tag-bg: #eef0fa;
-  --tag-color: #5b52e8;
-  --reg-bg: #e3f0fb;
-  --reg-color: #1565c0;
-  --mod-bg: #f3e8ff;
-  --mod-color: #6d28d9;
-  --chip-bg: #fff3e0;
-  --chip-color: #e65100;
-  --dis-bg: #ffebee;
-  --dis-color: #c62828;
 }
 :root[data-theme="dark"] {
   --bg: #0f0f1a;
@@ -48,16 +38,6 @@
   --hover: #1e1e38;
   --shadow: 0 1px 3px rgba(0,0,0,.3);
   --bar-bg: #2a2a4a;
-  --tag-bg: #2a2a4a;
-  --tag-color: #a89fff;
-  --reg-bg: #1a2a3a;
-  --reg-color: #4fc3f7;
-  --mod-bg: #2a1a3a;
-  --mod-color: #c084fc;
-  --chip-bg: #2a1a0a;
-  --chip-color: #ffb347;
-  --dis-bg: #2a1a1a;
-  --dis-color: #ff6b6b;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -76,52 +56,19 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
   box-shadow: var(--shadow);
 }
 .header-left { display: flex; align-items: center; gap: 12px; }
-.logo {
-  width: 34px; height: 34px;
-  background: var(--accent);
-  border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 800; color: #fff; font-size: 15px;
-}
+.logo { width: 34px; height: 34px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; font-size: 15px; }
 .header h1 { font-size: 17px; font-weight: 700; }
 .header h1 span { color: var(--accent); }
 .header-sub { color: var(--muted); font-size: 11px; margin-top: 1px; }
 .header-right { display: flex; align-items: center; gap: 10px; }
-.btn-theme {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 6px 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 12px;
-}
+.btn-theme { background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 6px 14px; border-radius: 6px; cursor: pointer; font-family: inherit; font-size: 12px; }
 .btn-theme:hover { border-color: var(--accent); color: var(--accent); }
-.badge {
-  background: var(--accent);
-  color: #fff;
-  padding: 5px 14px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 600;
-}
+.badge { background: var(--accent); color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 600; }
 
 .main { padding: 22px 28px; max-width: 1600px; margin: 0 auto; }
 
-.stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-  margin-bottom: 20px;
-}
-.stat {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 18px 20px;
-  box-shadow: var(--shadow);
-}
+.stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 20px; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; box-shadow: var(--shadow); }
 .stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; font-weight: 600; margin-bottom: 8px; }
 .stat-value { font-size: 24px; font-weight: 800; }
 .stat-sub { font-size: 11px; color: var(--muted); margin-top: 5px; }
@@ -131,13 +78,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 .stat.green .stat-value { color: var(--green); }
 
 .charts { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 20px; }
-.chart-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: var(--shadow);
-}
+.chart-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; box-shadow: var(--shadow); }
 .chart-title { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 16px; }
 .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
 .bar-label { font-size: 12px; width: 150px; flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -145,15 +86,8 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 .bar-fill { height: 7px; border-radius: 4px; }
 .bar-val { font-size: 11px; color: var(--muted); width: 95px; text-align: right; flex-shrink: 0; font-weight: 600; }
 
-.controls {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.controls input,
-.controls select {
+.controls { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; align-items: center; }
+.controls input, .controls select, .controls button {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 7px;
@@ -163,34 +97,17 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
   font-size: 12px;
   outline: none;
   box-shadow: var(--shadow);
+  cursor: pointer;
 }
 .controls input { width: 240px; }
-.controls input:focus,
-.controls select:focus { border-color: var(--accent); }
+.controls input:focus, .controls select:focus { border-color: var(--accent); }
+.btn-boletos { background: var(--accent); color: #fff; }
+.btn-boletos:hover { opacity: .9; }
 .count-label { color: var(--muted); font-size: 12px; margin-left: auto; font-weight: 600; }
 
-.table-wrap {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  overflow-x: auto;
-  box-shadow: var(--shadow);
-}
+.table-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow-x: auto; box-shadow: var(--shadow); }
 table { width: 100%; border-collapse: collapse; }
-thead th {
-  background: var(--thead);
-  padding: 8px 10px;
-  text-align: left;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: .4px;
-  white-space: nowrap;
-  cursor: pointer;
-  border-bottom: 1px solid var(--border);
-  user-select: none;
-}
+thead th { background: var(--thead); padding: 8px 10px; text-align: left; font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .4px; white-space: nowrap; cursor: pointer; border-bottom: 1px solid var(--border); user-select: none; }
 thead th:hover { color: var(--text); }
 thead th.sorted { color: var(--accent); }
 tbody tr { border-top: 1px solid var(--border); }
@@ -200,60 +117,38 @@ tbody td { padding: 8px 10px; vertical-align: middle; }
 .nome-principal { font-weight: 600; }
 .nome-fantasia { color: var(--muted); font-size: 11px; margin-top: 1px; }
 .valor-cell { font-weight: 800; color: var(--red); white-space: nowrap; }
-.dias-cell {
-  display: inline-block;
-  padding: 2px 7px;
-  border-radius: 5px;
-  font-weight: 700;
-  font-size: 11px;
-}
+.dias-cell { display: inline-block; padding: 2px 7px; border-radius: 5px; font-weight: 700; font-size: 11px; }
 .dias-alto { background: var(--red-bg); color: var(--red); }
-.dias-medio { background: var(--chip-bg); color: var(--amber); }
-.dias-baixo { background: var(--reg-bg); color: var(--blue); }
-.tag-regiao { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 11px; font-weight: 600; background: var(--reg-bg); color: var(--reg-color); }
-.tag-modelo { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 11px; font-weight: 600; background: var(--mod-bg); color: var(--mod-color); }
-.tag-qtd { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 11px; font-weight: 700; background: var(--chip-bg); color: var(--chip-color); }
-.tag-distrato { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 11px; font-weight: 700; background: var(--dis-bg); color: var(--dis-color); }
+.dias-medio { background: #fff3e0; color: var(--amber); }
+.dias-baixo { background: #e3f0fb; color: var(--blue); }
+.tag-regiao { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 11px; font-weight: 600; background: #e3f0fb; color: #1565c0; }
+.tag-modelo { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 11px; font-weight: 600; background: #f3e8ff; color: #6d28d9; }
+.tag-qtd { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 11px; font-weight: 700; background: #fff3e0; color: var(--amber); cursor: pointer; }
+.tag-distrato { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 11px; font-weight: 700; background: var(--red-bg); color: var(--red); }
 .tag-normal { color: var(--muted); font-size: 12px; }
-.tags-cell { font-size: 11px; color: var(--muted); max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  padding: 12px;
-  border-top: 1px solid var(--border);
-}
-.page-btn {
-  background: var(--card);
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 5px 11px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 12px;
-}
+.pagination { display: flex; align-items: center; justify-content: center; gap: 5px; padding: 12px; border-top: 1px solid var(--border); }
+.page-btn { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 5px 11px; border-radius: 5px; cursor: pointer; font-family: inherit; font-size: 12px; }
 .page-btn:hover { border-color: var(--accent); color: var(--accent); }
 .page-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 .page-btn:disabled { opacity: .35; cursor: not-allowed; }
 
+.modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,.5); z-index: 1000; align-items: center; justify-content: center; }
+.modal.active { display: flex; }
+.modal-content { background: var(--card); border-radius: 12px; width: 90%; max-width: 1400px; max-height: 90vh; overflow: auto; box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+.modal-header { padding: 20px 28px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.modal-header h2 { font-size: 18px; font-weight: 700; }
+.modal-close { background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 14px; }
+.modal-close:hover { border-color: var(--accent); }
+.modal-body { padding: 20px 28px; }
+
 .empty { text-align: center; padding: 40px; color: var(--muted); }
-.error-box {
-  background: var(--red-bg);
-  border: 1px solid var(--red);
-  border-radius: 8px;
-  padding: 20px;
-  color: var(--red);
-  line-height: 1.6;
-}
+.error-box { background: var(--red-bg); border: 1px solid var(--red); border-radius: 8px; padding: 20px; color: var(--red); line-height: 1.6; }
 
 @media (max-width: 900px) {
-  .stats { grid-template-columns: 1fr 1fr; }
-  .charts { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
   .main { padding: 14px; }
 }
 </style>
@@ -295,6 +190,11 @@ a:hover { text-decoration: underline; }
       <div class="stat-value" id="s-ticket">...</div>
       <div class="stat-sub">por inadimplente</div>
     </div>
+    <div class="stat red">
+      <div class="stat-label">Valor em Distrato</div>
+      <div class="stat-value" id="s-distrato">...</div>
+      <div class="stat-sub">lojistas em distrato</div>
+    </div>
   </div>
 
   <div class="charts">
@@ -302,20 +202,15 @@ a:hover { text-decoration: underline; }
       <div class="chart-title">Regioes com maior valor atrasado</div>
       <div id="chart-reg"></div>
     </div>
-
   </div>
 
   <div class="controls">
     <input type="text" id="busca" placeholder="Buscar nome, CNPJ ou email...">
     <select id="f-regiao"><option value="">Todas as regioes</option><option value="Sem Região">Sem regiao</option></select>
     <select id="f-modelo"><option value="">Todos os modelos</option></select>
-
     <select id="f-vendedor"><option value="">Todos os vendedores</option></select>
-    <select id="f-distrato">
-      <option value="">Todos</option>
-      <option value="Sim">Em distrato</option>
-      <option value="Não">Sem distrato</option>
-    </select>
+    <select id="f-distrato"><option value="">Todos</option><option value="Sim">Em distrato</option><option value="Não">Sem distrato</option></select>
+    <button class="btn-boletos" onclick="abrirTodosBoletos()">Ver todos os boletos</button>
     <span class="count-label" id="count-label"></span>
   </div>
 
@@ -341,6 +236,32 @@ a:hover { text-decoration: underline; }
       <tbody id="tbody"></tbody>
     </table>
     <div class="pagination" id="paginacao"></div>
+  </div>
+</div>
+
+<div class="modal" id="modal-boletos">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Todos os Boletos em Aberto</h2>
+      <button class="modal-close" onclick="fecharModal()">Fechar</button>
+    </div>
+    <div class="modal-body">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>CNPJ</th>
+              <th>Documento</th>
+              <th>Vencimento</th>
+              <th>Dias Atraso</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-boletos"></tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -391,7 +312,7 @@ function renderTabela() {
     var reg = r['Regiao'] && r['Regiao'] !== 'Sem Região' ? '<span class="tag-regiao">' + r['Regiao'] + '</span>' : '<span class="tag-normal">N/I</span>';
     var mod = r['Modelo de Negocio'] ? '<span class="tag-modelo">' + r['Modelo de Negocio'] + '</span>' : '<span class="tag-normal">N/I</span>';
     var dis = r['Distrato'] === 'Sim' ? '<span class="tag-distrato">Sim</span>' : '<span class="tag-normal">Nao</span>';
-    var tags = r['Tags'] ? '<div class="tags-cell" title="' + r['Tags'] + '">' + r['Tags'] + '</div>' : '<span class="tag-normal">N/I</span>';
+    var tags = r['Tags'] ? r['Tags'].substring(0, 30) + '...' : 'N/I';
     var vend = r['Vendedor'] || 'N/I';
     var dias = r['Dias em Atraso'] || 0;
 
@@ -403,9 +324,9 @@ function renderTabela() {
       '<td>' + reg + '</td>' +
       '<td>' + mod + '</td>' +
       '<td>' + dis + '</td>' +
-      '<td style="max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;color:var(--muted)" title="' + (r['Tags'] || '') + '">' + (r['Tags'] || 'N/I') + '</td>' +
+      '<td style="font-size:11px;color:var(--muted)" title="' + (r['Tags'] || '') + '">' + tags + '</td>' +
       '<td style="font-size:11px;color:var(--muted)">' + vend + '</td>' +
-      '<td style="cursor:pointer;text-align:center" onclick="expandirTitulos(this,idx)"><span class="tag-qtd" title="Clique para ver boletos">' + r['Qtd Titulos'] + '</span></td>' +
+      '<td style="cursor:pointer;text-align:center" onclick="expandirTitulos(this,idx)"><span class="tag-qtd">' + r['Qtd Titulos'] + '</span></td>' +
       '<td class="valor-cell">' + fmt(r['Valor Atrasado (R$)']) + '</td>' +
       '<td><span class="dias-cell ' + classDias(dias) + '">' + dias + 'd</span></td>' +
       '<td style="font-size:11px;color:var(--muted);white-space:nowrap">' + (r['Vencimento Mais Antigo'] || 'N/I') + '</td>' +
@@ -444,7 +365,6 @@ function aplicarFiltros() {
   var busca = document.getElementById('busca').value.toLowerCase();
   var fReg = document.getElementById('f-regiao').value;
   var fMod = document.getElementById('f-modelo').value;
-
   var fVendedor = document.getElementById('f-vendedor').value;
   var fDis = document.getElementById('f-distrato').value;
 
@@ -462,7 +382,6 @@ function aplicarFiltros() {
     if (fMod && r['Modelo de Negocio'] !== fMod) return false;
     if (fVendedor && r['Vendedor'] !== fVendedor) return false;
     if (fDis && r['Distrato'] !== fDis) return false;
-
     return true;
   });
 
@@ -512,32 +431,21 @@ function renderGraficos() {
       '<div class="bar-val">' + fmt(item[1]) + '</div></div>';
   });
   document.getElementById('chart-reg').innerHTML = htmlR || '<div class="empty">Sem dados</div>';
-
-
 }
 
 function popularFiltros() {
   var regs = [];
   var mods = [];
+  var vends = [];
   DADOS.forEach(function(r) {
     if (r['Regiao'] && r['Regiao'] !== 'Sem Região' && regs.indexOf(r['Regiao']) < 0) regs.push(r['Regiao']);
     if (r['Modelo de Negocio'] && mods.indexOf(r['Modelo de Negocio']) < 0) mods.push(r['Modelo de Negocio']);
-  });
-  regs.sort();
-  mods.sort();
-  var vends = [];
-  DADOS.forEach(function(r) {
     if (r['Vendedor'] && r['Vendedor'] !== 'N/I' && vends.indexOf(r['Vendedor']) < 0) vends.push(r['Vendedor']);
   });
-  vends.sort();
-  var selVend = document.getElementById('f-vendedor');
-  vends.forEach(function(v) {
-    var opt = document.createElement('option');
-    opt.value = v; opt.textContent = v;
-    selVend.appendChild(opt);
-  });
+  regs.sort(); mods.sort(); vends.sort();
   var selReg = document.getElementById('f-regiao');
   var selMod = document.getElementById('f-modelo');
+  var selVend = document.getElementById('f-vendedor');
   regs.forEach(function(r) {
     var opt = document.createElement('option');
     opt.value = r; opt.textContent = r;
@@ -548,37 +456,38 @@ function popularFiltros() {
     opt.value = m; opt.textContent = m;
     selMod.appendChild(opt);
   });
+  vends.forEach(function(v) {
+    var opt = document.createElement('option');
+    opt.value = v; opt.textContent = v;
+    selVend.appendChild(opt);
+  });
 }
 
 function expandirTitulos(cell, idx) {
   var tr = cell.closest('tr');
   var next = tr.nextElementSibling;
-
   if (next && next.classList.contains('expand-row')) {
     next.remove();
     return;
   }
-
   var r = filtrado[idx];
   var titulos = r['titulos'] || [];
   var cols = tr.querySelectorAll('td').length;
-
   var linhas = '';
   if (!titulos.length) {
-    linhas = '<tr><td colspan="4" style="padding:12px 24px;color:var(--muted)">Detalhes dos boletos nao disponiveis. Rode o script com a opcao de titulos detalhados.</td></tr>';
+    linhas = '<tr><td colspan="4" style="padding:12px 24px;color:var(--muted)">Sem boletos detalhados.</td></tr>';
   } else {
     titulos.forEach(function(t) {
       var dias = t['dias_atraso'] || 0;
       var cor = dias > 90 ? 'var(--red)' : dias > 30 ? 'var(--amber)' : 'var(--blue)';
       linhas += '<tr style="border-top:1px solid var(--border)">' +
-        '<td style="padding:8px 24px;font-size:12px">' + (t['numero_documento'] || t['nIdTitulo'] || 'N/I') + '</td>' +
+        '<td style="padding:8px 24px;font-size:12px">' + (t['numero_documento'] || 'N/I') + '</td>' +
         '<td style="padding:8px 24px;font-size:12px">' + (t['data_vencimento'] || 'N/I') + '</td>' +
-        '<td style="padding:8px 24px;font-size:12px;font-weight:700;color:' + cor + '">' + dias + ' dias</td>' +
-        '<td style="padding:8px 24px;font-size:12px;font-weight:800;color:var(--red)">R$ ' + Number(t['valor_documento'] || 0).toLocaleString("pt-BR", {minimumFractionDigits:2}) + '</td>' +
+        '<td style="padding:8px 24px;font-size:12px;font-weight:700;color:' + cor + '">' + dias + 'd</td>' +
+        '<td style="padding:8px 24px;font-size:12px;font-weight:800;color:var(--red)">' + fmt(t['valor_documento'] || 0) + '</td>' +
         '</tr>';
     });
   }
-
   var expandRow = document.createElement('tr');
   expandRow.className = 'expand-row';
   expandRow.innerHTML = '<td colspan="' + cols + '" style="padding:0;background:var(--thead)">' +
@@ -586,13 +495,48 @@ function expandirTitulos(cell, idx) {
     '<thead><tr style="background:var(--border)">' +
     '<th style="padding:8px 24px;text-align:left;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase">Documento</th>' +
     '<th style="padding:8px 24px;text-align:left;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase">Vencimento</th>' +
-    '<th style="padding:8px 24px;text-align:left;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase">Dias em Atraso</th>' +
+    '<th style="padding:8px 24px;text-align:left;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase">Dias</th>' +
     '<th style="padding:8px 24px;text-align:left;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase">Valor</th>' +
-    '</tr></thead>' +
-    '<tbody>' + linhas + '</tbody>' +
-    '</table></td>';
-
+    '</tr></thead><tbody>' + linhas + '</tbody></table></td>';
   tr.after(expandRow);
+}
+
+function abrirTodosBoletos() {
+  var todosBoletos = [];
+  DADOS.forEach(function(r) {
+    (r['titulos'] || []).forEach(function(t) {
+      todosBoletos.push({
+        cliente: r['Razao Social'],
+        cnpj: r['CNPJ/CPF'],
+        documento: t['numero_documento'] || 'N/I',
+        vencimento: t['data_vencimento'] || 'N/I',
+        dias: t['dias_atraso'] || 0,
+        valor: t['valor_documento'] || 0
+      });
+    });
+  });
+  
+  todosBoletos.sort(function(a, b) { return b.valor - a.valor; });
+  
+  var html = '';
+  todosBoletos.forEach(function(b) {
+    var cor = b.dias > 90 ? 'color:var(--red)' : b.dias > 30 ? 'color:var(--amber)' : 'color:var(--blue)';
+    html += '<tr>' +
+      '<td style="padding:8px 10px;font-size:12px;font-weight:600">' + b.cliente + '</td>' +
+      '<td style="padding:8px 10px;font-size:11px">' + b.cnpj + '</td>' +
+      '<td style="padding:8px 10px;font-size:12px">' + b.documento + '</td>' +
+      '<td style="padding:8px 10px;font-size:12px">' + b.vencimento + '</td>' +
+      '<td style="padding:8px 10px;font-size:12px;font-weight:700;' + cor + '">' + b.dias + 'd</td>' +
+      '<td style="padding:8px 10px;font-size:12px;font-weight:800;color:var(--red)">' + fmt(b.valor) + '</td>' +
+      '</tr>';
+  });
+  
+  document.getElementById('tbody-boletos').innerHTML = html;
+  document.getElementById('modal-boletos').classList.add('active');
+}
+
+function fecharModal() {
+  document.getElementById('modal-boletos').classList.remove('active');
 }
 
 function iniciar() {
@@ -609,11 +553,16 @@ function iniciar() {
       DADOS = json.inadimplentes || [];
       filtrado = DADOS.slice();
 
+      var valorDistrato = DADOS.reduce(function(s, r) {
+        return r['Distrato'] === 'Sim' ? s + r['Valor Atrasado (R$)'] : s;
+      }, 0);
+
       document.getElementById('header-sub').textContent = 'Atualizado em ' + json.gerado_em + ' · ' + DADOS.length + ' lojistas · ' + json.total_titulos + ' titulos';
       document.getElementById('s-valor').textContent = fmt(json.valor_total);
       document.getElementById('s-clientes').textContent = DADOS.length.toLocaleString('pt-BR');
       document.getElementById('s-titulos').textContent = json.total_titulos.toLocaleString('pt-BR');
       document.getElementById('s-ticket').textContent = fmt(json.valor_total / DADOS.length);
+      document.getElementById('s-distrato').textContent = fmt(valorDistrato);
       document.getElementById('count-label').textContent = DADOS.length.toLocaleString('pt-BR') + ' lojistas';
 
       ordenar();
