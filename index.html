@@ -65,7 +65,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 .btn-theme:hover { border-color: var(--accent); color: var(--accent); }
 .badge { background: var(--accent); color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 600; }
 
-.main { padding: 22px 28px; max-width: 1800px; margin: 0 auto; }
+.main { padding: 22px 28px; max-width: 1600px; margin: 0 auto; }
 
 .stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 20px; }
 .stat { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; box-shadow: var(--shadow); }
@@ -164,7 +164,7 @@ a:hover { text-decoration: underline; }
   </div>
   <div class="header-right">
     <button class="btn-theme" id="btn-theme" onclick="toggleTheme()">Modo escuro</button>
-    <span class="badge">Inadimplência</span>
+    <span class="badge">Inadimplencia</span>
   </div>
 </div>
 
@@ -178,15 +178,15 @@ a:hover { text-decoration: underline; }
     <div class="stat amber">
       <div class="stat-label">Lojistas Inadimplentes</div>
       <div class="stat-value" id="s-clientes">...</div>
-      <div class="stat-sub">clientes únicos</div>
+      <div class="stat-sub">clientes unicos</div>
     </div>
     <div class="stat blue">
-      <div class="stat-label">Títulos em Aberto</div>
+      <div class="stat-label">Titulos em Aberto</div>
       <div class="stat-value" id="s-titulos">...</div>
       <div class="stat-sub">boletos vencidos</div>
     </div>
     <div class="stat green">
-      <div class="stat-label">Ticket Médio</div>
+      <div class="stat-label">Ticket Medio</div>
       <div class="stat-value" id="s-ticket">...</div>
       <div class="stat-sub">por inadimplente</div>
     </div>
@@ -199,17 +199,16 @@ a:hover { text-decoration: underline; }
 
   <div class="charts">
     <div class="chart-card">
-      <div class="chart-title">Regiões com maior valor atrasado</div>
+      <div class="chart-title">Regioes com maior valor atrasado</div>
       <div id="chart-reg"></div>
     </div>
   </div>
 
   <div class="controls">
     <input type="text" id="busca" placeholder="Buscar nome, CNPJ ou email...">
-    <select id="f-diretora"><option value="">Todas as Diretoras</option></select>
-    <select id="f-gestora"><option value="">Todas as Gestoras</option></select>
-    <select id="f-regiao"><option value="">Todas as Regiões</option><option value="Sem Região">Sem região</option></select>
-    <select id="f-modelo"><option value="">Todos os Modelos</option></select>
+    <select id="f-regiao"><option value="">Todas as regioes</option><option value="Sem Região">Sem regiao</option></select>
+    <select id="f-modelo"><option value="">Todos os modelos</option></select>
+    <select id="f-vendedor"><option value="">Todos os vendedores</option></select>
     <select id="f-distrato"><option value="">Todos</option><option value="Sim">Em distrato</option><option value="Não">Sem distrato</option></select>
     <button class="btn-boletos" onclick="abrirTodosBoletos()">Ver todos os boletos</button>
     <span class="count-label" id="count-label"></span>
@@ -221,13 +220,14 @@ a:hover { text-decoration: underline; }
         <tr>
           <th onclick="sort('Razao Social')">Nome</th>
           <th onclick="sort('CNPJ/CPF')">CNPJ / CPF</th>
-          <th onclick="sort('Regiao')">Região</th>
-          <th onclick="sort('Diretora Regional')">Diretora Regional</th>
-          <th onclick="sort('Gestora')">Gestora</th>
+          <th onclick="sort('Email')">Email</th>
+          <th onclick="sort('Telefone')">Telefone</th>
+          <th onclick="sort('Regiao')">Regiao</th>
           <th onclick="sort('Modelo de Negocio')">Modelo</th>
           <th onclick="sort('Distrato')">Distrato</th>
           <th onclick="sort('Tags')">Tags</th>
-          <th onclick="sort('Qtd Titulos')">Títulos</th>
+          <th onclick="sort('Vendedor')">Vendedor</th>
+          <th onclick="sort('Qtd Titulos')">Titulos</th>
           <th onclick="sort('Valor Atrasado (R$)')" class="sorted">Valor</th>
           <th onclick="sort('Dias em Atraso')">Dias</th>
           <th onclick="sort('Vencimento Mais Antigo')">Vencimento</th>
@@ -297,7 +297,7 @@ function renderTabela() {
   var slice = filtrado.slice(inicio, inicio + POR_PAGINA);
 
   if (!slice.length) {
-    tbody.innerHTML = '<tr><td colspan="12"><div class="empty">Nenhum resultado encontrado.</div></td></tr>';
+    tbody.innerHTML = '<tr><td colspan="13"><div class="empty">Nenhum resultado encontrado.</div></td></tr>';
     document.getElementById('paginacao').innerHTML = '';
     return;
   }
@@ -307,23 +307,25 @@ function renderTabela() {
     var r = slice[i];
     var idx = (pagina - 1) * POR_PAGINA + i;
     var nf = r['Nome Fantasia'] ? '<div class="nome-fantasia">' + r['Nome Fantasia'] + '</div>' : '';
+    var email = r['Email'] ? '<a href="mailto:' + r['Email'] + '">' + r['Email'] + '</a>' : 'N/I';
+    var tel = r['Telefone'] || 'N/I';
     var reg = r['Regiao'] && r['Regiao'] !== 'Sem Região' ? '<span class="tag-regiao">' + r['Regiao'] + '</span>' : '<span class="tag-normal">N/I</span>';
-    var mod = r['Modelo de Negocio'] && r['Modelo de Negocio'] !== 'Sem Modelo' ? '<span class="tag-modelo">' + r['Modelo de Negocio'] + '</span>' : '<span class="tag-normal">N/I</span>';
-    var dis = r['Distrato'] === 'Sim' ? '<span class="tag-distrato">Sim</span>' : '<span class="tag-normal">Não</span>';
+    var mod = r['Modelo de Negocio'] ? '<span class="tag-modelo">' + r['Modelo de Negocio'] + '</span>' : '<span class="tag-normal">N/I</span>';
+    var dis = r['Distrato'] === 'Sim' ? '<span class="tag-distrato">Sim</span>' : '<span class="tag-normal">Nao</span>';
     var tags = r['Tags'] ? r['Tags'].substring(0, 30) + '...' : 'N/I';
-    var diretora = r['Diretora Regional'] && r['Diretora Regional'] !== 'Não Informada' ? r['Diretora Regional'] : 'N/I';
-    var gestora = r['Gestora'] || 'N/I';
+    var vend = r['Vendedor'] || 'N/I';
     var dias = r['Dias em Atraso'] || 0;
 
     html += '<tr>' +
       '<td><div class="nome-principal">' + r['Razao Social'] + '</div>' + nf + '</td>' +
       '<td style="white-space:nowrap;font-size:11px">' + (r['CNPJ/CPF'] || 'N/I') + '</td>' +
+      '<td style="font-size:11px">' + email + '</td>' +
+      '<td style="white-space:nowrap">' + tel + '</td>' +
       '<td>' + reg + '</td>' +
-      '<td style="font-size:12px;font-weight:600">' + diretora + '</td>' +
-      '<td style="font-size:12px;color:var(--muted)">' + gestora + '</td>' +
       '<td>' + mod + '</td>' +
       '<td>' + dis + '</td>' +
       '<td style="font-size:11px;color:var(--muted)" title="' + (r['Tags'] || '') + '">' + tags + '</td>' +
+      '<td style="font-size:11px;color:var(--muted)">' + vend + '</td>' +
       '<td style="cursor:pointer;text-align:center" onclick="expandirTitulos(this,idx)"><span class="tag-qtd">' + r['Qtd Titulos'] + '</span></td>' +
       '<td class="valor-cell">' + fmt(r['Valor Atrasado (R$)']) + '</td>' +
       '<td><span class="dias-cell ' + classDias(dias) + '">' + dias + 'd</span></td>' +
@@ -349,7 +351,7 @@ function renderPaginacao() {
   }
   if (e < total - 1) html += '<span style="padding:0 4px;color:var(--muted)">...</span>';
   if (e < total) html += '<button class="page-btn" onclick="irPagina(' + total + ')">' + total + '</button>';
-  html += '<button class="page-btn" onclick="irPagina(' + (pagina + 1) + ')" ' + (pagina === total ? 'disabled' : '') + '>Próximo</button>';
+  html += '<button class="page-btn" onclick="irPagina(' + (pagina + 1) + ')" ' + (pagina === total ? 'disabled' : '') + '>Proximo</button>';
   el.innerHTML = html;
 }
 
@@ -361,10 +363,9 @@ function irPagina(p) {
 
 function aplicarFiltros() {
   var busca = document.getElementById('busca').value.toLowerCase();
-  var fDir = document.getElementById('f-diretora').value;
-  var fGest = document.getElementById('f-gestora').value;
   var fReg = document.getElementById('f-regiao').value;
   var fMod = document.getElementById('f-modelo').value;
+  var fVendedor = document.getElementById('f-vendedor').value;
   var fDis = document.getElementById('f-distrato').value;
 
   filtrado = DADOS.filter(function(r) {
@@ -374,13 +375,12 @@ function aplicarFiltros() {
       var email = (r['Email'] || '').toLowerCase();
       if (nome.indexOf(busca) < 0 && cnpj.indexOf(busca) < 0 && email.indexOf(busca) < 0) return false;
     }
-    if (fDir && r['Diretora Regional'] !== fDir) return false;
-    if (fGest && r['Gestora'] !== fGest) return false;
     if (fReg) {
       if (fReg === 'Sem Região' && r['Regiao'] !== 'Sem Região') return false;
       if (fReg !== 'Sem Região' && r['Regiao'] !== fReg) return false;
     }
     if (fMod && r['Modelo de Negocio'] !== fMod) return false;
+    if (fVendedor && r['Vendedor'] !== fVendedor) return false;
     if (fDis && r['Distrato'] !== fDis) return false;
     return true;
   });
@@ -416,7 +416,7 @@ function ordenar() {
 function renderGraficos() {
   var regMap = {};
   DADOS.forEach(function(r) {
-    var k = r['Regiao'] || 'Sem Região';
+    var k = r['Regiao'] || 'Sem Regiao';
     regMap[k] = (regMap[k] || 0) + r['Valor Atrasado (R$)'];
   });
   var regs = Object.entries(regMap).sort(function(a, b) { return b[1] - a[1]; }).slice(0, 8);
@@ -434,35 +434,18 @@ function renderGraficos() {
 }
 
 function popularFiltros() {
-  var dirs = [];
-  var gests = [];
   var regs = [];
   var mods = [];
-  
+  var vends = [];
   DADOS.forEach(function(r) {
-    if (r['Diretora Regional'] && r['Diretora Regional'] !== 'Não Informada' && dirs.indexOf(r['Diretora Regional']) < 0) dirs.push(r['Diretora Regional']);
-    if (r['Gestora'] && r['Gestora'] !== 'N/I' && gests.indexOf(r['Gestora']) < 0) gests.push(r['Gestora']);
     if (r['Regiao'] && r['Regiao'] !== 'Sem Região' && regs.indexOf(r['Regiao']) < 0) regs.push(r['Regiao']);
-    if (r['Modelo de Negocio'] && r['Modelo de Negocio'] !== 'Sem Modelo' && mods.indexOf(r['Modelo de Negocio']) < 0) mods.push(r['Modelo de Negocio']);
+    if (r['Modelo de Negocio'] && mods.indexOf(r['Modelo de Negocio']) < 0) mods.push(r['Modelo de Negocio']);
+    if (r['Vendedor'] && r['Vendedor'] !== 'N/I' && vends.indexOf(r['Vendedor']) < 0) vends.push(r['Vendedor']);
   });
-  
-  dirs.sort(); gests.sort(); regs.sort(); mods.sort();
-  
-  var selDir = document.getElementById('f-diretora');
-  var selGest = document.getElementById('f-gestora');
+  regs.sort(); mods.sort(); vends.sort();
   var selReg = document.getElementById('f-regiao');
   var selMod = document.getElementById('f-modelo');
-  
-  dirs.forEach(function(d) {
-    var opt = document.createElement('option');
-    opt.value = d; opt.textContent = d;
-    selDir.appendChild(opt);
-  });
-  gests.forEach(function(g) {
-    var opt = document.createElement('option');
-    opt.value = g; opt.textContent = g;
-    selGest.appendChild(opt);
-  });
+  var selVend = document.getElementById('f-vendedor');
   regs.forEach(function(r) {
     var opt = document.createElement('option');
     opt.value = r; opt.textContent = r;
@@ -472,6 +455,11 @@ function popularFiltros() {
     var opt = document.createElement('option');
     opt.value = m; opt.textContent = m;
     selMod.appendChild(opt);
+  });
+  vends.forEach(function(v) {
+    var opt = document.createElement('option');
+    opt.value = v; opt.textContent = v;
+    selVend.appendChild(opt);
   });
 }
 
@@ -558,7 +546,7 @@ function iniciar() {
 
   fetch('inadimplentes.json')
     .then(function(res) {
-      if (!res.ok) throw new Error('Arquivo inadimplentes.json não encontrado. Execute o script Python primeiro.');
+      if (!res.ok) throw new Error('Arquivo inadimplentes.json nao encontrado. Execute o script gerar-relatorio-completo.py primeiro.');
       return res.json();
     })
     .then(function(json) {
@@ -569,11 +557,11 @@ function iniciar() {
         return r['Distrato'] === 'Sim' ? s + r['Valor Atrasado (R$)'] : s;
       }, 0);
 
-      document.getElementById('header-sub').textContent = 'Atualizado em ' + json.gerado_em + ' · ' + DADOS.length + ' lojistas · ' + json.total_titulos + ' títulos';
+      document.getElementById('header-sub').textContent = 'Atualizado em ' + json.gerado_em + ' · ' + DADOS.length + ' lojistas · ' + json.total_titulos + ' titulos';
       document.getElementById('s-valor').textContent = fmt(json.valor_total);
       document.getElementById('s-clientes').textContent = DADOS.length.toLocaleString('pt-BR');
       document.getElementById('s-titulos').textContent = json.total_titulos.toLocaleString('pt-BR');
-      document.getElementById('s-ticket').textContent = fmt(json.valor_total / (DADOS.length || 1));
+      document.getElementById('s-ticket').textContent = fmt(json.valor_total / DADOS.length);
       document.getElementById('s-distrato').textContent = fmt(valorDistrato);
       document.getElementById('count-label').textContent = DADOS.length.toLocaleString('pt-BR') + ' lojistas';
 
@@ -583,16 +571,15 @@ function iniciar() {
       renderTabela();
     })
     .catch(function(e) {
-      document.getElementById('tbody').innerHTML = '<tr><td colspan="12"><div class="error-box">' + e.message + '</div></td></tr>';
+      document.getElementById('tbody').innerHTML = '<tr><td colspan="13"><div class="error-box">' + e.message + '</div></td></tr>';
       document.getElementById('header-sub').textContent = 'Erro ao carregar dados';
     });
 }
 
 document.getElementById('busca').addEventListener('input', aplicarFiltros);
-document.getElementById('f-diretora').addEventListener('change', aplicarFiltros);
-document.getElementById('f-gestora').addEventListener('change', aplicarFiltros);
 document.getElementById('f-regiao').addEventListener('change', aplicarFiltros);
 document.getElementById('f-modelo').addEventListener('change', aplicarFiltros);
+document.getElementById('f-vendedor').addEventListener('change', aplicarFiltros);
 document.getElementById('f-distrato').addEventListener('change', aplicarFiltros);
 
 iniciar();
