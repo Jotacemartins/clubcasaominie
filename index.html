@@ -101,8 +101,8 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 }
 .controls input { width: 240px; }
 .controls input:focus, .controls select:focus { border-color: var(--accent); }
-.btn-boletos { background: var(--accent); color: #fff; }
-.btn-boletos:hover { opacity: .9; }
+.btn-action { background: var(--accent); color: #fff; }
+.btn-action:hover { opacity: .9; }
 .count-label { color: var(--muted); font-size: 12px; margin-left: auto; font-weight: 600; }
 
 .table-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow-x: auto; box-shadow: var(--shadow); }
@@ -208,9 +208,11 @@ a:hover { text-decoration: underline; }
     <input type="text" id="busca" placeholder="Buscar nome, CNPJ ou email...">
     <select id="f-regiao"><option value="">Todas as regioes</option><option value="Sem Região">Sem regiao</option></select>
     <select id="f-modelo"><option value="">Todos os modelos</option></select>
-    <select id="f-vendedor"><option value="">Todos os vendedores</option></select>
+    <select id="f-gestora"><option value="">Todas as gestoras</option></select>
+    <select id="f-diretora"><option value="">Todas as diretoras</option></select>
     <select id="f-distrato"><option value="">Todos</option><option value="Sim">Em distrato</option><option value="Não">Sem distrato</option></select>
-    <button class="btn-boletos" onclick="abrirTodosBoletos()">Ver todos os boletos</button>
+    <button class="btn-action" onclick="abrirTodosBoletos()">Ver todos os boletos</button>
+    <button class="btn-action" onclick="exportarExcel()">Exportar Excel</button>
     <span class="count-label" id="count-label"></span>
   </div>
 
@@ -221,16 +223,14 @@ a:hover { text-decoration: underline; }
           <th onclick="sort('Razao Social')">Nome</th>
           <th onclick="sort('CNPJ/CPF')">CNPJ / CPF</th>
           <th onclick="sort('Email')">Email</th>
-          <th onclick="sort('Telefone')">Telefone</th>
           <th onclick="sort('Regiao')">Regiao</th>
+          <th onclick="sort('Diretora Regional')">Diretora Regional</th>
+          <th onclick="sort('Gestora')">Gestora</th>
           <th onclick="sort('Modelo de Negocio')">Modelo</th>
           <th onclick="sort('Distrato')">Distrato</th>
-          <th onclick="sort('Tags')">Tags</th>
-          <th onclick="sort('Vendedor')">Vendedor</th>
           <th onclick="sort('Qtd Titulos')">Titulos</th>
           <th onclick="sort('Valor Atrasado (R$)')" class="sorted">Valor</th>
           <th onclick="sort('Dias em Atraso')">Dias</th>
-          <th onclick="sort('Vencimento Mais Antigo')">Vencimento</th>
         </tr>
       </thead>
       <tbody id="tbody"></tbody>
@@ -297,7 +297,7 @@ function renderTabela() {
   var slice = filtrado.slice(inicio, inicio + POR_PAGINA);
 
   if (!slice.length) {
-    tbody.innerHTML = '<tr><td colspan="13"><div class="empty">Nenhum resultado encontrado.</div></td></tr>';
+    tbody.innerHTML = '<tr><td colspan="11"><div class="empty">Nenhum resultado encontrado.</div></td></tr>';
     document.getElementById('paginacao').innerHTML = '';
     return;
   }
@@ -308,28 +308,25 @@ function renderTabela() {
     var idx = (pagina - 1) * POR_PAGINA + i;
     var nf = r['Nome Fantasia'] ? '<div class="nome-fantasia">' + r['Nome Fantasia'] + '</div>' : '';
     var email = r['Email'] ? '<a href="mailto:' + r['Email'] + '">' + r['Email'] + '</a>' : 'N/I';
-    var tel = r['Telefone'] || 'N/I';
     var reg = r['Regiao'] && r['Regiao'] !== 'Sem Região' ? '<span class="tag-regiao">' + r['Regiao'] + '</span>' : '<span class="tag-normal">N/I</span>';
     var mod = r['Modelo de Negocio'] ? '<span class="tag-modelo">' + r['Modelo de Negocio'] + '</span>' : '<span class="tag-normal">N/I</span>';
     var dis = r['Distrato'] === 'Sim' ? '<span class="tag-distrato">Sim</span>' : '<span class="tag-normal">Nao</span>';
-    var tags = r['Tags'] ? r['Tags'].substring(0, 30) + '...' : 'N/I';
-    var vend = r['Vendedor'] || 'N/I';
+    var dir = r['Diretora Regional'] || 'N/I';
+    var gest = r['Gestora'] || 'N/I';
     var dias = r['Dias em Atraso'] || 0;
 
     html += '<tr>' +
       '<td><div class="nome-principal">' + r['Razao Social'] + '</div>' + nf + '</td>' +
       '<td style="white-space:nowrap;font-size:11px">' + (r['CNPJ/CPF'] || 'N/I') + '</td>' +
       '<td style="font-size:11px">' + email + '</td>' +
-      '<td style="white-space:nowrap">' + tel + '</td>' +
       '<td>' + reg + '</td>' +
+      '<td style="font-size:11px;color:var(--muted)">' + dir + '</td>' +
+      '<td style="font-size:11px;color:var(--muted)">' + gest + '</td>' +
       '<td>' + mod + '</td>' +
       '<td>' + dis + '</td>' +
-      '<td style="font-size:11px;color:var(--muted)" title="' + (r['Tags'] || '') + '">' + tags + '</td>' +
-      '<td style="font-size:11px;color:var(--muted)">' + vend + '</td>' +
       '<td style="cursor:pointer;text-align:center" onclick="expandirTitulos(this,idx)"><span class="tag-qtd">' + r['Qtd Titulos'] + '</span></td>' +
       '<td class="valor-cell">' + fmt(r['Valor Atrasado (R$)']) + '</td>' +
       '<td><span class="dias-cell ' + classDias(dias) + '">' + dias + 'd</span></td>' +
-      '<td style="font-size:11px;color:var(--muted);white-space:nowrap">' + (r['Vencimento Mais Antigo'] || 'N/I') + '</td>' +
       '</tr>';
   }
   tbody.innerHTML = html;
@@ -365,7 +362,8 @@ function aplicarFiltros() {
   var busca = document.getElementById('busca').value.toLowerCase();
   var fReg = document.getElementById('f-regiao').value;
   var fMod = document.getElementById('f-modelo').value;
-  var fVendedor = document.getElementById('f-vendedor').value;
+  var fGest = document.getElementById('f-gestora').value;
+  var fDir = document.getElementById('f-diretora').value;
   var fDis = document.getElementById('f-distrato').value;
 
   filtrado = DADOS.filter(function(r) {
@@ -380,7 +378,8 @@ function aplicarFiltros() {
       if (fReg !== 'Sem Região' && r['Regiao'] !== fReg) return false;
     }
     if (fMod && r['Modelo de Negocio'] !== fMod) return false;
-    if (fVendedor && r['Vendedor'] !== fVendedor) return false;
+    if (fGest && r['Gestora'] !== fGest) return false;
+    if (fDir && r['Diretora Regional'] !== fDir) return false;
     if (fDis && r['Distrato'] !== fDis) return false;
     return true;
   });
@@ -436,16 +435,19 @@ function renderGraficos() {
 function popularFiltros() {
   var regs = [];
   var mods = [];
-  var vends = [];
+  var gests = [];
+  var dirs = [];
   DADOS.forEach(function(r) {
     if (r['Regiao'] && r['Regiao'] !== 'Sem Região' && regs.indexOf(r['Regiao']) < 0) regs.push(r['Regiao']);
     if (r['Modelo de Negocio'] && mods.indexOf(r['Modelo de Negocio']) < 0) mods.push(r['Modelo de Negocio']);
-    if (r['Vendedor'] && r['Vendedor'] !== 'N/I' && vends.indexOf(r['Vendedor']) < 0) vends.push(r['Vendedor']);
+    if (r['Gestora'] && r['Gestora'] !== 'N/I' && gests.indexOf(r['Gestora']) < 0) gests.push(r['Gestora']);
+    if (r['Diretora Regional'] && r['Diretora Regional'] !== 'Não Informada' && dirs.indexOf(r['Diretora Regional']) < 0) dirs.push(r['Diretora Regional']);
   });
-  regs.sort(); mods.sort(); vends.sort();
+  regs.sort(); mods.sort(); gests.sort(); dirs.sort();
   var selReg = document.getElementById('f-regiao');
   var selMod = document.getElementById('f-modelo');
-  var selVend = document.getElementById('f-vendedor');
+  var selGest = document.getElementById('f-gestora');
+  var selDir = document.getElementById('f-diretora');
   regs.forEach(function(r) {
     var opt = document.createElement('option');
     opt.value = r; opt.textContent = r;
@@ -456,10 +458,15 @@ function popularFiltros() {
     opt.value = m; opt.textContent = m;
     selMod.appendChild(opt);
   });
-  vends.forEach(function(v) {
+  gests.forEach(function(g) {
     var opt = document.createElement('option');
-    opt.value = v; opt.textContent = v;
-    selVend.appendChild(opt);
+    opt.value = g; opt.textContent = g;
+    selGest.appendChild(opt);
+  });
+  dirs.forEach(function(d) {
+    var opt = document.createElement('option');
+    opt.value = d; opt.textContent = d;
+    selDir.appendChild(opt);
   });
 }
 
@@ -539,6 +546,38 @@ function fecharModal() {
   document.getElementById('modal-boletos').classList.remove('active');
 }
 
+function exportarExcel() {
+  if (!filtrado.length) { alert('Nenhum dado para exportar'); return; }
+  
+  var html = '<table border="1"><thead><tr><th>Razao Social</th><th>Nome Fantasia</th><th>CNPJ</th><th>Email</th><th>Regiao</th><th>Diretora Regional</th><th>Gestora</th><th>Modelo</th><th>Distrato</th><th>Qtd Titulos</th><th>Valor Atrasado</th><th>Dias Atraso</th></tr></thead><tbody>';
+  
+  filtrado.forEach(function(r) {
+    html += '<tr>' +
+      '<td>' + r['Razao Social'] + '</td>' +
+      '<td>' + (r['Nome Fantasia'] || '') + '</td>' +
+      '<td>' + r['CNPJ/CPF'] + '</td>' +
+      '<td>' + r['Email'] + '</td>' +
+      '<td>' + r['Regiao'] + '</td>' +
+      '<td>' + r['Diretora Regional'] + '</td>' +
+      '<td>' + r['Gestora'] + '</td>' +
+      '<td>' + r['Modelo de Negocio'] + '</td>' +
+      '<td>' + r['Distrato'] + '</td>' +
+      '<td>' + r['Qtd Titulos'] + '</td>' +
+      '<td>' + r['Valor Atrasado (R$)'] + '</td>' +
+      '<td>' + r['Dias em Atraso'] + '</td>' +
+      '</tr>';
+  });
+  html += '</tbody></table>';
+  
+  var blob = new Blob([html], {type: 'application/vnd.ms-excel'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'inadimplentes-' + new Date().toISOString().slice(0,10) + '.xls';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
 function iniciar() {
   var tema = localStorage.getItem('cc-theme') || 'light';
   document.documentElement.setAttribute('data-theme', tema);
@@ -554,7 +593,7 @@ function iniciar() {
       filtrado = DADOS.slice();
 
       var valorDistrato = DADOS.reduce(function(s, r) {
-        return r['Distrato'] === 'Sim' ? s + r['Valor Atrasado (R$)'] : s;
+        return (r['Distrato'] === 'Sim') ? (s + (r['Valor Atrasado (R$)'] || 0)) : s;
       }, 0);
 
       document.getElementById('header-sub').textContent = 'Atualizado em ' + json.gerado_em + ' · ' + DADOS.length + ' lojistas · ' + json.total_titulos + ' titulos';
@@ -571,7 +610,7 @@ function iniciar() {
       renderTabela();
     })
     .catch(function(e) {
-      document.getElementById('tbody').innerHTML = '<tr><td colspan="13"><div class="error-box">' + e.message + '</div></td></tr>';
+      document.getElementById('tbody').innerHTML = '<tr><td colspan="11"><div class="error-box">' + e.message + '</div></td></tr>';
       document.getElementById('header-sub').textContent = 'Erro ao carregar dados';
     });
 }
@@ -579,7 +618,8 @@ function iniciar() {
 document.getElementById('busca').addEventListener('input', aplicarFiltros);
 document.getElementById('f-regiao').addEventListener('change', aplicarFiltros);
 document.getElementById('f-modelo').addEventListener('change', aplicarFiltros);
-document.getElementById('f-vendedor').addEventListener('change', aplicarFiltros);
+document.getElementById('f-gestora').addEventListener('change', aplicarFiltros);
+document.getElementById('f-diretora').addEventListener('change', aplicarFiltros);
 document.getElementById('f-distrato').addEventListener('change', aplicarFiltros);
 
 iniciar();
