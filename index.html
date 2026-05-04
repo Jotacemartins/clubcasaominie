@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Club&Casa — Inadimplência</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
 :root[data-theme="light"] {
   --bg: #f4f6fb;
@@ -43,18 +44,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13px; }
 
-.header {
-  background: var(--card);
-  border-bottom: 1px solid var(--border);
-  padding: 14px 28px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: var(--shadow);
-}
+.header { background: var(--card); border-bottom: 1px solid var(--border); padding: 14px 28px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow); }
 .header-left { display: flex; align-items: center; gap: 12px; }
 .logo { width: 34px; height: 34px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; font-size: 15px; }
 .header h1 { font-size: 17px; font-weight: 700; }
@@ -87,22 +77,13 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 .bar-val { font-size: 11px; color: var(--muted); width: 95px; text-align: right; flex-shrink: 0; font-weight: 600; }
 
 .controls { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; align-items: center; }
-.controls input, .controls select, .controls button {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 7px;
-  padding: 8px 12px;
-  color: var(--text);
-  font-family: inherit;
-  font-size: 12px;
-  outline: none;
-  box-shadow: var(--shadow);
-  cursor: pointer;
-}
+.controls input, .controls select, .controls button { background: var(--card); border: 1px solid var(--border); border-radius: 7px; padding: 8px 12px; color: var(--text); font-family: inherit; font-size: 12px; outline: none; box-shadow: var(--shadow); cursor: pointer; }
 .controls input { width: 240px; }
 .controls input:focus, .controls select:focus { border-color: var(--accent); }
-.btn-action { background: var(--accent); color: #fff; }
+.btn-action { background: var(--accent); color: #fff; border: none; }
 .btn-action:hover { opacity: .9; }
+.btn-excel { background: #1d6f42; color: #fff; border: none; }
+.btn-excel:hover { background: #155d36; }
 .count-label { color: var(--muted); font-size: 12px; margin-left: auto; font-weight: 600; }
 
 .table-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow-x: auto; box-shadow: var(--shadow); }
@@ -129,6 +110,9 @@ tbody td { padding: 8px 10px; vertical-align: middle; }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
+.btn-omie { background: #5b52e8; color: #fff; padding: 4px 10px; border-radius: 5px; font-size: 11px; font-weight: 600; text-decoration: none; display: inline-block; border: none; cursor: pointer; }
+.btn-omie:hover { background: #4a40d4; text-decoration: none; }
+
 .pagination { display: flex; align-items: center; justify-content: center; gap: 5px; padding: 12px; border-top: 1px solid var(--border); }
 .page-btn { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 5px 11px; border-radius: 5px; cursor: pointer; font-family: inherit; font-size: 12px; }
 .page-btn:hover { border-color: var(--accent); color: var(--accent); }
@@ -137,9 +121,11 @@ a:hover { text-decoration: underline; }
 
 .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,.5); z-index: 1000; align-items: center; justify-content: center; }
 .modal.active { display: flex; }
-.modal-content { background: var(--card); border-radius: 12px; width: 90%; max-width: 1400px; max-height: 90vh; overflow: auto; box-shadow: 0 20px 60px rgba(0,0,0,.3); }
-.modal-header { padding: 20px 28px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.modal-content { background: var(--card); border-radius: 12px; width: 95%; max-width: 1400px; max-height: 90vh; overflow: auto; box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+.modal-header { padding: 20px 28px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: var(--card); z-index: 10; }
 .modal-header h2 { font-size: 18px; font-weight: 700; }
+.modal-header-info { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.modal-actions { display: flex; gap: 8px; }
 .modal-close { background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 14px; }
 .modal-close:hover { border-color: var(--accent); }
 .modal-body { padding: 20px 28px; }
@@ -212,7 +198,7 @@ a:hover { text-decoration: underline; }
     <select id="f-diretora"><option value="">Todas as diretoras</option></select>
     <select id="f-distrato"><option value="">Todos</option><option value="Sim">Em distrato</option><option value="Não">Sem distrato</option></select>
     <button class="btn-action" onclick="abrirTodosBoletos()">Ver todos os boletos</button>
-    <button class="btn-action" onclick="exportarExcel()">Exportar Excel</button>
+    <button class="btn-excel" onclick="exportarExcel()">📊 Exportar Excel</button>
     <span class="count-label" id="count-label"></span>
   </div>
 
@@ -224,13 +210,14 @@ a:hover { text-decoration: underline; }
           <th onclick="sort('CNPJ/CPF')">CNPJ / CPF</th>
           <th onclick="sort('Email')">Email</th>
           <th onclick="sort('Regiao')">Regiao</th>
-          <th onclick="sort('Diretora Regional')">Diretora Regional</th>
+          <th onclick="sort('Diretora Regional')">Diretora</th>
           <th onclick="sort('Gestora')">Gestora</th>
           <th onclick="sort('Modelo de Negocio')">Modelo</th>
           <th onclick="sort('Distrato')">Distrato</th>
           <th onclick="sort('Qtd Titulos')">Titulos</th>
           <th onclick="sort('Valor Atrasado (R$)')" class="sorted">Valor</th>
           <th onclick="sort('Dias em Atraso')">Dias</th>
+          <th>Acoes</th>
         </tr>
       </thead>
       <tbody id="tbody"></tbody>
@@ -242,8 +229,14 @@ a:hover { text-decoration: underline; }
 <div class="modal" id="modal-boletos">
   <div class="modal-content">
     <div class="modal-header">
-      <h2>Todos os Boletos em Aberto</h2>
-      <button class="modal-close" onclick="fecharModal()">Fechar</button>
+      <div>
+        <h2 id="modal-titulo">Boletos em Aberto</h2>
+        <div class="modal-header-info" id="modal-info"></div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-excel" onclick="exportarBoletosExcel()">📊 Exportar Excel</button>
+        <button class="modal-close" onclick="fecharModal()">Fechar</button>
+      </div>
     </div>
     <div class="modal-body">
       <div class="table-wrap">
@@ -256,6 +249,7 @@ a:hover { text-decoration: underline; }
               <th>Vencimento</th>
               <th>Dias Atraso</th>
               <th>Valor</th>
+              <th>Acoes</th>
             </tr>
           </thead>
           <tbody id="tbody-boletos"></tbody>
@@ -272,6 +266,7 @@ var colOrdem = 'Valor Atrasado (R$)';
 var crescente = false;
 var pagina = 1;
 var POR_PAGINA = 50;
+var BOLETOS_MODAL = [];
 
 function fmt(v) {
   return 'R$ ' + Number(v).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -291,13 +286,23 @@ function toggleTheme() {
   localStorage.setItem('cc-theme', escuro ? 'light' : 'dark');
 }
 
+function abrirOmieCliente(codigo) {
+  if (!codigo) { alert('Codigo do cliente nao disponivel'); return; }
+  window.open('https://app.omie.com.br/gestao/club-ozv23f8/#FIN/cli/' + codigo, '_blank');
+}
+
+function abrirOmieBoleto(codigo) {
+  if (!codigo) { alert('Codigo do cliente nao disponivel'); return; }
+  window.open('https://app.omie.com.br/gestao/club-ozv23f8/#FIN/cli/' + codigo, '_blank');
+}
+
 function renderTabela() {
   var tbody = document.getElementById('tbody');
   var inicio = (pagina - 1) * POR_PAGINA;
   var slice = filtrado.slice(inicio, inicio + POR_PAGINA);
 
   if (!slice.length) {
-    tbody.innerHTML = '<tr><td colspan="11"><div class="empty">Nenhum resultado encontrado.</div></td></tr>';
+    tbody.innerHTML = '<tr><td colspan="12"><div class="empty">Nenhum resultado encontrado.</div></td></tr>';
     document.getElementById('paginacao').innerHTML = '';
     return;
   }
@@ -309,11 +314,12 @@ function renderTabela() {
     var nf = r['Nome Fantasia'] ? '<div class="nome-fantasia">' + r['Nome Fantasia'] + '</div>' : '';
     var email = r['Email'] ? '<a href="mailto:' + r['Email'] + '">' + r['Email'] + '</a>' : 'N/I';
     var reg = r['Regiao'] && r['Regiao'] !== 'Sem Região' ? '<span class="tag-regiao">' + r['Regiao'] + '</span>' : '<span class="tag-normal">N/I</span>';
-    var mod = r['Modelo de Negocio'] ? '<span class="tag-modelo">' + r['Modelo de Negocio'] + '</span>' : '<span class="tag-normal">N/I</span>';
+    var mod = r['Modelo de Negocio'] && r['Modelo de Negocio'] !== 'Sem Modelo' ? '<span class="tag-modelo">' + r['Modelo de Negocio'] + '</span>' : '<span class="tag-normal">N/I</span>';
     var dis = r['Distrato'] === 'Sim' ? '<span class="tag-distrato">Sim</span>' : '<span class="tag-normal">Nao</span>';
-    var dir = r['Diretora Regional'] || 'N/I';
+    var dir = r['Diretora Regional'] && r['Diretora Regional'] !== 'Não Informada' ? r['Diretora Regional'] : 'N/I';
     var gest = r['Gestora'] || 'N/I';
     var dias = r['Dias em Atraso'] || 0;
+    var codigoCliente = r['codigo_cliente'] || r['Codigo Cliente'] || '';
 
     html += '<tr>' +
       '<td><div class="nome-principal">' + r['Razao Social'] + '</div>' + nf + '</td>' +
@@ -324,9 +330,10 @@ function renderTabela() {
       '<td style="font-size:11px;color:var(--muted)">' + gest + '</td>' +
       '<td>' + mod + '</td>' +
       '<td>' + dis + '</td>' +
-      '<td style="cursor:pointer;text-align:center" onclick="expandirTitulos(this,idx)"><span class="tag-qtd">' + r['Qtd Titulos'] + '</span></td>' +
+      '<td style="cursor:pointer;text-align:center" onclick="abrirBoletosCliente(' + idx + ')"><span class="tag-qtd">' + r['Qtd Titulos'] + '</span></td>' +
       '<td class="valor-cell">' + fmt(r['Valor Atrasado (R$)']) + '</td>' +
       '<td><span class="dias-cell ' + classDias(dias) + '">' + dias + 'd</span></td>' +
+      '<td><button class="btn-omie" data-codigo="' + codigoCliente + '" onclick="abrirOmieCliente(this.dataset.codigo)">Ver no Omie</button></td>' +
       '</tr>';
   }
   tbody.innerHTML = html;
@@ -352,11 +359,7 @@ function renderPaginacao() {
   el.innerHTML = html;
 }
 
-function irPagina(p) {
-  pagina = p;
-  renderTabela();
-  window.scrollTo(0, 0);
-}
+function irPagina(p) { pagina = p; renderTabela(); window.scrollTo(0, 0); }
 
 function aplicarFiltros() {
   var busca = document.getElementById('busca').value.toLowerCase();
@@ -433,88 +436,62 @@ function renderGraficos() {
 }
 
 function popularFiltros() {
-  var regs = [];
-  var mods = [];
-  var gests = [];
-  var dirs = [];
+  var regs = [], mods = [], gests = [], dirs = [];
   DADOS.forEach(function(r) {
     if (r['Regiao'] && r['Regiao'] !== 'Sem Região' && regs.indexOf(r['Regiao']) < 0) regs.push(r['Regiao']);
-    if (r['Modelo de Negocio'] && mods.indexOf(r['Modelo de Negocio']) < 0) mods.push(r['Modelo de Negocio']);
+    if (r['Modelo de Negocio'] && r['Modelo de Negocio'] !== 'Sem Modelo' && mods.indexOf(r['Modelo de Negocio']) < 0) mods.push(r['Modelo de Negocio']);
     if (r['Gestora'] && r['Gestora'] !== 'N/I' && gests.indexOf(r['Gestora']) < 0) gests.push(r['Gestora']);
     if (r['Diretora Regional'] && r['Diretora Regional'] !== 'Não Informada' && dirs.indexOf(r['Diretora Regional']) < 0) dirs.push(r['Diretora Regional']);
   });
   regs.sort(); mods.sort(); gests.sort(); dirs.sort();
-  var selReg = document.getElementById('f-regiao');
-  var selMod = document.getElementById('f-modelo');
-  var selGest = document.getElementById('f-gestora');
-  var selDir = document.getElementById('f-diretora');
-  regs.forEach(function(r) {
-    var opt = document.createElement('option');
-    opt.value = r; opt.textContent = r;
-    selReg.appendChild(opt);
-  });
-  mods.forEach(function(m) {
-    var opt = document.createElement('option');
-    opt.value = m; opt.textContent = m;
-    selMod.appendChild(opt);
-  });
-  gests.forEach(function(g) {
-    var opt = document.createElement('option');
-    opt.value = g; opt.textContent = g;
-    selGest.appendChild(opt);
-  });
-  dirs.forEach(function(d) {
-    var opt = document.createElement('option');
-    opt.value = d; opt.textContent = d;
-    selDir.appendChild(opt);
-  });
-}
-
-function expandirTitulos(cell, idx) {
-  var tr = cell.closest('tr');
-  var next = tr.nextElementSibling;
-  if (next && next.classList.contains('expand-row')) {
-    next.remove();
-    return;
-  }
-  var r = filtrado[idx];
-  var titulos = r['titulos'] || [];
-  var cols = tr.querySelectorAll('td').length;
-  var linhas = '';
-  if (!titulos.length) {
-    linhas = '<tr><td colspan="4" style="padding:12px 24px;color:var(--muted)">Sem boletos detalhados.</td></tr>';
-  } else {
-    titulos.forEach(function(t) {
-      var dias = t['dias_atraso'] || 0;
-      var cor = dias > 90 ? 'var(--red)' : dias > 30 ? 'var(--amber)' : 'var(--blue)';
-      linhas += '<tr style="border-top:1px solid var(--border)">' +
-        '<td style="padding:8px 24px;font-size:12px">' + (t['numero_documento'] || 'N/I') + '</td>' +
-        '<td style="padding:8px 24px;font-size:12px">' + (t['data_vencimento'] || 'N/I') + '</td>' +
-        '<td style="padding:8px 24px;font-size:12px;font-weight:700;color:' + cor + '">' + dias + 'd</td>' +
-        '<td style="padding:8px 24px;font-size:12px;font-weight:800;color:var(--red)">' + fmt(t['valor_documento'] || 0) + '</td>' +
-        '</tr>';
+  
+  function popular(id, lista) {
+    var sel = document.getElementById(id);
+    lista.forEach(function(v) {
+      var opt = document.createElement('option');
+      opt.value = v; opt.textContent = v;
+      sel.appendChild(opt);
     });
   }
-  var expandRow = document.createElement('tr');
-  expandRow.className = 'expand-row';
-  expandRow.innerHTML = '<td colspan="' + cols + '" style="padding:0;background:var(--thead)">' +
-    '<table style="width:100%;border-collapse:collapse">' +
-    '<thead><tr style="background:var(--border)">' +
-    '<th style="padding:8px 24px;text-align:left;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase">Documento</th>' +
-    '<th style="padding:8px 24px;text-align:left;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase">Vencimento</th>' +
-    '<th style="padding:8px 24px;text-align:left;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase">Dias</th>' +
-    '<th style="padding:8px 24px;text-align:left;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase">Valor</th>' +
-    '</tr></thead><tbody>' + linhas + '</tbody></table></td>';
-  tr.after(expandRow);
+  popular('f-regiao', regs);
+  popular('f-modelo', mods);
+  popular('f-gestora', gests);
+  popular('f-diretora', dirs);
+}
+
+function abrirBoletosCliente(idx) {
+  var r = filtrado[idx];
+  var titulos = r['titulos'] || [];
+  var codigoCliente = r['codigo_cliente'] || r['Codigo Cliente'] || '';
+  
+  BOLETOS_MODAL = titulos.map(function(t) {
+    return {
+      cliente: r['Razao Social'],
+      cnpj: r['CNPJ/CPF'],
+      codigoCliente: codigoCliente,
+      documento: t['numero_documento'] || 'N/I',
+      vencimento: t['data_vencimento'] || 'N/I',
+      dias: t['dias_atraso'] || 0,
+      valor: t['valor_documento'] || 0
+    };
+  });
+  
+  document.getElementById('modal-titulo').textContent = 'Boletos de ' + r['Razao Social'];
+  document.getElementById('modal-info').textContent = titulos.length + ' boleto(s) | Total: ' + fmt(r['Valor Atrasado (R$)']);
+  
+  renderModalBoletos();
+  document.getElementById('modal-boletos').classList.add('active');
 }
 
 function abrirTodosBoletos() {
   var todosBoletos = [];
-  DADOS.forEach(function(r) {
+  filtrado.forEach(function(r) {
+    var codigoCliente = r['codigo_cliente'] || r['Codigo Cliente'] || '';
     (r['titulos'] || []).forEach(function(t) {
       todosBoletos.push({
         cliente: r['Razao Social'],
         cnpj: r['CNPJ/CPF'],
+        codigoCliente: codigoCliente,
         documento: t['numero_documento'] || 'N/I',
         vencimento: t['data_vencimento'] || 'N/I',
         dias: t['dias_atraso'] || 0,
@@ -524,9 +501,19 @@ function abrirTodosBoletos() {
   });
   
   todosBoletos.sort(function(a, b) { return b.valor - a.valor; });
+  BOLETOS_MODAL = todosBoletos;
   
+  var totalValor = todosBoletos.reduce(function(s, b) { return s + b.valor; }, 0);
+  document.getElementById('modal-titulo').textContent = 'Todos os Boletos em Aberto';
+  document.getElementById('modal-info').textContent = todosBoletos.length + ' boletos | Total: ' + fmt(totalValor);
+  
+  renderModalBoletos();
+  document.getElementById('modal-boletos').classList.add('active');
+}
+
+function renderModalBoletos() {
   var html = '';
-  todosBoletos.forEach(function(b) {
+  BOLETOS_MODAL.forEach(function(b) {
     var cor = b.dias > 90 ? 'color:var(--red)' : b.dias > 30 ? 'color:var(--amber)' : 'color:var(--blue)';
     html += '<tr>' +
       '<td style="padding:8px 10px;font-size:12px;font-weight:600">' + b.cliente + '</td>' +
@@ -535,11 +522,10 @@ function abrirTodosBoletos() {
       '<td style="padding:8px 10px;font-size:12px">' + b.vencimento + '</td>' +
       '<td style="padding:8px 10px;font-size:12px;font-weight:700;' + cor + '">' + b.dias + 'd</td>' +
       '<td style="padding:8px 10px;font-size:12px;font-weight:800;color:var(--red)">' + fmt(b.valor) + '</td>' +
+      '<td style="padding:8px 10px"><button class="btn-omie" data-codigo="' + b.codigoCliente + '" onclick="abrirOmieBoleto(this.dataset.codigo)">Ver Boleto</button></td>' +
       '</tr>';
   });
-  
   document.getElementById('tbody-boletos').innerHTML = html;
-  document.getElementById('modal-boletos').classList.add('active');
 }
 
 function fecharModal() {
@@ -549,33 +535,127 @@ function fecharModal() {
 function exportarExcel() {
   if (!filtrado.length) { alert('Nenhum dado para exportar'); return; }
   
-  var html = '<table border="1"><thead><tr><th>Razao Social</th><th>Nome Fantasia</th><th>CNPJ</th><th>Email</th><th>Regiao</th><th>Diretora Regional</th><th>Gestora</th><th>Modelo</th><th>Distrato</th><th>Qtd Titulos</th><th>Valor Atrasado</th><th>Dias Atraso</th></tr></thead><tbody>';
-  
-  filtrado.forEach(function(r) {
-    html += '<tr>' +
-      '<td>' + r['Razao Social'] + '</td>' +
-      '<td>' + (r['Nome Fantasia'] || '') + '</td>' +
-      '<td>' + r['CNPJ/CPF'] + '</td>' +
-      '<td>' + r['Email'] + '</td>' +
-      '<td>' + r['Regiao'] + '</td>' +
-      '<td>' + r['Diretora Regional'] + '</td>' +
-      '<td>' + r['Gestora'] + '</td>' +
-      '<td>' + r['Modelo de Negocio'] + '</td>' +
-      '<td>' + r['Distrato'] + '</td>' +
-      '<td>' + r['Qtd Titulos'] + '</td>' +
-      '<td>' + r['Valor Atrasado (R$)'] + '</td>' +
-      '<td>' + r['Dias em Atraso'] + '</td>' +
-      '</tr>';
+  var dados = filtrado.map(function(r) {
+    return {
+      'Razao Social': r['Razao Social'] || '',
+      'Nome Fantasia': r['Nome Fantasia'] || '',
+      'CNPJ/CPF': r['CNPJ/CPF'] || '',
+      'Email': r['Email'] || '',
+      'Telefone': r['Telefone'] || '',
+      'Cidade': r['Cidade'] || '',
+      'Estado': r['Estado'] || '',
+      'Regiao': r['Regiao'] || '',
+      'Diretora Regional': r['Diretora Regional'] || '',
+      'Gestora': r['Gestora'] || '',
+      'Modelo de Negocio': r['Modelo de Negocio'] || '',
+      'Distrato': r['Distrato'] || '',
+      'Qtd Titulos': r['Qtd Titulos'] || 0,
+      'Valor Atrasado (R$)': r['Valor Atrasado (R$)'] || 0,
+      'Dias em Atraso': r['Dias em Atraso'] || 0,
+      'Vencimento Mais Antigo': r['Vencimento Mais Antigo'] || ''
+    };
   });
-  html += '</tbody></table>';
   
-  var blob = new Blob([html], {type: 'application/vnd.ms-excel'});
-  var a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'inadimplentes-' + new Date().toISOString().slice(0,10) + '.xls';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
+  var ws = XLSX.utils.json_to_sheet(dados);
+  
+  // Definir larguras das colunas
+  ws['!cols'] = [
+    { wch: 35 }, { wch: 25 }, { wch: 18 }, { wch: 30 }, { wch: 15 },
+    { wch: 20 }, { wch: 6 }, { wch: 20 }, { wch: 18 }, { wch: 18 },
+    { wch: 18 }, { wch: 10 }, { wch: 10 }, { wch: 18 }, { wch: 12 }, { wch: 18 }
+  ];
+  
+  // Estilizar cabeçalho
+  var range = XLSX.utils.decode_range(ws['!ref']);
+  for (var C = range.s.c; C <= range.e.c; ++C) {
+    var cellRef = XLSX.utils.encode_cell({ r: 0, c: C });
+    if (ws[cellRef]) {
+      ws[cellRef].s = {
+        font: { bold: true, color: { rgb: 'FFFFFF' }, sz: 12 },
+        fill: { fgColor: { rgb: '5B52E8' } },
+        alignment: { horizontal: 'center', vertical: 'center' }
+      };
+    }
+  }
+  
+  // Formatar coluna de valor como moeda
+  for (var R = 1; R <= range.e.r; ++R) {
+    var valorCell = XLSX.utils.encode_cell({ r: R, c: 13 });
+    if (ws[valorCell]) {
+      ws[valorCell].t = 'n';
+      ws[valorCell].z = '"R$ "#,##0.00';
+    }
+  }
+  
+  var wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Inadimplentes');
+  
+  // Adicionar aba resumo
+  var totalValor = filtrado.reduce(function(s, r) { return s + (r['Valor Atrasado (R$)'] || 0); }, 0);
+  var totalDistrato = filtrado.reduce(function(s, r) { return r['Distrato'] === 'Sim' ? s + (r['Valor Atrasado (R$)'] || 0) : s; }, 0);
+  var totalTitulos = filtrado.reduce(function(s, r) { return s + (r['Qtd Titulos'] || 0); }, 0);
+  
+  var resumo = [
+    { 'Metrica': 'CLUB&CASA DESIGN', 'Valor': 'RELATORIO DE INADIMPLENCIA' },
+    { 'Metrica': 'Data de Geracao', 'Valor': new Date().toLocaleDateString('pt-BR') + ' ' + new Date().toLocaleTimeString('pt-BR') },
+    { 'Metrica': '', 'Valor': '' },
+    { 'Metrica': 'Total de Lojistas', 'Valor': filtrado.length },
+    { 'Metrica': 'Total de Titulos', 'Valor': totalTitulos },
+    { 'Metrica': 'Valor Total Atrasado', 'Valor': 'R$ ' + totalValor.toLocaleString('pt-BR', {minimumFractionDigits: 2}) },
+    { 'Metrica': 'Valor em Distrato', 'Valor': 'R$ ' + totalDistrato.toLocaleString('pt-BR', {minimumFractionDigits: 2}) },
+    { 'Metrica': 'Ticket Medio', 'Valor': 'R$ ' + (totalValor / filtrado.length).toLocaleString('pt-BR', {minimumFractionDigits: 2}) }
+  ];
+  
+  var wsResumo = XLSX.utils.json_to_sheet(resumo);
+  wsResumo['!cols'] = [{ wch: 25 }, { wch: 35 }];
+  XLSX.utils.book_append_sheet(wb, wsResumo, 'Resumo');
+  
+  // Reordenar abas: Resumo primeiro
+  wb.SheetNames = ['Resumo', 'Inadimplentes'];
+  
+  XLSX.writeFile(wb, 'inadimplentes-clubcasa-' + new Date().toISOString().slice(0,10) + '.xlsx');
+}
+
+function exportarBoletosExcel() {
+  if (!BOLETOS_MODAL.length) { alert('Nenhum boleto para exportar'); return; }
+  
+  var dados = BOLETOS_MODAL.map(function(b) {
+    return {
+      'Cliente': b.cliente,
+      'CNPJ': b.cnpj,
+      'Documento': b.documento,
+      'Vencimento': b.vencimento,
+      'Dias em Atraso': b.dias,
+      'Valor (R$)': b.valor
+    };
+  });
+  
+  var ws = XLSX.utils.json_to_sheet(dados);
+  ws['!cols'] = [{ wch: 35 }, { wch: 18 }, { wch: 15 }, { wch: 12 }, { wch: 12 }, { wch: 15 }];
+  
+  var range = XLSX.utils.decode_range(ws['!ref']);
+  for (var C = range.s.c; C <= range.e.c; ++C) {
+    var cellRef = XLSX.utils.encode_cell({ r: 0, c: C });
+    if (ws[cellRef]) {
+      ws[cellRef].s = {
+        font: { bold: true, color: { rgb: 'FFFFFF' } },
+        fill: { fgColor: { rgb: '5B52E8' } },
+        alignment: { horizontal: 'center' }
+      };
+    }
+  }
+  
+  for (var R = 1; R <= range.e.r; ++R) {
+    var valorCell = XLSX.utils.encode_cell({ r: R, c: 5 });
+    if (ws[valorCell]) {
+      ws[valorCell].t = 'n';
+      ws[valorCell].z = '"R$ "#,##0.00';
+    }
+  }
+  
+  var wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Boletos');
+  XLSX.writeFile(wb, 'boletos-' + new Date().toISOString().slice(0,10) + '.xlsx');
 }
 
 function iniciar() {
@@ -585,7 +665,7 @@ function iniciar() {
 
   fetch('inadimplentes.json')
     .then(function(res) {
-      if (!res.ok) throw new Error('Arquivo inadimplentes.json nao encontrado. Execute o script gerar-relatorio-completo.py primeiro.');
+      if (!res.ok) throw new Error('Arquivo inadimplentes.json nao encontrado.');
       return res.json();
     })
     .then(function(json) {
@@ -610,7 +690,7 @@ function iniciar() {
       renderTabela();
     })
     .catch(function(e) {
-      document.getElementById('tbody').innerHTML = '<tr><td colspan="11"><div class="error-box">' + e.message + '</div></td></tr>';
+      document.getElementById('tbody').innerHTML = '<tr><td colspan="12"><div class="error-box">' + e.message + '</div></td></tr>';
       document.getElementById('header-sub').textContent = 'Erro ao carregar dados';
     });
 }
