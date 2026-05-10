@@ -663,9 +663,9 @@ function iniciar() {
   document.documentElement.setAttribute('data-theme', tema);
   document.getElementById('btn-theme').textContent = tema === 'dark' ? 'Modo claro' : 'Modo escuro';
 
-  fetch('inadimplentes.json')
+  fetch('https://n8n.dainex.com.br/webhook/clubcasa-inadimplentes')
     .then(function(res) {
-      if (!res.ok) throw new Error('Arquivo inadimplentes.json nao encontrado.');
+      if (!res.ok) throw new Error('Erro ao buscar dados do n8n. Verifique se o workflow W1 esta ativo.');
       return res.json();
     })
     .then(function(json) {
