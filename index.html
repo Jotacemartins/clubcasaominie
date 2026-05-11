@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club&Casa — Inadimplência</title>
+<style>
+:root[data-theme="light"] {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --border: #e2e6f0;
+  --accent: #5b52e8;
+  --red: #c62828;
+  --red-bg: #ffebee;
+  --amber: #e65100;
+  --green: #2e7d32;
+  --blue: #1565c0;
+  --text: #1a1a2e;
+  --muted: #6b7080;
+  --thead: #f0f2f8;
+  --hover: #f7f8fc;
+  --shadow: 0 1px 3px rgba(0,0,0,.08);
+  --bar-bg: #e2e6f0;
+  --tag-bg: #eef0fa;
+  --tag-color: #5b52e8;
+  --reg-bg: #e3f0fb;
+  --reg-color: #1565c0;
+  --mod-bg: #f3e8ff;
+  --mod-color: #6d28d9;
+  --chip-bg: #fff3e0;
+  --chip-color: #e65100;
+  --dis-bg: #ffebee;
+  --dis-color: #c62828;
+}
+:root[data-theme="dark"] {
+  --bg: #0f0f1a;
+  --card: #1a1a2e;
+  --border: #2a2a4a;
+  --accent: #6c63ff;
+  --red: #ff6b6b;
+  --red-bg: #2a1a1a;
+  --amber: #ffb347;
+  --green: #00c896;
+  --blue: #4fc3f7;
+  --text: #e0e0f0;
+  --muted: #8888aa;
+  --thead: #16163a;
+  --hover: #1e1e38;
+  --shadow: 0 1px 3px rgba(0,0,0,.3);
+  --bar-bg: #2a2a4a;
+  --tag-bg: #2a2a4a;
+  --tag-color: #a89fff;
+  --reg-bg: #1a2a3a;
+  --reg-color: #4fc3f7;
+  --mod-bg: #2a1a3a;
+  --mod-color: #c084fc;
+  --chip-bg: #2a1a0a;
+  --chip-color: #ffb347;
+  --dis-bg: #2a1a1a;
+  --dis-color: #ff6b6b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13px; }
+
+.header {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+.header-left { display: flex; align-items: center; gap: 12px; }
+.logo {
+  width: 34px; height: 34px;
+  background: var(--accent);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; color: #fff; font-size: 15px;
+}
+.header h1 { font-size: 17px; font-weight: 700; }
+.header h1 span { color: var(--accent); }
+.header-sub { color: var(--muted); font-size: 11px; margin-top: 1px; }
+.header-right { display: flex; align-items: center; gap: 10px; }
+.btn-theme {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+}
+.btn-theme:hover { border-color: var(--accent); color: var(--accent); }
+.btn-action {
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+.btn-action:hover { opacity: 0.9; }
+.badge {
+  background: var(--accent);
+  color: #fff;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.main { padding: 22px 28px; max-width: 1600px; margin: 0 auto; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.stat {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+}
+.stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; font-weight: 600; margin-bottom: 8px; }
+.stat-value { font-size: 24px; font-weight: 800; }
+.stat-sub { font-size: 11px; color: var(--muted); margin-top: 5px; }
+.stat.red .stat-value { color: var(--red); }
+.stat.amber .stat-value { color: var(--amber); }
+.stat.blue .stat-value { color: var(--blue); }
+.stat.green .stat-value { color: var(--green); }
+.stat.purple { border-color: var(--dis-color); }
+.stat.purple .stat-value { color: var(--dis-color); }
+
+.charts { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 20px; }
+.chart-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+.chart-title { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 16px; }
+.bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.bar-label { font-size: 12px; width: 150px; flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar-track { flex: 1; height: 7px; background: var(--bar-bg); border-radius: 4px; }
+.bar-fill { height: 7px; border-radius: 4px; }
+.bar-val { font-size: 11px; color: var(--muted); width: 95px; text-align: right; flex-shrink: 0; font-weight: 600; }
+
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.controls input,
+.controls select {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 8px 12px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 12px;
+  outline: none;
+  box-shadow: var(--shadow);
+}
+.controls input { width: 240px; }
+.controls input:focus,
+.controls select:focus { border-color: var(--accent); }
+.count-label { color: var(--muted); font-size: 12px; margin-left: auto; font-weight: 600; }
+
+.table-wrap {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow-x: auto;
+  box-shadow: var(--shadow);
+}
+table { width: 100%; border-collapse: collapse; }
+thead th {
+  background: var(--thead);
+  padding: 8px 10px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  white-space: nowrap;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+  user-select: none;
+}
+thead th:hover { color: var(--text); }
+thead th.sorted { color: var(--accent); }
+tbody tr { border-top: 1px solid var(--border); }
+tbody tr:hover { background: var(--hover); }
+tbody td { padding: 8px 10px; vertical-align: middle; }
+
+.nome-principal { font-weight: 600; }
+.nome-fantasia { color: var(--muted); font-size: 11px; margin-top: 1px; }
+.valor-cell { font-weight: 800; color: var(--red); white-space: nowrap; }
+.dias-cell {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 11px;
+}
+.dias-alto { background: var(--red-bg); color: var(--red); }
+.dias-medio { background: var(--chip-bg); color: var(--amber); }
+.dias-baixo { background: var(--reg-bg); color: var(--blue); }
+.tag-regiao { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 11px; font-weight: 600; background: var(--reg-bg); color: var(--reg-color); }
+.tag-modelo { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 11px; font-weight: 600; background: var(--mod-bg); color: var(--mod-color); }
+.tag-qtd { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 11px; font-weight: 700; background: var(--chip-bg); color: var(--chip-color); }
+.tag-distrato { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 11px; font-weight: 700; background: var(--dis-bg); color: var(--dis-color); }
+.tag-normal { color: var(--muted); font-size: 12px; }
+.tags-cell { font-size: 11px; color: var(--muted); max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 12px;
+  border-top: 1px solid var(--border);
+}
+.page-btn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 5px 11px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+}
+.page-btn:hover { border-color: var(--accent); color: var(--accent); }
+.page-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.page-btn:disabled { opacity: .35; cursor: not-allowed; }
+
+.empty { text-align: center; padding: 40px; color: var(--muted); }
+.error-box {
+  background: var(--red-bg);
+  border: 1px solid var(--red);
+  border-radius: 8px;
+  padding: 20px;
+  color: var(--red);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  .charts { grid-template-columns: 1fr; }
+  .main { padding: 14px; }
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-left">
+    <div class="logo">C&</div>
+    <div>
+      <h1>Club<span>&</span>Casa Design</h1>
+      <div class="header-sub" id="header-sub">Carregando...</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <button class="btn-theme" id="btn-theme" onclick="toggleTheme()">Modo escuro</button>
+    <span class="badge">Inadimplencia</span>
+  </div>
+</div>
+
+<div class="main">
+  <div class="stats">
+    <div class="stat red">
+      <div class="stat-label">Valor Total Atrasado</div>
+      <div class="stat-value" id="s-valor">...</div>
+      <div class="stat-sub">total consolidado</div>
+    </div>
+    <div class="stat amber">
+      <div class="stat-label">Lojistas Inadimplentes</div>
+      <div class="stat-value" id="s-clientes">...</div>
+      <div class="stat-sub">clientes unicos</div>
+    </div>
+    <div class="stat blue">
+      <div class="stat-label">Titulos em Aberto</div>
+      <div class="stat-value" id="s-titulos">...</div>
+      <div class="stat-sub">boletos vencidos</div>
+    </div>
+    <div class="stat green">
+      <div class="stat-label">Ticket Medio</div>
+      <div class="stat-value" id="s-ticket">...</div>
+      <div class="stat-sub">por inadimplente</div>
+    </div>
+    <div class="stat purple">
+      <div class="stat-label">Valor em Distrato</div>
+      <div class="stat-value" id="s-distrato">...</div>
+      <div class="stat-sub">apenas clientes em distrato</div>
+    </div>
+  </div>
+
+  <div class="charts">
+    <div class="chart-card">
+      <div class="chart-title">Regioes com maior valor atrasado</div>
+      <div id="chart-reg"></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <input type="text" id="busca" placeholder="Buscar nome, CNPJ ou email...">
+    <select id="f-regiao"><option value="">Todas as regioes</option><option value="Sem Região">Sem regiao</option></select>
+    <select id="f-modelo"><option value="">Todos os modelos</option></select>
+    <select id="f-vendedor"><option value="">Todos os vendedores</option></select>
+    <select id="f-distrato">
+      <option value="">Todos (Distrato ou não)</option>
+      <option value="Sim">Apenas em distrato</option>
+      <option value="Não">Sem distrato</option>
+    </select>
+    <button class="btn-action" id="btn-expand" onclick="toggleTodos()">Expandir Todos Boletos</button>
+    <span class="count-label" id="count-label"></span>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th onclick="sort('Razao Social')">Nome</th>
+          <th onclick="sort('CNPJ/CPF')">CNPJ / CPF</th>
+          <th onclick="sort('Email')">Email</th>
+          <th onclick="sort('Telefone')">Telefone</th>
+          <th onclick="sort('Regiao')">Regiao</th>
+          <th onclick="sort('Modelo de Negocio')">Modelo</th>
+          <th onclick="sort('Distrato')">Distrato</th>
+          <th onclick="sort('Tags')">Tags</th>
+          <th onclick="sort('Vendedor')">Vendedor</th>
+          <th onclick="sort('Qtd Titulos')">Titulos</th>
+          <th onclick="sort('Valor Atrasado (R$)')" class="sorted">Valor</th>
+          <th onclick="sort('Dias em Atraso')">Dias</th>
+          <th onclick="sort('Vencimento Mais Antigo')">Vencimento</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div class="pagination" id="paginacao"></div>
+  </div>
+</div>
+
+<script>
+var DADOS = [];
+var filtrado = [];
+var colOrdem = 'Valor Atrasado (R$)';
+var crescente = false;
+var pagina = 1;
+var POR_PAGINA = 50;
+
+function fmt(v) {
+  return 'R$ ' + Number(v).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function classDias(d) {
+  if (d > 90) return 'dias-alto';
+  if (d > 30) return 'dias-medio';
+  return 'dias-baixo';
+}
+
+function toggleTheme() {
+  var html = document.documentElement;
+  var escuro = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', escuro ? 'light' : 'dark');
+  document.getElementById('btn-theme').textContent = escuro ? 'Modo escuro' : 'Modo claro';
+  localStorage.setItem('cc-theme', escuro ? 'light' : 'dark');
+}
+
+function renderTabela() {
+  var tbody = document.getElementById('tbody');
+  var inicio = (pagina - 1) * POR_PAGINA;
+  var slice = filtrado.slice(inicio, inicio + POR_PAGINA);
+
+  // Reseta o botão de expandir todos ao mudar a tabela
+  var btnExpand = document.getElementById('btn-expand');
+  if (btnExpand) btnExpand.textContent = 'Expandir Todos Boletos';
+
+  if (!slice.length) {
+    tbody.innerHTML = '<tr><td colspan="13"><div class="empty">Nenhum resultado encontrado.</div></td></tr>';
+    document.getElementById('paginacao').innerHTML = '';
+    return;
+  }
+
+  var html = '';
+  for (var i = 0; i < slice.length; i++) {
+    var r = slice[i];
+    var idx = (pagina - 1) * POR_PAGINA + i;
+    var nf = r['Nome Fantasia'] ? '<div class="nome-fantasia">' + r['Nome Fantasia'] + '</div>' : '';
+    var email = r['Email'] ? '<a href="mailto:' + r['Email'] + '">' + r['Email'] + '</a>' : 'N/I';
+    var tel = r['Telefone'] || 'N/I';
+    var reg = r['Regiao'] && r['Regiao'] !== 'Sem Região' ? '<span class="tag-regiao">' + r['Regiao'] + '</span>' : '<span class="tag-normal">N/I</span>';
+    var mod = r['Modelo de Negocio'] ? '<span class="tag-modelo">' + r['Modelo de Negocio'] + '</span>' : '<span class="tag-normal">N/I</span>';
+    var dis = r['Distrato'] === 'Sim' ? '<span class="tag-distrato">Sim</span>' : '<span class="tag-normal">Nao</span>';
+    var tags = r['Tags'] ? '<div class="tags-cell" title="' + r['Tags'] + '">' + r['Tags'] + '</div>' : '<span class="tag-normal">N/I</span>';
+    var vend = r['Vendedor'] || 'N/I';
+    var dias = r['Dias em Atraso'] || 0;
+
+    html += '<tr>' +
+      '<td><div class="nome-principal">' + r['Razao Social'] + '</div>' + nf + '</td>' +
+      '<td style="white-space:nowrap;font-size:11px">' + (r['CNPJ/CPF'] || 'N/I') + '</td>' +
+      '<td style="font-size:11px">' + email + '</td>' +
+      '<td style="white-space:nowrap">' + tel + '</td>' +
+      '<td>' + reg + '</td>' +
+      '<td>' + mod + '</td>' +
+      '<td>' + dis + '</td>' +
+      '<td style="max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;color:var(--muted)" title="' + (r['Tags'] || '') + '">' + (r['Tags'] || 'N/I') + '</td>' +
+      '<td style="font-size:11px;color:var(--muted)">' + vend + '</td>' +
+      '<td style="cursor:pointer;text-align:center" onclick="expandirTitulos(this,' + idx + ')"><span class="tag-qtd" title="Clique para ver boletos">' + r['Qtd Titulos'] + '</span></td>' +
+      '<td class="valor-cell">' + fmt(r['Valor Atrasado (R$)']) + '</td>' +
+      '<td><span class="dias-cell ' + classDias(dias) + '">' + dias + 'd</span></td>' +
+      '<td style="font-size:11px;color:var(--muted);white-space:nowrap">' + (r['Vencimento Mais Antigo'] || 'N/I') + '</td>' +
+      '</tr>';
+  }
+  tbody.innerHTML = html;
+  renderPaginacao();
+}
+
+function renderPaginacao() {
+  var total = Math.ceil(filtrado.length / POR_PAGINA);
+  var el = document.getElementById('paginacao');
+  if (total <= 1) { el.innerHTML = ''; return; }
+
+  var html = '<button class="page-btn" onclick="irPagina(' + (pagina - 1) + ')" ' + (pagina === 1 ? 'disabled' : '') + '>Anterior</button>';
+  var s = Math.max(1, pagina - 2);
+  var e = Math.min(total, pagina + 2);
+  if (s > 1) html += '<button class="page-btn" onclick="irPagina(1)">1</button>';
+  if (s > 2) html += '<span style="padding:0 4px;color:var(--muted)">...</span>';
+  for (var i = s; i <= e; i++) {
+    html += '<button class="page-btn' + (i === pagina ? ' active' : '') + '" onclick="irPagina(' + i + ')">' + i + '</button>';
+  }
+  if (e < total - 1) html += '<span style="padding:0 4px;color:var(--muted)">...</span>';
+  if (e < total) html += '<button class="page-btn" onclick="irPagina(' + total + ')">' + total + '</button>';
+  html += '<button class="page-btn" onclick="irPagina(' + (pagina + 1) + ')" ' + (pagina === total ? 'disabled' : '') + '>Proximo</button>';
+  el.innerHTML = html;
+}
+
+function irPagina(p) {
+  pagina = p;
+  renderTabela();
+  window.scrollTo(0, 0);
+}
+
+function aplicarFiltros() {
+  var busca = document.getElementById('busca').value.toLowerCase();
+  var fReg = document.getElementById('f-regiao').value;
+  var fMod = document.getElementById('f-modelo').value;
+  var fVendedor = document.getElementById('f-vendedor').value;
+  var fDis = document.getElementById('f-distrato').value;
+
+  filtrado = DADOS.filter(function(r) {
+    if (busca) {
+      var nome = (r['Razao Social'] || '').toLowerCase();
+      var cnpj = (r['CNPJ/CPF'] || '').toLowerCase();
+      var email = (r['Email'] || '').toLowerCase();
+      if (nome.indexOf(busca) < 0 && cnpj.indexOf(busca) < 0 && email.indexOf(busca) < 0) return false;
+    }
+    if (fReg) {
+      if (fReg === 'Sem Região' && r['Regiao'] !== 'Sem Região') return false;
+      if (fReg !== 'Sem Região' && r['Regiao'] !== fReg) return false;
+    }
+    if (fMod && r['Modelo de Negocio'] !== fMod) return false;
+    if (fVendedor && r['Vendedor'] !== fVendedor) return false;
+    if (fDis && r['Distrato'] !== fDis) return false;
+
+    return true;
+  });
+
+  ordenar();
+  pagina = 1;
+  document.getElementById('count-label').textContent = filtrado.length.toLocaleString('pt-BR') + ' de ' + DADOS.length.toLocaleString('pt-BR') + ' lojistas';
+  renderTabela();
+}
+
+function sort(col) {
+  if (colOrdem === col) crescente = !crescente;
+  else { colOrdem = col; crescente = false; }
+  document.querySelectorAll('thead th').forEach(function(th) { th.classList.remove('sorted'); });
+  ordenar();
+  pagina = 1;
+  renderTabela();
+}
+
+function ordenar() {
+  filtrado.sort(function(a, b) {
+    var va = a[colOrdem];
+    var vb = b[colOrdem];
+    if (va === undefined || va === null) va = '';
+    if (vb === undefined || vb === null) vb = '';
+    if (typeof va === 'number' && typeof vb === 'number') return crescente ? va - vb : vb - va;
+    var sa = String(va).toLowerCase();
+    var sb = String(vb).toLowerCase();
+    return crescente ? sa.localeCompare(sb) : sb.localeCompare(sa);
+  });
+}
+
+function renderGraficos() {
+  var regMap = {};
+  DADOS.forEach(function(r) {
+    var k = r['Regiao'] || 'Sem Regiao';
+    regMap[k] = (regMap[k] || 0) + r['Valor Atrasado (R$)'];
+  });
+  var regs = Object.entries(regMap).sort(function(a, b) { return b[1] - a[1]; }).slice(0, 8);
+  var maxR = regs.length ? regs[0][1] : 1;
+  var htmlR = '';
+  var cores = ['#5b52e8','#6c63ff','#7c73ff','#8c83ff','#9c93ff','#acaaff','#bcb3ff','#ccc3ff'];
+  regs.forEach(function(item, i) {
+    var pct = ((item[1] / maxR) * 100).toFixed(1);
+    htmlR += '<div class="bar-row">' +
+      '<div class="bar-label" title="' + item[0] + '">' + item[0] + '</div>' +
+      '<div class="bar-track"><div class="bar-fill" style="width:' + pct + '%;background:' + cores[i] + '"></div></div>' +
+      '<div class="bar-val">' + fmt(item[1]) + '</div></div>';
+  });
+  document.getElementById('chart-reg').innerHTML = htmlR || '<div class="empty">Sem dados</div>';
+}
+
+function popularFiltros() {
+  var regs = [];
+  var mods = [];
+  DADOS.forEach(function(r) {
+    if (r['Regiao'] && r['Regiao'] !== 'Sem Região' && regs.indexOf(r['Regiao']) < 0) regs.push(r['Regiao']);
+    if (r['Modelo de Negocio'] && mods.indexOf(r['Modelo de Negocio']) < 0) mods.push(r['Modelo de Negocio']);
+  });
+  regs.sort();
+  mods.sort();
+  var vends = [];
+  DADOS.forEach(function(r) {
+    if (r['Vendedor'] && r['Vendedor'] !== 'N/I' && vends.indexOf(r['Vendedor']) < 0) vends.push(r['Vendedor']);
+  });
+  vends.sort();
+  var selVend = document.getElementById('f-vendedor');
+  vends.forEach(function(v) {
+    var opt = document.createElement('option');
+    opt.value = v; opt.textContent = v;
+    selVend.appendChild(opt);
+  });
+  var selReg = document.getElementById('f-regiao');
+  var selMod = document.getElementById('f-modelo');
+  regs.forEach(function(r) {
+    var opt = document.createElement('option');
+    opt.value = r; opt.textContent = r;
+    selReg.appendChild(opt);
+  });
+  mods.forEach(function(m) {
+    var opt = document.createElement('option');
+    opt.value = m; opt.textContent = m;
+    selMod.appendChild(opt);
+  });
+}
+
+function expandirTitulos(cell, idx) {
+  var tr = cell.closest('tr');
+  var next = tr.nextElementSibling;
+
+  if (next && next.classList.contains('expand-row')) {
+    next.remove();
+    return;
+  }
+
+  var r = filtrado[idx];
+  var titulos = r['titulos'] || [];
+  var cols = tr.querySelectorAll('td').length;
+
+  var linhas = '';
+  if (!titulos.length) {
+    linhas = '<tr><td colspan="4" style="padding:12px 24px;color:var(--muted)">Detalhes dos boletos nao disponiveis. Rode o script com a opcao de titulos detalhados.</td></tr>';
+  } else {
+    titulos.forEach(function(t) {
+      var dias = t['dias_atraso'] || 0;
+      var cor = dias > 90 ? 'var(--red)' : dias > 30 ? 'var(--amber)' : 'var(--blue)';
+      linhas += '<tr style="border-top:1px solid var(--border)">' +
+        '<td style="padding:8px 24px;font-size:12px">' + (t['numero_documento'] || t['nIdTitulo'] || 'N/I') + '</td>' +
+        '<td style="padding:8px 24px;font-size:12px">' + (t['data_vencimento'] || 'N/I') + '</td>' +
+        '<td style="padding:8px 24px;font-size:12px;font-weight:700;color:' + cor + '">' + dias + ' dias</td>' +
+        '<td style="padding:8px 24px;font-size:12px;font-weight:800;color:var(--red)">R$ ' + Number(t['valor_documento'] || 0).toLocaleString("pt-BR", {minimumFractionDigits:2}) + '</td>' +
+        '</tr>';
+    });
+  }
+
+  var expandRow = document.createElement('tr');
+  expandRow.className = 'expand-row';
+  expandRow.innerHTML = '<td colspan="' + cols + '" style="padding:0;background:var(--thead)">' +
+    '<table style="width:100%;border-collapse:collapse">' +
+    '<thead><tr style="background:var(--border)">' +
+    '<th style="padding:8px 24px;text-align:left;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase">Documento</th>' +
+    '<th style="padding:8px 24px;text-align:left;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase">Vencimento</th>' +
+    '<th style="padding:8px 24px;text-align:left;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase">Dias em Atraso</th>' +
+    '<th style="padding:8px 24px;text-align:left;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase">Valor</th>' +
+    '</tr></thead>' +
+    '<tbody>' + linhas + '</tbody>' +
+    '</table></td>';
+
+  tr.after(expandRow);
+}
+
+function toggleTodos() {
+  var btn = document.getElementById('btn-expand');
+  var expandindo = btn.textContent === 'Expandir Todos Boletos';
+  btn.textContent = expandindo ? 'Recolher Todos Boletos' : 'Expandir Todos Boletos';
+
+  var tbody = document.getElementById('tbody');
+  var trs = tbody.querySelectorAll('tr:not(.expand-row)');
+
+  trs.forEach(function(tr, i) {
+    var idx = (pagina - 1) * POR_PAGINA + i;
+    var next = tr.nextElementSibling;
+    var isExpanded = next && next.classList.contains('expand-row');
+
+    if (expandindo && !isExpanded) {
+      expandirTitulos(tr.cells[9], idx); // Aciona o clique usando a célula "Titulos" (coluna 9)
+    } else if (!expandindo && isExpanded) {
+      next.remove();
+    }
+  });
+}
+
+function iniciar() {
+  var tema = localStorage.getItem('cc-theme') || 'light';
+  document.documentElement.setAttribute('data-theme', tema);
+  document.getElementById('btn-theme').textContent = tema === 'dark' ? 'Modo claro' : 'Modo escuro';
+
+  fetch('inadimplentes.json')
+    .then(function(res) {
+      if (!res.ok) throw new Error('Arquivo inadimplentes.json nao encontrado. Execute o script gerar-relatorio-completo.py primeiro.');
+      return res.json();
+    })
+    .then(function(json) {
+      DADOS = json.inadimplentes || [];
+      filtrado = DADOS.slice();
+
+      // Calcula valor total dos distratos
+      var valDistrato = 0;
+      DADOS.forEach(function(r) {
+        if (r['Distrato'] === 'Sim') valDistrato += r['Valor Atrasado (R$)'];
+      });
+
+      document.getElementById('header-sub').textContent = 'Atualizado em ' + json.gerado_em + ' · ' + DADOS.length + ' lojistas · ' + json.total_titulos + ' titulos';
+      document.getElementById('s-valor').textContent = fmt(json.valor_total);
+      document.getElementById('s-clientes').textContent = DADOS.length.toLocaleString('pt-BR');
+      document.getElementById('s-titulos').textContent = json.total_titulos.toLocaleString('pt-BR');
+      document.getElementById('s-ticket').textContent = fmt(json.valor_total / DADOS.length);
+      document.getElementById('s-distrato').textContent = fmt(valDistrato); // Insere no novo card
+      document.getElementById('count-label').textContent = DADOS.length.toLocaleString('pt-BR') + ' lojistas';
+
+      ordenar();
+      popularFiltros();
+      renderGraficos();
+      renderTabela();
+    })
+    .catch(function(e) {
+      document.getElementById('tbody').innerHTML = '<tr><td colspan="13"><div class="error-box">' + e.message + '</div></td></tr>';
+      document.getElementById('header-sub').textContent = 'Erro ao carregar dados';
+    });
+}
+
+document.getElementById('busca').addEventListener('input', aplicarFiltros);
+document.getElementById('f-regiao').addEventListener('change', aplicarFiltros);
+document.getElementById('f-modelo').addEventListener('change', aplicarFiltros);
+document.getElementById('f-vendedor').addEventListener('change', aplicarFiltros);
+document.getElementById('f-distrato').addEventListener('change', aplicarFiltros);
+
+iniciar();
+</script>
+</body>
+</html>
