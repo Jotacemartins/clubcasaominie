@@ -1,8 +1,8 @@
 {
-  "gerado_em": "12/05/2026 15:41",
-  "total_clientes": 457,
-  "total_titulos": 2277,
-  "valor_total": 4593971.98,
+  "gerado_em": "12/05/2026 15:59",
+  "total_clientes": 456,
+  "total_titulos": 2272,
+  "valor_total": 4590257.52,
   "inadimplentes": [
     {
       "codigo_cliente": 8775148631,
@@ -17979,58 +17979,6 @@
           "data_vencimento": "05/05/2026",
           "valor_documento": 1619.62,
           "dias_atraso": 7
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8611783067,
-      "Razao Social": "ENEIDA DIAS DO CARMO 29608283809",
-      "Nome Fantasia": "ENEIDA DIAS DO CARMO 29608283809",
-      "CNPJ/CPF": "23.398.046/0001-06",
-      "Email": "eneidadiasdocarmo@hotmail.com",
-      "Telefone": "97283-3846",
-      "Cidade": "MOGI DAS CRUZES (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Susi Grundner",
-      "Tags": "Cliente, Alto Tietê, Associados Pró",
-      "Qtd Titulos": 5,
-      "Valor Atrasado (R$)": 3714.46,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "RPS 38523",
-          "data_vencimento": "16/03/2026",
-          "valor_documento": 777.77,
-          "dias_atraso": 57
-        },
-        {
-          "numero_documento": "RPS 38523",
-          "data_vencimento": "16/04/2026",
-          "valor_documento": 777.84,
-          "dias_atraso": 26
-        },
-        {
-          "numero_documento": "RPS 50209",
-          "data_vencimento": "16/03/2026",
-          "valor_documento": 1000,
-          "dias_atraso": 57
-        },
-        {
-          "numero_documento": "RPS 50435",
-          "data_vencimento": "12/03/2026",
-          "valor_documento": 158.85,
-          "dias_atraso": 61
-        },
-        {
-          "numero_documento": "RPS 51291",
-          "data_vencimento": "15/04/2026",
-          "valor_documento": 1000,
-          "dias_atraso": 27
         }
       ]
     },
