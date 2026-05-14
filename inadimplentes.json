@@ -1,8 +1,8 @@
 {
-  "gerado_em": "14/05/2026 01:26",
-  "total_clientes": 631,
-  "total_titulos": 2437,
-  "valor_total": 5494258.36,
+  "gerado_em": "14/05/2026 10:40",
+  "total_clientes": 564,
+  "total_titulos": 2361,
+  "valor_total": 4996706.25,
   "inadimplentes": [
     {
       "codigo_cliente": 8775148631,
@@ -1241,34 +1241,6 @@
       ]
     },
     {
-      "codigo_cliente": 8534412034,
-      "Razao Social": "BIOMA COMERCIO DE MOVEIS LTDA",
-      "Nome Fantasia": "BIOMA COMERCIO DE MOVEIS LTDA",
-      "CNPJ/CPF": "42.800.463/0003-40",
-      "Email": "adm.contratos@breton.com.br",
-      "Telefone": "99976-2484",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Oeste e Sul",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Design, Região Oeste e Sul",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 44975.98,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54413",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 44975.98,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8550398894,
       "Razao Social": "MIRANDA COMERCIO DE MARMORES LTDA",
       "Nome Fantasia": "MIRANDA - MARMORES, GRANITOS E REVESTIMENTO",
@@ -2163,34 +2135,6 @@
           "data_vencimento": "10/05/2026",
           "valor_documento": 1719.99,
           "dias_atraso": 4
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8441161351,
-      "Razao Social": "ARTE COZINHAS DESIGN LTDA",
-      "Nome Fantasia": "ARTE COZINHAS",
-      "CNPJ/CPF": "09.812.902/0001-05",
-      "Email": "decon@artecozinhas.com.br",
-      "Telefone": "97070-0020",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Oeste e Sul",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Design, Região Oeste e Sul",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 33864.94,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54429",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 33864.94,
-          "dias_atraso": 1
         }
       ]
     },
@@ -5415,34 +5359,6 @@
       ]
     },
     {
-      "codigo_cliente": 8804045248,
-      "Razao Social": "DRZ PORTAS ECOLOGICAS LTDA",
-      "Nome Fantasia": "SR - ALPHAVILLE",
-      "CNPJ/CPF": "10.652.922/0006-41",
-      "Email": "sr@pormade.com.br",
-      "Telefone": "99822-0362",
-      "Cidade": "BARUERI (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Alphaville",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Susi Grundner",
-      "Tags": "Cliente, Região Alphaville, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 21313.96,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54348",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 21313.96,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8504368528,
       "Razao Social": "TTL SERVIÇOS E COMÉRCIO DE MÓVEIS LTDA",
       "Nome Fantasia": "TTL",
@@ -6877,34 +6793,6 @@
       ]
     },
     {
-      "codigo_cliente": 8515609590,
-      "Razao Social": "ORVIETO MOVEIS E DECORACAO LTDA",
-      "Nome Fantasia": "ORVIETO MOVEIS E DECORACAO",
-      "CNPJ/CPF": "56.343.699/0001-47",
-      "Email": "amanda@todeschinipiracicaba.com.br",
-      "Telefone": "(19) 99274-3901",
-      "Cidade": "PIRACICABA (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Rafael Faria",
-      "Tags": "Cliente, Associados Pró, Piracicaba",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 19050,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54578",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 19050,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8508167950,
       "Razao Social": "MEST ENGENHARIA CIVIL &amp; SEGURANCA DO TRABALHO LTDA",
       "Nome Fantasia": "MEST ENGENHARIA &amp; CONSTRUCAO",
@@ -7873,40 +7761,6 @@
       ]
     },
     {
-      "codigo_cliente": 2336059919,
-      "Razao Social": "MOVEIS BLANCO DESIGN EIRELI",
-      "Nome Fantasia": "MOVEIS BLANCO DESIGN EIRELI",
-      "CNPJ/CPF": "27.336.158/0001-93",
-      "Email": "adm@blancodesign.com.br",
-      "Telefone": "971339486",
-      "Cidade": "SAO CAETANO DO SUL (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Abc",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Região Abc, Design",
-      "Qtd Titulos": 2,
-      "Valor Atrasado (R$)": 17120.9,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "52942",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 12290.9,
-          "dias_atraso": 1
-        },
-        {
-          "numero_documento": "54368",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 4830,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8480690667,
       "Razao Social": "ANNE CRISTINE TROVO OSORIO",
       "Nome Fantasia": "ANNE CRISTINE TROVO OSORIO",
@@ -8561,34 +8415,6 @@
       ]
     },
     {
-      "codigo_cliente": 8540624516,
-      "Razao Social": "3 M COMERCIO DE MOVEIS E PLANEJADOS LTDA",
-      "Nome Fantasia": "3 M COMERCIO DE MOVEIS E PLANEJADOS LTDA",
-      "CNPJ/CPF": "16.742.039/0002-03",
-      "Email": "adm@todeschinisantos.com.br",
-      "Telefone": "97405-7607",
-      "Cidade": "BERTIOGA (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Luciene Almeida",
-      "Tags": "Cliente, Associados Pró, Litoral Norte",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 15900,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54550",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 15900,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8507831935,
       "Razao Social": "ACUCENA &amp; ACUCENA COMERCIO VAREJISTA DE MOVEIS LTDA",
       "Nome Fantasia": "MOVELARIA",
@@ -8689,34 +8515,6 @@
           "data_vencimento": "18/02/2026",
           "valor_documento": 4151.49,
           "dias_atraso": 85
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8518516890,
-      "Razao Social": "BIOMA COMERCIO DE MOVEIS LTDA",
-      "Nome Fantasia": "BIOMA COMERCIO DE MOVEIS LTDA",
-      "CNPJ/CPF": "42.800.463/0002-69",
-      "Email": "adm.contratos@breton.com.br",
-      "Telefone": "99103-8666",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Zona Norte",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Zona Norte, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 15396.65,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54396",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 15396.65,
-          "dias_atraso": 1
         }
       ]
     },
@@ -8885,34 +8683,6 @@
       ]
     },
     {
-      "codigo_cliente": 2472297934,
-      "Razao Social": "OBRA FACIL COMERCIO DE MATERIAIS PARA CONSTRUCAO LTDA",
-      "Nome Fantasia": "OBRA FACIL ZONA LESTE",
-      "CNPJ/CPF": "05.909.339/0006-33",
-      "Email": "relacionamento@lojaobrafacil.com.br",
-      "Telefone": "94311-7747",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Zona Leste",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Zona Leste, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 14610.91,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54390",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 14610.91,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8149570068,
       "Razao Social": "BARONESA COMERCIO DE PEDRAS LTDA",
       "Nome Fantasia": "BARONESA COMERCIO DE PEDRAS",
@@ -8985,34 +8755,6 @@
           "data_vencimento": "14/05/2025",
           "valor_documento": 1950,
           "dias_atraso": 365
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 2336426230,
-      "Razao Social": "PORTO ABC - REVESTIMENTOS E DECORACOES LTDA",
-      "Nome Fantasia": "PORTOBELLO SHOP SANTO ANDRÉ",
-      "CNPJ/CPF": "22.474.970/0001-61",
-      "Email": "carla.darwiche@portobelloshop.com.br",
-      "Telefone": "99654-6845",
-      "Cidade": "SANTO ANDRE (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Abc",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Região Abc, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 14210.84,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54377",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 14210.84,
-          "dias_atraso": 1
         }
       ]
     },
@@ -9135,34 +8877,6 @@
           "data_vencimento": "10/05/2026",
           "valor_documento": 1500,
           "dias_atraso": 4
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8536399994,
-      "Razao Social": "CASA 46 DESIGN LTDA",
-      "Nome Fantasia": "CASA 46",
-      "CNPJ/CPF": "23.891.152/0001-27",
-      "Email": "financeiro@casa46.com.br",
-      "Telefone": "97182-4053",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Oeste e Sul",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Design, Região Oeste e Sul",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 13987.73,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54420",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 13987.73,
-          "dias_atraso": 1
         }
       ]
     },
@@ -9303,34 +9017,6 @@
           "data_vencimento": "11/05/2026",
           "valor_documento": 1680.04,
           "dias_atraso": 3
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8534633779,
-      "Razao Social": "CASA C&amp;C COMERCIO DE MOVEIS E SERVICOS LTDA",
-      "Nome Fantasia": "CASA C&amp;C",
-      "CNPJ/CPF": "24.395.814/0001-30",
-      "Email": "neusa@casacec.com",
-      "Telefone": "98232-8099",
-      "Cidade": "BERTIOGA (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Luciene Almeida",
-      "Tags": "Cliente, Associados Pró, Litoral Norte",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 13627.4,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54551",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 13627.4,
-          "dias_atraso": 1
         }
       ]
     },
@@ -10713,34 +10399,6 @@
       ]
     },
     {
-      "codigo_cliente": 2335792950,
-      "Razao Social": "T A DOS SANTOS PLANEJADOS",
-      "Nome Fantasia": "TODESCHINI MORUMBI",
-      "CNPJ/CPF": "28.030.565/0001-30",
-      "Email": "magda@artecozinhas.com.br",
-      "Telefone": "97070-0020",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Oeste e Sul",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Design, Região Oeste e Sul",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 12282.2,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54452",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 12282.2,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8551207693,
       "Razao Social": "BOTTURA INDUSTRIA E COMERCIO DE PEDRAS LTDA",
       "Nome Fantasia": "BOTTURA INDUSTRIA E COMERCIO DE PEDRAS LTDA",
@@ -10764,34 +10422,6 @@
           "numero_documento": "54353",
           "data_vencimento": "13/05/2026",
           "valor_documento": 12274.2,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8619604100,
-      "Razao Social": "ROBLES &amp; ROBLES COMERCIO DE MOVEIS LTDA",
-      "Nome Fantasia": "MOVELARIA FRANCA",
-      "CNPJ/CPF": "30.947.811/0001-65",
-      "Email": "barbara@movelariafranca.com.br",
-      "Telefone": "91153-1872",
-      "Cidade": "SANTO ANDRE (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Abc",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Região Abc, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 12264,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54364",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 12264,
           "dias_atraso": 1
         }
       ]
@@ -12143,90 +11773,6 @@
       ]
     },
     {
-      "codigo_cliente": 8535307928,
-      "Razao Social": "IBIZA MATERIAIS PARA ACABAMENTO EXPORTACAO E IMPORTACAO LTDA",
-      "Nome Fantasia": "IBIZA MATERIAIS PARA ACABAMENTO EXPORTACAO E IMPORTACAO LTDA",
-      "CNPJ/CPF": "71.791.552/0005-37",
-      "Email": "felix@ibizaacabamentos.com.br",
-      "Telefone": "3061-2780",
-      "Cidade": "BARUERI (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Alphaville",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Susi Grundner",
-      "Tags": "Cliente, Região Alphaville, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 10729.95,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54342",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 10729.95,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 5929583814,
-      "Razao Social": "M &amp; C PISOS E REVESTIMENTOS LTDA",
-      "Nome Fantasia": "PORTOBELLO SHOP GUARULHOS",
-      "CNPJ/CPF": "10.836.918/0001-29",
-      "Email": "guarulhos@portobelloshop.com.br",
-      "Telefone": "94354-6437",
-      "Cidade": "GUARULHOS (SP)",
-      "Estado": "SP",
-      "Regiao": "Guarulhos",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Susi Grundner",
-      "Tags": "Cliente, Alto Tietê, Guarulhos, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 10622.13,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54381",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 10622.13,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8475477282,
-      "Razao Social": "D DI CASA ACABAMENTO DE INTERIORES LTDA",
-      "Nome Fantasia": "D DI CASA ATELIÊ",
-      "CNPJ/CPF": "20.796.250/0001-97",
-      "Email": "gabimartinho@wbconsulting.com.br",
-      "Telefone": "97406-8248",
-      "Cidade": "CAMPINAS (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Bruna Mafra",
-      "Tags": "Cliente, Campinas, Associados Pró",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 10497.15,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54513",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 10497.15,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 2335630319,
       "Razao Social": "FLAVIA DE OLIVEIRA COMERCIO DE MOVEIS",
       "Nome Fantasia": "DECORAKASA - ROMANZZA MOEMA",
@@ -12309,34 +11855,6 @@
           "data_vencimento": "11/05/2026",
           "valor_documento": 1500,
           "dias_atraso": 3
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8423621971,
-      "Razao Social": "STUDIO ELLUME ILUMINACAO E DECORACAO LTDA",
-      "Nome Fantasia": "ELLUME DESIGN / MAIS LED",
-      "CNPJ/CPF": "26.973.506/0001-70",
-      "Email": "financeiro@ellume.com.br",
-      "Telefone": "99538-6528",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Rio de Janeiro",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Associados, Rio de Janeiro, Zona Sul",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 10299.25,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54428",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 10299.25,
-          "dias_atraso": 1
         }
       ]
     },
@@ -12581,34 +12099,6 @@
           "data_vencimento": "30/04/2026",
           "valor_documento": 2515,
           "dias_atraso": 14
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8550289598,
-      "Razao Social": "CA COMERCIAL LTDA",
-      "Nome Fantasia": "UD HOUSE",
-      "CNPJ/CPF": "08.890.804/0001-15",
-      "Email": "claudney@udhouse.com.br",
-      "Telefone": "(11) 97535-8328",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Zona Norte",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Zona Norte, Design, Região Oeste e Sul",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 10032.06,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54419",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 10032.06,
-          "dias_atraso": 1
         }
       ]
     },
@@ -13133,34 +12623,6 @@
       ]
     },
     {
-      "codigo_cliente": 8667542625,
-      "Razao Social": "MASSA ESQUADRIMAR LTDA",
-      "Nome Fantasia": "MASSA ESQUADRIMAR LTDA",
-      "CNPJ/CPF": "08.217.629/0001-08",
-      "Email": "juliana@esquadrimar.com.br",
-      "Telefone": "99622-7222",
-      "Cidade": "BERTIOGA (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Luciene Almeida",
-      "Tags": "Cliente, Associados Pró, Litoral Norte",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 9573.83,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54547",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 9573.83,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 2335500031,
       "Razao Social": "DEDINI &amp; ZANINI COMERCIO DE MOVEIS E DECORACOES LTDA",
       "Nome Fantasia": "ROMANZZA SANTO ANDRE",
@@ -13409,34 +12871,6 @@
           "data_vencimento": "21/05/2025",
           "valor_documento": 3089.3,
           "dias_atraso": 358
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 6101259652,
-      "Razao Social": "EDGRAN MARMORES E GRANITOS LTDA",
-      "Nome Fantasia": "EDGRAN",
-      "CNPJ/CPF": "46.020.195/0001-32",
-      "Email": "financeiro@edgran.com.br",
-      "Telefone": "97565-9453",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Zona Norte",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Zona Norte, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 9131.88,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54411",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 9131.88,
-          "dias_atraso": 1
         }
       ]
     },
@@ -14071,34 +13505,6 @@
       ]
     },
     {
-      "codigo_cliente": 2335483688,
-      "Razao Social": "CELIA DECOR BOUTIQUE LTDA",
-      "Nome Fantasia": "CELIA DECOR BOUTIQUE LTDA",
-      "CNPJ/CPF": "04.990.930/0001-90",
-      "Email": "contato@celiadecor.com.br",
-      "Telefone": "96318-8104",
-      "Cidade": "SANTO ANDRE (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Abc",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Região Abc, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 8531.95,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54358",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 8531.95,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 2336444833,
       "Razao Social": "ROKKA DECOR MARMORES, GRANITOS, IMPORTACAO E EXPORTACAO - EI",
       "Nome Fantasia": "ROKKA",
@@ -14122,34 +13528,6 @@
           "numero_documento": "54464",
           "data_vencimento": "13/05/2026",
           "valor_documento": 8458.71,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 2336000070,
-      "Razao Social": "HECLABI COMERCIO E SOLUCOES EM REVESTIMENTOS LTDA.",
-      "Nome Fantasia": "PORTOBELLO SHOP MOOCA",
-      "CNPJ/CPF": "19.913.976/0001-83",
-      "Email": "simone.bisi@portobelloshop.com.br",
-      "Telefone": "97175-6616",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Zona Leste",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Zona Leste, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 8434.51,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54395",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 8434.51,
           "dias_atraso": 1
         }
       ]
@@ -14757,34 +14135,6 @@
       ]
     },
     {
-      "codigo_cliente": 8445736109,
-      "Razao Social": "OLIVEIRA PAULINIA MATERIAIS PARA CONSTRUCAO LTDA",
-      "Nome Fantasia": "KAZAMAIS ACABAMENTOS",
-      "CNPJ/CPF": "11.778.754/0001-93",
-      "Email": "financeiro@kazamais.com.br",
-      "Telefone": "99192-6009",
-      "Cidade": "PAULINIA (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Susi Grundner",
-      "Tags": "Cliente, Campinas, Associados Pró",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 7703.48,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54516",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 7703.48,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8742742308,
       "Razao Social": "PF COMERCIO DE PORCELANATOS E ACABAMENTOS LTDA",
       "Nome Fantasia": "PF COMERCIO DE PORCELANATOS E ACABAMENTOS LTDA",
@@ -15321,34 +14671,6 @@
           "data_vencimento": "10/06/2024",
           "valor_documento": 1500,
           "dias_atraso": 703
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8486256720,
-      "Razao Social": "SOLUZIONE REVESTIMENTOS LTDA",
-      "Nome Fantasia": "SOLUZIONE REVESTIMENTOS",
-      "CNPJ/CPF": "08.946.301/0001-14",
-      "Email": "felix@ibizaacabamentos.com.br",
-      "Telefone": "98481-8911",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Oeste e Sul",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Design, Região Oeste e Sul",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 7388.87,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54426",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 7388.87,
-          "dias_atraso": 1
         }
       ]
     },
@@ -16133,34 +15455,6 @@
       ]
     },
     {
-      "codigo_cliente": 2336445688,
-      "Razao Social": "RS DESIGN MOBILIARIO CORPORATIVO EIRELI",
-      "Nome Fantasia": "RS DESIGN CORPORATIVO",
-      "CNPJ/CPF": "11.052.823/0001-87",
-      "Email": "financeiro@rsdesign.com.br",
-      "Telefone": "97969-7136",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Abc",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Região Abc, Design, Região Oeste e Sul",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 6483.24,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54416",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 6483.24,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8447509413,
       "Razao Social": "INGAMAR - IND. E COM. DE MARMORES E GRANITOS LTDA",
       "Nome Fantasia": "INGAMAR MARMORES E GRANITOS",
@@ -16643,40 +15937,6 @@
       ]
     },
     {
-      "codigo_cliente": 8121261010,
-      "Razao Social": "TURAZZA MOVEIS E DECORACOES LTDA",
-      "Nome Fantasia": "TURAZZA MOVEIS E DECORACOES",
-      "CNPJ/CPF": "22.850.445/0001-01",
-      "Email": "andressa@turazza.com.br",
-      "Telefone": "3329-3849",
-      "Cidade": "SOROCABA (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Sorocaba",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Fabiana Kumai",
-      "Tags": "Cliente, Região Sorocaba, Associados Pró",
-      "Qtd Titulos": 2,
-      "Valor Atrasado (R$)": 6045.68,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "52941",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 3328.52,
-          "dias_atraso": 1
-        },
-        {
-          "numero_documento": "54593",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 2717.16,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 5835539458,
       "Razao Social": "MADEIREIRA MADELASCA LTDA",
       "Nome Fantasia": "MADEIREIRA MADELASCA",
@@ -17027,70 +16287,6 @@
       ]
     },
     {
-      "codigo_cliente": 8499908676,
-      "Razao Social": "AMPLA MOVEIS &amp; DECOR LTDA",
-      "Nome Fantasia": "AMPLA MOVEIS &amp; DECOR LTDA",
-      "CNPJ/CPF": "94.917.861/0001-82",
-      "Email": "nara@amplasm.com.br",
-      "Telefone": "3026-5458",
-      "Cidade": "SANTA MARIA (RS)",
-      "Estado": "RS",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Sim",
-      "Gestora": "Ana C. Piovesan",
-      "Tags": "Cliente, Associados, Rio Grande do Sul, Santa Maria, Distrato",
-      "Qtd Titulos": 7,
-      "Valor Atrasado (R$)": 5991.64,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "41368",
-          "data_vencimento": "17/11/2025",
-          "valor_documento": 784.34,
-          "dias_atraso": 178
-        },
-        {
-          "numero_documento": "41368",
-          "data_vencimento": "16/12/2025",
-          "valor_documento": 784.35,
-          "dias_atraso": 149
-        },
-        {
-          "numero_documento": "45285",
-          "data_vencimento": "10/11/2025",
-          "valor_documento": 1600,
-          "dias_atraso": 185
-        },
-        {
-          "numero_documento": "46465",
-          "data_vencimento": "10/12/2025",
-          "valor_documento": 1600,
-          "dias_atraso": 155
-        },
-        {
-          "numero_documento": "49164",
-          "data_vencimento": "20/01/2026",
-          "valor_documento": 578.34,
-          "dias_atraso": 114
-        },
-        {
-          "numero_documento": "50526",
-          "data_vencimento": "03/03/2026",
-          "valor_documento": 322.3,
-          "dias_atraso": 72
-        },
-        {
-          "numero_documento": "50526",
-          "data_vencimento": "03/04/2026",
-          "valor_documento": 322.31,
-          "dias_atraso": 41
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8487143778,
       "Razao Social": "ROSSI CONCEITO ACABAMENTOS E MATERIAIS PARA CONSTRUCAO LTDA",
       "Nome Fantasia": "ROSSI CONCEITO",
@@ -17167,34 +16363,6 @@
           "data_vencimento": "15/03/2025",
           "valor_documento": 1500,
           "dias_atraso": 425
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8639104426,
-      "Razao Social": "KASA RIVIERA MOVEIS E DECORACOES LTDA",
-      "Nome Fantasia": "KASA RIVIERA",
-      "CNPJ/CPF": "33.053.210/0001-05",
-      "Email": "financeiro@lucattiartes.com",
-      "Telefone": "99619-9119",
-      "Cidade": "BERTIOGA (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Luciene Almeida",
-      "Tags": "Cliente, Associados Pró, Litoral Norte",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 5938.48,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54548",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 5938.48,
-          "dias_atraso": 1
         }
       ]
     },
@@ -17349,62 +16517,6 @@
           "data_vencimento": "10/04/2026",
           "valor_documento": 5871.99,
           "dias_atraso": 34
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8800102388,
-      "Razao Social": "GUSTAVO HENRIQUE ANASTACIO DA SILVA",
-      "Nome Fantasia": "GUSTAVO HENRIQUE ANASTACIO DA SILVA",
-      "CNPJ/CPF": "10.706.592/0001-15",
-      "Email": "financeiro1@vidrosprimavera.com.br",
-      "Telefone": "98899-7092",
-      "Cidade": "PAULINIA (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Susi Grundner",
-      "Tags": "Cliente, Campinas, Associados Pró",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 5857.89,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54503",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 5857.89,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 2335209887,
-      "Razao Social": "ASA SERVICE INSTALACAO, COMERCIO DE AR CONDICIONADO E TRANSP",
-      "Nome Fantasia": "ASA SERVICE",
-      "CNPJ/CPF": "28.456.304/0001-87",
-      "Email": "vanessa@asaservice.com.br",
-      "Telefone": "97474-1771",
-      "Cidade": "SAO BERNARDO DO CAMPO (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Abc",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Região Abc, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 5822.72,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54360",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 5822.72,
-          "dias_atraso": 1
         }
       ]
     },
@@ -17625,34 +16737,6 @@
       ]
     },
     {
-      "codigo_cliente": 8804014682,
-      "Razao Social": "DRZ PORTAS ECOLOGICAS LTDA",
-      "Nome Fantasia": "SR - CAMPINAS",
-      "CNPJ/CPF": "10.652.922/0030-71",
-      "Email": "sr@pormade.com.br",
-      "Telefone": "(42) 99822-0362",
-      "Cidade": "CAMPINAS (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Bruna Mafra",
-      "Tags": "Cliente, Campinas, Associados Pró",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 5542.99,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54514",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 5542.99,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8600125473,
       "Razao Social": "CASA MISI DECOR LTDA",
       "Nome Fantasia": "CASA MISI DECOR LTDA",
@@ -17701,34 +16785,6 @@
           "data_vencimento": "15/04/2026",
           "valor_documento": 1600,
           "dias_atraso": 29
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 5605394480,
-      "Razao Social": "RODRIGUES AUTOMACAO AUDIO E VIDEO EIRELI",
-      "Nome Fantasia": "RODRIGUES AUTOMACAO AUDIO E VIDEO",
-      "CNPJ/CPF": "30.049.029/0001-29",
-      "Email": "adm@rodriguesautomacao.com.br",
-      "Telefone": "94745-6541",
-      "Cidade": "BARUERI (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Alphaville",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Susi Grundner",
-      "Tags": "Cliente, Região Alphaville, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 5502,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54336",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 5502,
-          "dias_atraso": 1
         }
       ]
     },
@@ -18003,62 +17059,6 @@
       ]
     },
     {
-      "codigo_cliente": 8590576922,
-      "Razao Social": "CASA MIMOSA HIDRAULICA E ACABAMENTOS LTDA",
-      "Nome Fantasia": "CASA MIMOSA CONCEITO",
-      "CNPJ/CPF": "62.978.978/0005-03",
-      "Email": "thamyris@casamimosa.com.br",
-      "Telefone": "2782-5500",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Zona Leste",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Zona Leste, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 5350.24,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54387",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 5350.24,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8425793968,
-      "Razao Social": "SHINNING STONE MARMORARIA E CONSTRUCOES LTDA",
-      "Nome Fantasia": "BELLA MARMI",
-      "CNPJ/CPF": "48.104.629/0001-08",
-      "Email": "bellamarmimarmoraria@gmail.com",
-      "Telefone": "99984-9989",
-      "Cidade": "EMBU DAS ARTES (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Oeste e Sul",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Susi Grundner",
-      "Tags": "Cliente, Design, Região Oeste e Sul",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 5331.75,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54346",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 5331.75,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8492383224,
       "Razao Social": "PRIMUS DECOR MATERIAL DE CONSTRUCAO LTDA",
       "Nome Fantasia": "PRIMUS DECOR",
@@ -18279,34 +17279,6 @@
           "data_vencimento": "15/04/2026",
           "valor_documento": 1300,
           "dias_atraso": 29
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8751996738,
-      "Razao Social": "FYNE PIRACICABA COMERCIO DE MOVEIS LTDA",
-      "Nome Fantasia": "FYNE",
-      "CNPJ/CPF": "41.666.545/0001-19",
-      "Email": "comercial@fynedecor.com.br",
-      "Telefone": "97407-2757",
-      "Cidade": "PIRACICABA (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Rafael Faria",
-      "Tags": "Cliente, Associados Pró, Piracicaba",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 5180.1,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "52940",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 5180.1,
-          "dias_atraso": 1
         }
       ]
     },
@@ -18901,34 +17873,6 @@
       ]
     },
     {
-      "codigo_cliente": 2335456087,
-      "Razao Social": "CASA DKRA LTDA",
-      "Nome Fantasia": "CASA DKRA/CASA DEKORA",
-      "CNPJ/CPF": "37.598.911/0001-72",
-      "Email": "renata.sultanum@casadekora.com.br",
-      "Telefone": "2691-4657",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Oeste e Sul",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Design, Região Oeste e Sul",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 4690.7,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54443",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 4690.7,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8735548411,
       "Razao Social": "MOVEIS ARCHDESIGN LTDA",
       "Nome Fantasia": "MOVEIS ARCHDESIGN",
@@ -18952,34 +17896,6 @@
           "numero_documento": "54386",
           "data_vencimento": "13/05/2026",
           "valor_documento": 4680,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8400203625,
-      "Razao Social": "MUNDIAL MIX ACABAMENTOS LTDA",
-      "Nome Fantasia": "MUNDIAL MIX ACABAMENTOS",
-      "CNPJ/CPF": "10.141.800/0001-86",
-      "Email": "controle@mundialmix.com.br",
-      "Telefone": "98409-1878",
-      "Cidade": "GOIANIA (GO)",
-      "Estado": "GO",
-      "Regiao": "Goiânia",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Vania Velloso",
-      "Tags": "Cliente, Goiânia, Associados Pró",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 4641.62,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54616",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 4641.62,
           "dias_atraso": 1
         }
       ]
@@ -19195,34 +18111,6 @@
       ]
     },
     {
-      "codigo_cliente": 2337061815,
-      "Razao Social": "ABAJUR ROBY LTDA",
-      "Nome Fantasia": "ROBY LUSTRES  / ROBY LUSTRES - FILIAL/TATUAPÉ",
-      "CNPJ/CPF": "56.260.565/0002-43",
-      "Email": "izolete.teixeira@robylustres.com.br",
-      "Telefone": "93803-9327",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Zona Leste",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Zona Leste, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 4477.55,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54394",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 4477.55,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8489087894,
       "Razao Social": "BELLA INTERIOR HOME ART LTDA",
       "Nome Fantasia": "BELLA INTERIOR",
@@ -19309,34 +18197,6 @@
       ]
     },
     {
-      "codigo_cliente": 8440865891,
-      "Razao Social": "ANDRA S A ELECTRIC SOLUTIONS",
-      "Nome Fantasia": "ANDRA S A ELECTRIC SOLUTIONS",
-      "CNPJ/CPF": "47.674.429/0011-08",
-      "Email": "nfe@andra.com.br",
-      "Telefone": "3352-7000",
-      "Cidade": "SANTOS (SP)",
-      "Estado": "SP",
-      "Regiao": "Litoral Sul",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Susi Grundner",
-      "Tags": "Cliente, Associados Pró, Litoral Sul",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 4332,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54569",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 4332,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8439354467,
       "Razao Social": "REVA COMERCIO DE MOBILIARIO SOB MEDIDA LTDA",
       "Nome Fantasia": "REVA MOBILIARIO",
@@ -19373,34 +18233,6 @@
           "data_vencimento": "10/05/2026",
           "valor_documento": 1737.71,
           "dias_atraso": 4
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 2336279124,
-      "Razao Social": "OGDEN PERSIANAS &amp; DESIGN LTDA",
-      "Nome Fantasia": "OGDEN PERSIANAS &amp; DESIGN LTDA",
-      "CNPJ/CPF": "02.650.296/0001-11",
-      "Email": "contato@ogdenpersianas.com.br",
-      "Telefone": "99909-5854",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Oeste e Sul",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Design, Região Oeste e Sul",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 4263.95,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54335",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 4263.95,
-          "dias_atraso": 1
         }
       ]
     },
@@ -19453,34 +18285,6 @@
           "data_vencimento": "16/01/2025",
           "valor_documento": 852.28,
           "dias_atraso": 483
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 2336013578,
-      "Razao Social": "LUZ OCULTA COMERCIO DE ARTIGOS PARA ILUMINACAO LTDA",
-      "Nome Fantasia": "LUZ OCULTA",
-      "CNPJ/CPF": "10.619.565/0001-05",
-      "Email": "agostinho@luzoculta.com",
-      "Telefone": "93900-8466",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Zona Leste",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Zona Leste, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 4260.55,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54402",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 4260.55,
-          "dias_atraso": 1
         }
       ]
     },
@@ -19937,34 +18741,6 @@
       ]
     },
     {
-      "codigo_cliente": 8605971927,
-      "Razao Social": "EUROMOBILE INTERIORES S/A.",
-      "Nome Fantasia": "EUROMOBILE INTERIORES S/A.",
-      "CNPJ/CPF": "47.410.238/0006-63",
-      "Email": "carolinagroth@portalartefacto.com.br",
-      "Telefone": "3459-9000",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Oeste e Sul",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Design, Região Oeste e Sul",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 3952.46,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54422",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 3952.46,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8495968776,
       "Razao Social": "IARA F L P VALENCA - COLCHOARIA",
       "Nome Fantasia": "ANJOS COLCHOES E SOFAS",
@@ -20001,34 +18777,6 @@
           "data_vencimento": "05/05/2026",
           "valor_documento": 1500,
           "dias_atraso": 9
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 2336010576,
-      "Razao Social": "KFA PROJETOS E SERVICOS EM MOVEIS E DECORACOES EIRELI",
-      "Nome Fantasia": "SCA JARDIM EUROPA",
-      "CNPJ/CPF": "22.211.570/0001-63",
-      "Email": "karina@scajdeuropa.com.br",
-      "Telefone": "992174389",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Oeste e Sul",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Design, Região Oeste e Sul",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 3878.39,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54461",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 3878.39,
-          "dias_atraso": 1
         }
       ]
     },
@@ -20135,34 +18883,6 @@
       ]
     },
     {
-      "codigo_cliente": 8137205663,
-      "Razao Social": "E F COMERCIO DE MOVEIS LTDA",
-      "Nome Fantasia": "BOA ESPERANCA MOVELARIA",
-      "CNPJ/CPF": "12.004.836/0001-43",
-      "Email": "contato@mboaesperanca.com.br",
-      "Telefone": "99781-1843",
-      "Cidade": "SAO JOSE DOS CAMPOS (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Patrícia Cardoso",
-      "Tags": "Cliente, Vale do Paraíba, Associados Pró",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 3776.1,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54608",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 3776.1,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8419839507,
       "Razao Social": "CASARAO LUSTRES LTDA",
       "Nome Fantasia": "CASARAO LUSTRES LTDA",
@@ -20231,34 +18951,6 @@
       ]
     },
     {
-      "codigo_cliente": 8515607442,
-      "Razao Social": "FERRANTE COMERCIO DE REVESTIMENTOS LTDA",
-      "Nome Fantasia": "SPAZIO PISOS E REVESTIMENTOS",
-      "CNPJ/CPF": "71.960.686/0001-00",
-      "Email": "administracao@spazio.art.br",
-      "Telefone": "98144-0153",
-      "Cidade": "PIRACICABA (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Rafael Faria",
-      "Tags": "Cliente, Associados Pró, Piracicaba",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 3681.25,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54577",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 3681.25,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8468277059,
       "Razao Social": "MR COMERCIO DE PRODUTOS ELETRONICOS LTDA",
       "Nome Fantasia": "SHOP CINE",
@@ -20289,34 +18981,6 @@
           "data_vencimento": "10/05/2026",
           "valor_documento": 1500,
           "dias_atraso": 4
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8512300773,
-      "Razao Social": "CONSCRIE ENGENHARIA LTDA",
-      "Nome Fantasia": "CONSCRIE",
-      "CNPJ/CPF": "30.834.851/0001-09",
-      "Email": "estevao@conscrie.com.br",
-      "Telefone": "99223-9292",
-      "Cidade": "GOIANIA (GO)",
-      "Estado": "GO",
-      "Regiao": "Goiânia",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Vania Velloso",
-      "Tags": "Cliente, Goiânia, Associados Pró",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 3625.13,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54615",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 3625.13,
-          "dias_atraso": 1
         }
       ]
     },
@@ -20463,34 +19127,6 @@
       ]
     },
     {
-      "codigo_cliente": 8468271770,
-      "Razao Social": "MOVELARIA PIPA MOVEIS PLANEJADOS LTDA",
-      "Nome Fantasia": "MOVELARIA PIPA",
-      "CNPJ/CPF": "46.682.078/0001-34",
-      "Email": "acfsj@terra.com.br",
-      "Telefone": "97669-8030",
-      "Cidade": "SAO CAETANO DO SUL (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Abc",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Região Abc, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 3543.56,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54434",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 3543.56,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8507157292,
       "Razao Social": "FM&amp;L COMERCIO DE ELETRONICOS LTDA",
       "Nome Fantasia": "FM&amp;L COMERCIO DE ELETRONICOS LTDA",
@@ -20521,34 +19157,6 @@
           "data_vencimento": "17/10/2025",
           "valor_documento": 2027.77,
           "dias_atraso": 209
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8487198925,
-      "Razao Social": "LUAL MOBILIARIOS LTDA",
-      "Nome Fantasia": "BONTEMPO AMERICANA",
-      "CNPJ/CPF": "05.935.118/0003-97",
-      "Email": "alberto.oliveira@americana.bontempo.com.br",
-      "Telefone": "98180-3000",
-      "Cidade": "AMERICANA (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Rafael Faria",
-      "Tags": "Cliente, Associados Pró, Americana",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 3514,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "52939",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 3514,
-          "dias_atraso": 1
         }
       ]
     },
@@ -21791,34 +20399,6 @@
       ]
     },
     {
-      "codigo_cliente": 6143568118,
-      "Razao Social": "SIMPLE AMBIENTES PLANEJADOS LTDA",
-      "Nome Fantasia": "SIMPLE AP",
-      "CNPJ/CPF": "30.270.879/0001-52",
-      "Email": "rafatedeschi@gmail.com",
-      "Telefone": "98768-6366",
-      "Cidade": "CAMPINAS (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Bruna Mafra",
-      "Tags": "Cliente, Campinas, Associados Pró",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 2898.87,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54521",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 2898.87,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8491004161,
       "Razao Social": "F R A RIBEIRO COMERCIO E REPRESENTACOES",
       "Nome Fantasia": "ORNATTO",
@@ -22361,34 +20941,6 @@
       ]
     },
     {
-      "codigo_cliente": 8741040846,
-      "Razao Social": "LAVRADOR &amp; MOREIRA LAVRADOR LTDA",
-      "Nome Fantasia": "LAVRADOR &amp; MOREIRA LAVRADOR LTDA",
-      "CNPJ/CPF": "00.231.227/0001-48",
-      "Email": "guairasbc@gmail.com",
-      "Telefone": "99828-2833",
-      "Cidade": "SAO BERNARDO DO CAMPO (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Abc",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Região Abc, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 2500,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54144",
-          "data_vencimento": "10/05/2026",
-          "valor_documento": 2500,
-          "dias_atraso": 4
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8600105732,
       "Razao Social": "MAZO AMBIENTES PLANEJADOS LTDA",
       "Nome Fantasia": "MAZO PLANEJADOS",
@@ -22659,62 +21211,6 @@
       ]
     },
     {
-      "codigo_cliente": 8459871563,
-      "Razao Social": "THREE SOLLAR COMERCIO E SERVICOS LTDA",
-      "Nome Fantasia": "THREE SOLLAR COMERCIO E SERVICOS LTDA",
-      "CNPJ/CPF": "45.419.971/0001-09",
-      "Email": "administrativo1@threesollar.com",
-      "Telefone": "91780-9136",
-      "Cidade": "SANTANA DE PARNAIBA (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Alphaville",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Susi Grundner",
-      "Tags": "Cliente, Região Alphaville, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 2400,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54345",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 2400,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 2335488996,
-      "Razao Social": "DOMUS ELETROS PREMIUM LTDA",
-      "Nome Fantasia": "CRISSAIR",
-      "CNPJ/CPF": "43.236.593/0001-00",
-      "Email": "financeir01@crissair.com.br",
-      "Telefone": "99617-2390",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Zona Norte",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Zona Norte, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 2372.19,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54409",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 2372.19,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8470630522,
       "Razao Social": "CALLOU COMERCIO DE MOVEIS PLANEJADOS LTDA",
       "Nome Fantasia": "REFERENZZA AMBIENTES PENSADOS",
@@ -22773,34 +21269,6 @@
           "data_vencimento": "17/07/2023",
           "valor_documento": 2310,
           "dias_atraso": 1032
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8543452322,
-      "Razao Social": "IPEL - MATERIAIS ELETRICOS LTDA",
-      "Nome Fantasia": "IPEL - MATERIAIS ELETRICOS LTDA",
-      "CNPJ/CPF": "02.373.895/0001-35",
-      "Email": "financeiro@ipeliluminacao.com.br",
-      "Telefone": "99258-8149",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Oeste e Sul",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Design, Região Oeste e Sul",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 2298.49,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54414",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 2298.49,
-          "dias_atraso": 1
         }
       ]
     },
@@ -23593,34 +22061,6 @@
       ]
     },
     {
-      "codigo_cliente": 8113132499,
-      "Razao Social": "PISO TAUBATE SOCIEDADE UNIPESSOAL LTDA",
-      "Nome Fantasia": "PIZZOTTI DESIGN",
-      "CNPJ/CPF": "08.181.514/0001-00",
-      "Email": "pizzotti@pizzottidesign.com.br",
-      "Telefone": "99168-4974",
-      "Cidade": "TAUBATE (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Patrícia Cardoso",
-      "Tags": "Cliente, Vale do Paraíba, Associados Pró",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 1891.86,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54609",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 1891.86,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8669487420,
       "Razao Social": "LUSO GARDEN CENTER E PAISAGISMO LTDA",
       "Nome Fantasia": "LUSO GARDEN CENTER",
@@ -23651,34 +22091,6 @@
           "data_vencimento": "10/05/2026",
           "valor_documento": 1500,
           "dias_atraso": 4
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 2334934127,
-      "Razao Social": "ZANUTTO, RODRIGUES &amp; CIA LTDA",
-      "Nome Fantasia": "ZANUTTO RODRIGUES",
-      "CNPJ/CPF": "67.064.295/0001-30",
-      "Email": "zrbr@yahoo.com.br",
-      "Telefone": "4121-3774",
-      "Cidade": "SAO BERNARDO DO CAMPO (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Abc",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Região Abc, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 1859.62,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54378",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 1859.62,
-          "dias_atraso": 1
         }
       ]
     },
@@ -24603,34 +23015,6 @@
       ]
     },
     {
-      "codigo_cliente": 8598007661,
-      "Razao Social": "VITORIA GESSO LTDA",
-      "Nome Fantasia": "VITORIA GESSO LTDA",
-      "CNPJ/CPF": "27.926.397/0001-01",
-      "Email": "juniorvitoriagesso@gmail.com",
-      "Telefone": "99284-4114",
-      "Cidade": "PORTO VELHO (RO)",
-      "Estado": "RO",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Nao",
-      "Gestora": "Dani Montani",
-      "Tags": "Cliente, Associados, Rondônia, Porto Velho",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 1600,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54260",
-          "data_vencimento": "10/05/2026",
-          "valor_documento": 1600,
-          "dias_atraso": 4
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8775224481,
       "Razao Social": "INDELEV INDUSTRIA E COMERCIO DE ELEVADORES LTDA",
       "Nome Fantasia": "INDELEV",
@@ -25399,34 +23783,6 @@
       ]
     },
     {
-      "codigo_cliente": 8827297039,
-      "Razao Social": "ANJOS MARINGA COLCHOES E SOFAS LTDA",
-      "Nome Fantasia": "ANJOS MARINGA COLCHOES E SOFAS LTDA",
-      "CNPJ/CPF": "55.208.126/0001-48",
-      "Email": "drifranciscasousa@outlook.com",
-      "Telefone": "99943-5374",
-      "Cidade": "MARINGA (PR)",
-      "Estado": "PR",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Nao",
-      "Gestora": "Raffael Botta",
-      "Tags": "Cliente, Associados, Maringá",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 1500,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "53931",
-          "data_vencimento": "10/05/2026",
-          "valor_documento": 1500,
-          "dias_atraso": 4
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8833739867,
       "Razao Social": "IDEALE DECOR LTDA",
       "Nome Fantasia": "IDEALE DECOR LTDA",
@@ -25476,34 +23832,6 @@
       "titulos": [
         {
           "numero_documento": "54077",
-          "data_vencimento": "10/05/2026",
-          "valor_documento": 1500,
-          "dias_atraso": 4
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8827033305,
-      "Razao Social": "BELLA CASA COMERCIO LTDA.",
-      "Nome Fantasia": "ABC DA CONSTRUCAO",
-      "CNPJ/CPF": "25.277.659/0001-10",
-      "Email": "consultoria2@melocampos.com.br",
-      "Telefone": "2123-0000",
-      "Cidade": "BELO HORIZONTE (MG)",
-      "Estado": "MG",
-      "Regiao": "Belo Horizonte",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Nao",
-      "Gestora": "Raffael Botta",
-      "Tags": "Cliente, Associados, Belo Horizonte",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 1500,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54108",
           "data_vencimento": "10/05/2026",
           "valor_documento": 1500,
           "dias_atraso": 4
@@ -25847,34 +24175,6 @@
       ]
     },
     {
-      "codigo_cliente": 5653359157,
-      "Razao Social": "OBRA FACIL COMERCIO DE MATERIAIS PARA CONSTRUCAO LTDA",
-      "Nome Fantasia": "OBRA FACIL ZONA NORTE",
-      "CNPJ/CPF": "05.909.339/0003-90",
-      "Email": "relacionamento@lojaobrafacil.com.br",
-      "Telefone": "22362799",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Zona Norte",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Zona Norte, Design",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 1357.71,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54406",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 1357.71,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8552177610,
       "Razao Social": "ARQUER &amp; RODRIGUES LTDA",
       "Nome Fantasia": "XMAD MOVELARIA",
@@ -25929,34 +24229,6 @@
           "data_vencimento": "12/08/2025",
           "valor_documento": 225.48,
           "dias_atraso": 275
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8519399169,
-      "Razao Social": "JORGE LUIS DE OLIVEIRA PINTO LTDA",
-      "Nome Fantasia": "JORGE LUIS DE OLIVEIRA PINTO LTDA",
-      "CNPJ/CPF": "01.245.873/0001-27",
-      "Email": "adm@ldacabamentos.com.br",
-      "Telefone": "99379-6397",
-      "Cidade": "PIRACICABA (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Rafael Faria",
-      "Tags": "Cliente, Associados Pró, Piracicaba",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 1300.38,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54575",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 1300.38,
-          "dias_atraso": 1
         }
       ]
     },
@@ -26219,62 +24491,6 @@
       ]
     },
     {
-      "codigo_cliente": 8468258148,
-      "Razao Social": "LINEA HOME DECORACOES LTDA",
-      "Nome Fantasia": "LINEA HOME DECORACOES",
-      "CNPJ/CPF": "50.074.787/0001-04",
-      "Email": "comercial@mekonline.com.br",
-      "Telefone": "98449-0073",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Região Oeste e Sul",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Design, Região Oeste e Sul",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 1130.61,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54430",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 1130.61,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8827476558,
-      "Razao Social": "ESPACO PRIME PROJETADOS LTDA",
-      "Nome Fantasia": "ESPACO PRIME",
-      "CNPJ/CPF": "28.347.230/0001-40",
-      "Email": "espacoprimefinanceiro@gmail.com",
-      "Telefone": "99122-6147",
-      "Cidade": "SAO LUIS (MA)",
-      "Estado": "MA",
-      "Regiao": "Alagoas",
-      "Diretora Regional": "Olga Bezerra",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Nao",
-      "Gestora": "Olga Bezerra",
-      "Tags": "Cliente, Associados, Maranhão, Alagoas",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 1125,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "52107",
-          "data_vencimento": "25/04/2026",
-          "valor_documento": 1125,
-          "dias_atraso": 19
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8498387213,
       "Razao Social": "CASSAROTTI &amp; LEAL COMERCIO E SERVICOS LTDA",
       "Nome Fantasia": "LOJAS ECODECOR",
@@ -26527,34 +24743,6 @@
       ]
     },
     {
-      "codigo_cliente": 8443449783,
-      "Razao Social": "ANA PAULA ELETRO COMERCIO DE ELETRODOMESTICOS LTDA",
-      "Nome Fantasia": "ANA PAULA ELETRO",
-      "CNPJ/CPF": "17.281.835/0001-60",
-      "Email": "angelo@anapaulaeletro.com",
-      "Telefone": "97407-4314",
-      "Cidade": "CAMPINAS (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Bruna Mafra",
-      "Tags": "Cliente, Campinas, Associados Pró",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 1018.25,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54515",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 1018.25,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8510949090,
       "Razao Social": "MAVISOL COMERCIO DE PISCINAS LTDA",
       "Nome Fantasia": "MAVISOL COMERCIO DE PISCINAS LTDA",
@@ -26779,34 +24967,6 @@
       ]
     },
     {
-      "codigo_cliente": 8722655570,
-      "Razao Social": "FAENZA PISCINAS LTDA",
-      "Nome Fantasia": "FAENZA PISCINAS",
-      "CNPJ/CPF": "59.908.431/0001-01",
-      "Email": "iguicuiaba@igui.com",
-      "Telefone": "99638-3311",
-      "Cidade": "CUIABA (MT)",
-      "Estado": "MT",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Nao",
-      "Gestora": "Vania Velloso",
-      "Tags": "Cliente, Associados, Cuiabá, Mato Grosso",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 1000,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "53991",
-          "data_vencimento": "10/05/2026",
-          "valor_documento": 1000,
-          "dias_atraso": 4
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8854647958,
       "Razao Social": "RIBEIRAO PRETO SOLUCOES CONSTRUTIVAS LTDA",
       "Nome Fantasia": "RIBEIRAO PRETO SOLUCOES CONSTRUTIVAS LTDA",
@@ -26886,34 +25046,6 @@
           "numero_documento": "54552",
           "data_vencimento": "13/05/2026",
           "valor_documento": 954.7,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8416140138,
-      "Razao Social": "M H M COMERCIO DE MATERIAIS PARA CONSTRUCAO LTDA",
-      "Nome Fantasia": "ABC DA CONSTRUÇÃO",
-      "CNPJ/CPF": "28.836.206/0001-75",
-      "Email": "contato@renovaassessoria.cnt.br",
-      "Telefone": "99953-8923",
-      "Cidade": "PIRACAIA (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Gestora": "Susi Grundner",
-      "Tags": "Cliente, Atibaia/Bragança, Associados Pró",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 953.25,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54494",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 953.25,
           "dias_atraso": 1
         }
       ]
@@ -27031,34 +25163,6 @@
       ]
     },
     {
-      "codigo_cliente": 8451832312,
-      "Razao Social": "MEKANEC INDUSTRIA E USINAGEM LTDA",
-      "Nome Fantasia": "MEK MEKANEC INDUSTRIA",
-      "CNPJ/CPF": "27.699.638/0001-19",
-      "Email": "financeiro@mekanec.com.br",
-      "Telefone": "91680-0345",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Zona Norte",
-      "Diretora Regional": "Priscila Rubira",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Sim",
-      "Gestora": "Priscila Rubira",
-      "Tags": "Cliente, Zona Norte, Design, Distrato",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 811.32,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "54404",
-          "data_vencimento": "13/05/2026",
-          "valor_documento": 811.32,
-          "dias_atraso": 1
-        }
-      ]
-    },
-    {
       "codigo_cliente": 8797699673,
       "Razao Social": "CORREIA KOZAN COMERCIO DE MOVEIS E COLCHOES LTDA",
       "Nome Fantasia": "COMFY COLCHOES",
@@ -27080,34 +25184,6 @@
       "titulos": [
         {
           "numero_documento": "53435",
-          "data_vencimento": "10/05/2026",
-          "valor_documento": 800,
-          "dias_atraso": 4
-        }
-      ]
-    },
-    {
-      "codigo_cliente": 8832630833,
-      "Razao Social": "ARAUJO DE JESUS INDUSTRIA E COMERCIO DE MOVEIS LTDA",
-      "Nome Fantasia": "ARAUJO DE JESUS INDUSTRIA E COMERCIO DE MOVEIS LTDA",
-      "CNPJ/CPF": "12.517.016/0001-55",
-      "Email": "controladoriamarrommoveis@gmail.com",
-      "Telefone": "8849-7694",
-      "Cidade": "ARAPONGAS (PR)",
-      "Estado": "PR",
-      "Regiao": "Paraná",
-      "Diretora Regional": "Nao Informada",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Nao",
-      "Gestora": "Marcia Borges",
-      "Tags": "Cliente, Paraná, Associados, Arapongas",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 800,
-      "Vencimento Mais Antigo": "",
-      "Dias em Atraso": 0,
-      "titulos": [
-        {
-          "numero_documento": "53626",
           "data_vencimento": "10/05/2026",
           "valor_documento": 800,
           "dias_atraso": 4
@@ -27404,7 +25480,7 @@
       "Cidade": "LIMEIRA (SP)",
       "Estado": "SP",
       "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
+      "Diretora Regional": "Susi Grundner",
       "Modelo de Negocio": "Associados Pró",
       "Distrato": "Nao",
       "Gestora": "Susi Grundner",
