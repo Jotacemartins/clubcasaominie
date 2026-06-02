@@ -39,9 +39,8 @@ def extrair_caracteristicas(caracteristicas):
     for c in caracteristicas:
         campo = norm(c.get('campo', ''))
         conteudo = str(c.get('conteudo', '')).strip()
-        # Ampliada a busca para pegar Franquia, Regional, Diretora, etc.
-        if any(x in campo for x in ['diretor', 'franquia', 'regional']): 
-            if 'regiao' not in campo: # Evita confundir com o campo de Região
+        if any(x in campo for x in ['diretor', 'franquia', 'regional']):
+            if 'regiao' not in campo:
                 dados['diretora_regional'] = conteudo
         if 'gestor' in campo: dados['gestora'] = conteudo
         elif 'regiao' in campo: dados['regiao'] = conteudo
@@ -77,6 +76,10 @@ print('=' * 60)
 print('CLUB&CASA - Gerando relatorio de inadimplentes')
 print('=' * 60)
 
+# ----------------------------------------------------------------
+# [1/4] LOJISTAS - removido filtro de tag 'cliente' que excluía
+#        a maioria dos lojistas cadastrados
+# ----------------------------------------------------------------
 print('\n[1/4] Buscando lojistas no Omie...')
 p, tp = 1, 1
 lojistas = {}
@@ -91,23 +94,27 @@ while p <= tp:
     for c in r['clientes_cadastro']:
         if invalido(c): continue
 
+        # CORREÇÃO 1: removido o filtro 'cliente' not in nd_tags
+        # que excluía lojistas sem essa tag específica
         raw_tags = [t.get('tag', '') for t in c.get('tags', [])]
-        nd_tags = [norm(t) for t in raw_tags]
+        nd_tags  = [norm(t) for t in raw_tags]
 
-        if 'cliente' not in nd_tags or 'fornecedor' in nd_tags: continue
+        # Só exclui se explicitamente marcado como fornecedor (sem ser cliente)
+        if 'fornecedor' in nd_tags and 'cliente' not in nd_tags:
+            continue
 
         caracs = extrair_caracteristicas(c.get('caracteristicas', []))
 
-        regiao_tag = next((raw_tags[i] for i, t in enumerate(nd_tags) if t in TAGS_REGIAO), '')
-        modelo_tag = next((raw_tags[i] for i, t in enumerate(nd_tags) if t in TAGS_MODELO), '')
-        distrato_tag = 'distrato' in nd_tags
+        regiao_tag    = next((raw_tags[i] for i, t in enumerate(nd_tags) if t in TAGS_REGIAO), '')
+        modelo_tag    = next((raw_tags[i] for i, t in enumerate(nd_tags) if t in TAGS_MODELO), '')
+        distrato_tag  = 'distrato' in nd_tags
 
-        regiao_final = caracs['regiao'] if caracs['regiao'] else regiao_tag
-        modelo_final = caracs['modelo'] if caracs['modelo'] else modelo_tag
+        regiao_final  = caracs['regiao']  if caracs['regiao']  else regiao_tag
+        modelo_final  = caracs['modelo']  if caracs['modelo']  else modelo_tag
         distrato_final = 'Sim' if (norm(caracs['status']) == 'distrato' or distrato_tag) else 'Nao'
 
         email_raw = c.get('email', '') or ''
-        codigo = c.get('codigo_cliente_omie')
+        codigo    = c.get('codigo_cliente_omie')
 
         lojistas[str(codigo)] = {
             'codigo':            codigo,
@@ -126,10 +133,14 @@ while p <= tp:
             'todas_tags':        ', '.join(raw_tags),
             'codigo_vendedor':   str((c.get('recomendacoes') or {}).get('codigo_vendedor', '') or ''),
         }
+
     print(f'  Pag {p:3}/{tp} - {len(lojistas)} lojistas')
     p += 1
     time.sleep(0.3)
 
+# ----------------------------------------------------------------
+# [2/4] GESTORAS
+# ----------------------------------------------------------------
 print('\n[2/4] Buscando gestoras na API Omie...')
 vendedores = {}
 try:
@@ -152,28 +163,58 @@ try:
 except Exception as e:
     print(f'  Erro: {e}')
 
+# ----------------------------------------------------------------
+# [3/4] TÍTULOS ATRASADOS
+# CORREÇÃO 2: em vez de break no faultstring, apenas loga e avança
+#             para não parar na página 1 por erro pontual da API
+# ----------------------------------------------------------------
 print('\n[3/4] Buscando titulos ATRASADOS...')
 p, tp = 1, 1
-titulos = {}
+titulos   = {}
 total_tit = 0
+erros_consecutivos = 0
+
 while p <= tp:
     r = omie_post(OMIE_CONTAS, {
         'call': 'ListarContasReceber', 'app_key': APP_KEY, 'app_secret': APP_SECRET,
         'param': [{'pagina': p, 'registros_por_pagina': RPP, 'filtrar_por_status': 'ATRASADO'}]
     })
-    if not r or r.get('faultstring'): break
-    tp = r.get('total_de_paginas', 1)
+
+    # Sem resposta alguma: para
+    if not r:
+        print(f'  Sem resposta na pag {p}, encerrando.')
+        break
+
+    # Erro da API: loga, aguarda e tenta a próxima página
+    if r.get('faultstring'):
+        erros_consecutivos += 1
+        print(f'  Aviso pag {p}: {r["faultstring"]}')
+        if erros_consecutivos >= 5:
+            print('  Muitos erros consecutivos, encerrando.')
+            break
+        p += 1
+        time.sleep(1.5)
+        continue
+
+    erros_consecutivos = 0
+    tp   = r.get('total_de_paginas', 1)
     regs = r.get('conta_receber_cadastro') or r.get('lista_contareceber') or []
+
     for t in regs:
         cod = str(t.get('codigo_cliente_fornecedor', ''))
         if not cod: continue
-        if cod not in titulos: titulos[cod] = []
+        if cod not in titulos:
+            titulos[cod] = []
         titulos[cod].append(t)
         total_tit += 1
+
     print(f'  Pag {p:3}/{tp} - {total_tit} titulos | {len(titulos)} clientes')
     p += 1
     time.sleep(0.6)
 
+# ----------------------------------------------------------------
+# [4/4] CRUZAMENTO
+# ----------------------------------------------------------------
 print('\n[4/4] Cruzando dados...')
 rows = []
 for cod, tits in titulos.items():
@@ -187,7 +228,8 @@ for cod, tits in titulos.items():
         try:
             d, m, y = dv.split('/')
             return (int(y), int(m), int(d))
-        except: return (9999, 99, 99)
+        except:
+            return (9999, 99, 99)
 
     tits_sorted    = sorted(tits, key=sort_key)
     mais_antigo_dv = tits_sorted[0].get('dDtVenc', '')
@@ -225,6 +267,9 @@ for cod, tits in titulos.items():
 
 rows.sort(key=lambda x: x['Valor Atrasado (R$)'], reverse=True)
 
+# ----------------------------------------------------------------
+# SALVAR JSON
+# ----------------------------------------------------------------
 print('\nSalvando inadimplentes.json...')
 with open('inadimplentes.json', 'w', encoding='utf-8') as f:
     json.dump({
@@ -235,22 +280,25 @@ with open('inadimplentes.json', 'w', encoding='utf-8') as f:
         'inadimplentes':  rows
     }, f, ensure_ascii=False, indent=2)
 
+# ----------------------------------------------------------------
+# SALVAR XLSX
+# ----------------------------------------------------------------
 print('Salvando inadimplentes-clubcasa.xlsx...')
 
 wb = Workbook()
 
-roxo = PatternFill(start_color='5B52E8', end_color='5B52E8', fill_type='solid')
+roxo       = PatternFill(start_color='5B52E8', end_color='5B52E8', fill_type='solid')
 roxo_claro = PatternFill(start_color='F4F6FB', end_color='F4F6FB', fill_type='solid')
-branco = Font(color='FFFFFF', bold=True, size=12)
+branco     = Font(color='FFFFFF', bold=True, size=12)
 preto_bold = Font(bold=True, size=11)
 borda = Border(
-    left=Side(style='thin', color='E2E6F0'),
-    right=Side(style='thin', color='E2E6F0'),
-    top=Side(style='thin', color='E2E6F0'),
+    left=Side(style='thin',   color='E2E6F0'),
+    right=Side(style='thin',  color='E2E6F0'),
+    top=Side(style='thin',    color='E2E6F0'),
     bottom=Side(style='thin', color='E2E6F0')
 )
 
-total_valor = sum(r['Valor Atrasado (R$)'] for r in rows)
+total_valor    = sum(r['Valor Atrasado (R$)'] for r in rows)
 total_distrato = sum(r['Valor Atrasado (R$)'] for r in rows if r['Distrato'] == 'Sim')
 
 ws_resumo = wb.active
@@ -279,10 +327,10 @@ def fmt_brl(v):
 
 dados_resumo = [
     ('Total de Lojistas Inadimplentes', len(rows)),
-    ('Total de Titulos em Aberto', total_tit),
-    ('Valor Total Atrasado', fmt_brl(total_valor)),
-    ('Valor em Distrato', fmt_brl(total_distrato)),
-    ('Ticket Medio', fmt_brl(total_valor/len(rows)) if rows else 'R$ 0,00'),
+    ('Total de Titulos em Aberto',      total_tit),
+    ('Valor Total Atrasado',            fmt_brl(total_valor)),
+    ('Valor em Distrato',               fmt_brl(total_distrato)),
+    ('Ticket Medio',                    fmt_brl(total_valor / len(rows)) if rows else 'R$ 0,00'),
 ]
 
 for i, (k, v) in enumerate(dados_resumo, start=6):
