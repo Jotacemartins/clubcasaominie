@@ -62,7 +62,6 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Header & Logo Customizada */
 .header { 
   background: var(--card); 
   border-bottom: 1px solid var(--border); 
@@ -87,7 +86,6 @@ body {
 .header-sub { color: var(--muted); font-size: 12px; font-weight: 500; }
 .header-right { display: flex; align-items: center; gap: 12px; }
 
-/* Buttons */
 .btn-theme, .btn-action, .btn-excel, .modal-close { 
   border: 1px solid var(--border); 
   padding: 8px 16px; 
@@ -110,10 +108,8 @@ body {
 
 .badge { background: var(--red-bg); color: var(--red); padding: 6px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; border: 1px solid rgba(239, 68, 68, 0.2); }
 
-/* Main Container */
 .main { padding: 32px; max-width: 1600px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
 
-/* Stats Cards */
 .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
 .stat { 
   background: var(--card); 
@@ -132,7 +128,6 @@ body {
 .stat.blue .stat-value { color: var(--blue); }
 .stat.green .stat-value { color: var(--green); }
 
-/* Charts */
 .chart-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; box-shadow: var(--shadow-sm); }
 .chart-title { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; }
 .bar-row { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
@@ -141,7 +136,6 @@ body {
 .bar-fill { height: 100%; border-radius: 10px; transition: width 1s ease-in-out; }
 .bar-val { font-size: 12px; color: var(--text); width: 100px; text-align: right; flex-shrink: 0; font-weight: 700; }
 
-/* Filters */
 .controls { 
   display: flex; 
   gap: 12px; 
@@ -170,7 +164,6 @@ body {
 .controls input:focus, .controls select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15); }
 .count-label { color: var(--muted); font-size: 13px; margin-left: auto; font-weight: 600; padding: 0 10px; }
 
-/* Table Container */
 .table-wrap { 
   background: var(--card); 
   border: 1px solid var(--border); 
@@ -184,19 +177,16 @@ body {
 .table-wrap::-webkit-scrollbar-track { background: var(--bg); border-radius: 8px; }
 .table-wrap::-webkit-scrollbar-thumb { background: var(--border); border-radius: 8px; }
 
-/* Tabela Simplificada e Resistente */
 table { 
   width: 100%; 
   border-collapse: separate; 
   border-spacing: 0; 
 }
 
-/* O Segredo: Isso impede que QUALQUER coluna seja espremida */
 th, td {
   white-space: nowrap;
 }
 
-/* Alinhamentos da Tabela */
 .t-left { text-align: left; }
 .t-center { text-align: center; }
 .t-right { text-align: right; }
@@ -227,12 +217,10 @@ tbody tr:not(:last-child) td { border-bottom: 1px solid var(--border); }
 tbody tr:hover { background-color: var(--hover); }
 tbody td { padding: 14px 20px; vertical-align: middle; }
 
-/* Table Content Styles */
 .nome-principal { font-weight: 600; color: var(--text); font-size: 13px; }
 .nome-fantasia { color: var(--muted); font-size: 12px; margin-top: 4px; }
 .valor-cell { font-weight: 800; color: var(--red); font-size: 14px; }
 
-/* Pills & Tags */
 .tag { display: inline-flex; justify-content: center; padding: 4px 10px; border-radius: 99px; font-size: 11px; font-weight: 600; }
 .dias-alto { background: var(--red-bg); color: var(--red); }
 .dias-medio { background: var(--amber-bg); color: var(--amber); }
@@ -243,6 +231,9 @@ tbody td { padding: 14px 20px; vertical-align: middle; }
 .tag-qtd:hover { transform: scale(1.05); }
 .tag-distrato { background: var(--red-bg); color: var(--red); }
 .tag-normal { color: var(--muted); font-size: 12px; font-weight: 500; }
+.tag-status-pago { background: rgba(16, 185, 129, 0.1); color: var(--green); }
+.tag-status-atrasado { background: var(--red-bg); color: var(--red); }
+.tag-status-avencer { background: var(--amber-bg); color: var(--amber); }
 
 a { color: var(--accent); text-decoration: none; font-weight: 500; transition: opacity 0.2s; }
 a:hover { opacity: 0.8; text-decoration: underline; }
@@ -260,14 +251,12 @@ a:hover { opacity: 0.8; text-decoration: underline; }
 }
 .btn-omie:hover { background: var(--accent); color: #fff; }
 
-/* Pagination */
 .pagination { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 16px; background: var(--card); border-top: 1px solid var(--border); position: sticky; bottom: 0; z-index: 5; }
 .page-btn { background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 8px 14px; border-radius: 8px; cursor: pointer; font-family: inherit; font-size: 13px; font-weight: 500; transition: all 0.2s; }
 .page-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
 .page-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 .page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
-/* Modal */
 .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px); z-index: 1000; align-items: center; justify-content: center; padding: 20px; opacity: 0; transition: opacity 0.3s ease; }
 .modal.active { display: flex; opacity: 1; }
 .modal-content { background: var(--card); border-radius: 20px; width: 100%; max-width: 1200px; max-height: 90vh; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); display: flex; flex-direction: column; transform: translateY(20px); transition: transform 0.3s ease; }
@@ -357,7 +346,7 @@ a:hover { opacity: 0.8; text-decoration: underline; }
     <select id="f-gestora"><option value="">Todas as gestoras</option></select>
     <select id="f-diretora"><option value="">Todas as diretoras</option></select>
     <select id="f-distrato"><option value="">Distrato: Todos</option><option value="Sim">Apenas em distrato</option><option value="Nao">Sem distrato</option></select>
-    
+
     <button class="btn-action" onclick="abrirTodosBoletos()">Ver todos os boletos</button>
     <button class="btn-excel" onclick="exportarExcel()">📊 Exportar Excel</button>
     <span class="count-label" id="count-label"></span>
@@ -407,7 +396,9 @@ a:hover { opacity: 0.8; text-decoration: underline; }
               <th class="t-left">Cliente</th>
               <th class="t-left">CNPJ</th>
               <th class="t-left">Nº Documento</th>
+              <th class="t-left">Categoria</th>
               <th class="t-left">Vencimento</th>
+              <th class="t-center">Status</th>
               <th class="t-center">Dias em Atraso</th>
               <th class="t-right">Valor do Boleto</th>
               <th class="t-center">Integração</th>
@@ -422,6 +413,7 @@ a:hover { opacity: 0.8; text-decoration: underline; }
 
 <script>
 var DADOS = [];
+var CLIENTES = [];
 var filtrado = [];
 var colOrdem = 'Valor Atrasado (R$)';
 var crescente = false;
@@ -430,13 +422,19 @@ var POR_PAGINA = 50;
 var BOLETOS_MODAL = [];
 
 function fmt(v) {
-  return 'R$ ' + Number(v).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  return 'R$ ' + Number(v || 0).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
 function classDias(d) {
   if (d > 90) return 'dias-alto';
   if (d > 30) return 'dias-medio';
   return 'dias-baixo';
+}
+
+function classStatus(s) {
+  if (s === 'Pago' || s === 'Recebido') return 'tag-status-pago';
+  if (s === 'A Vencer') return 'tag-status-avencer';
+  return 'tag-status-atrasado';
 }
 
 function toggleTheme() {
@@ -457,6 +455,64 @@ function abrirOmieCliente(codigo) {
 function abrirOmieBoleto(codigo) {
   if (!codigo) { alert('Código do cliente não disponível'); return; }
   window.open('https://app.omie.com.br/gestao/club-ozv23f8/#FIN/cli/' + codigo, '_blank');
+}
+
+// -----------------------------------------------------------------
+// CORRIGIDO: agrega 1 linha por CLIENTE somando valores corretamente
+// A chave usa apenas CNPJ/CPF ou Razao Social (nunca Codigo Omie,
+// que é o código do TÍTULO e causava duplicatas no distrato)
+// -----------------------------------------------------------------
+function agregarClientes(linhasTitulos) {
+  var mapa = {};
+  var ordem = [];
+
+  linhasTitulos.forEach(function(r) {
+    var chave = r['CNPJ/CPF'] || r['Razao Social'];
+    if (!mapa[chave]) {
+      mapa[chave] = {
+        'codigo_cliente': r['codigo_cliente'] || r['Codigo Omie'] || '',
+        'Razao Social': r['Razao Social'] || '',
+        'Nome Fantasia': r['Nome Fantasia'] || '',
+        'CNPJ/CPF': r['CNPJ/CPF'] || '',
+        'Email': r['Email'] || '',
+        'Telefone': r['Telefone'] || '',
+        'Cidade': r['Cidade'] || '',
+        'Estado': r['Estado'] || '',
+        'Regiao': r['Regiao'] || 'Sem Regiao',
+        'Diretora Regional': r['Diretora Regional'] || 'Nao Informada',
+        'Gestora': r['Gestora'] || '',
+        'Modelo de Negocio': r['Modelo de Negocio'] || 'Sem Modelo',
+        'Distrato': r['Distrato'] || 'Nao',
+        'Qtd Titulos': 0,
+        'Valor Atrasado (R$)': 0,
+        'Dias em Atraso': 0,
+        'Vencimento Mais Antigo': r['Vencimento Mais Antigo'] || '',
+        'Tags': r['Tags'] || '',
+        'titulos': []
+      };
+      ordem.push(chave);
+    }
+
+    // Acumula valor e quantidade corretamente
+    mapa[chave]['Valor Atrasado (R$)'] += (parseFloat(r['Valor Atrasado (R$)']) || 0);
+    mapa[chave]['Qtd Titulos'] += (parseInt(r['Qtd Titulos']) || 1);
+
+    // Mantém o maior atraso
+    if ((r['Dias em Atraso'] || 0) > mapa[chave]['Dias em Atraso']) {
+      mapa[chave]['Dias em Atraso'] = r['Dias em Atraso'] || 0;
+    }
+
+    mapa[chave].titulos.push({
+      'numero_documento': r['Documento'],
+      'categoria': r['Categoria'],
+      'data_vencimento': r['Vencimento'],
+      'status': r['Status'],
+      'dias_atraso': r['Dias em Atraso'],
+      'valor_documento': r['Valor']
+    });
+  });
+
+  return ordem.map(function(k) { return mapa[k]; });
 }
 
 function renderTabela() {
@@ -482,7 +538,7 @@ function renderTabela() {
     var dir = r['Diretora Regional'] && r['Diretora Regional'] !== 'Nao Informada' ? r['Diretora Regional'] : '<span class="tag-normal">N/I</span>';
     var gest = r['Gestora'] || '<span class="tag-normal">N/I</span>';
     var dias = r['Dias em Atraso'] || 0;
-    var codigoCliente = r['codigo_cliente'] || r['Codigo Cliente'] || '';
+    var codigoCliente = r['codigo_cliente'] || '';
 
     html += '<tr>' +
       '<td class="t-left"><div class="nome-principal">' + (r['Razao Social'] || 'N/I') + '</div>' + nf + '</td>' +
@@ -511,7 +567,7 @@ function renderPaginacao() {
   var html = '<button class="page-btn" onclick="irPagina(' + (pagina - 1) + ')" ' + (pagina === 1 ? 'disabled' : '') + '>Anterior</button>';
   var s = Math.max(1, pagina - 2);
   var e = Math.min(total, pagina + 2);
-  
+
   if (s > 1) html += '<button class="page-btn" onclick="irPagina(1)">1</button>';
   if (s > 2) html += '<span style="padding:0 8px;color:var(--muted)">...</span>';
   for (var i = s; i <= e; i++) {
@@ -519,7 +575,7 @@ function renderPaginacao() {
   }
   if (e < total - 1) html += '<span style="padding:0 8px;color:var(--muted)">...</span>';
   if (e < total) html += '<button class="page-btn" onclick="irPagina(' + total + ')">' + total + '</button>';
-  
+
   html += '<button class="page-btn" onclick="irPagina(' + (pagina + 1) + ')" ' + (pagina === total ? 'disabled' : '') + '>Próximo</button>';
   el.innerHTML = html;
 }
@@ -530,7 +586,6 @@ function irPagina(p) {
   document.getElementById('table-container').scrollTo({top: 0, behavior: 'smooth'}); 
 }
 
-// Função para remover acentos e normalizar strings na busca
 function normalizeString(str) {
   if (!str) return '';
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
@@ -544,8 +599,7 @@ function aplicarFiltros() {
   var fDir = document.getElementById('f-diretora').value;
   var fDis = document.getElementById('f-distrato').value;
 
-  filtrado = DADOS.filter(function(r) {
-    // Texto
+  filtrado = CLIENTES.filter(function(r) {
     if (busca) {
       var nome = normalizeString(r['Razao Social']);
       var fantasia = normalizeString(r['Nome Fantasia']);
@@ -555,12 +609,11 @@ function aplicarFiltros() {
         return false;
       }
     }
-    
-    // Selects - Lidando com nulos automaticamente
-    var regiaoReal = r['Regiao'] || 'Sem Região';
+
+    var regiaoReal = r['Regiao'] || 'Sem Regiao';
     var modReal = r['Modelo de Negocio'] || 'Sem Modelo';
-    var gestReal = r['Gestora'] || 'Não Informada';
-    var dirReal = r['Diretora Regional'] || 'Não Informada';
+    var gestReal = r['Gestora'] || 'Nao Informada';
+    var dirReal = r['Diretora Regional'] || 'Nao Informada';
     var disReal = r['Distrato'] || 'Nao';
 
     if (fReg && regiaoReal !== fReg) return false;
@@ -574,7 +627,7 @@ function aplicarFiltros() {
 
   ordenar();
   pagina = 1;
-  document.getElementById('count-label').textContent = filtrado.length.toLocaleString('pt-BR') + ' de ' + DADOS.length.toLocaleString('pt-BR') + ' lojistas';
+  document.getElementById('count-label').textContent = filtrado.length.toLocaleString('pt-BR') + ' de ' + CLIENTES.length.toLocaleString('pt-BR') + ' lojistas';
   atualizarCards();
   renderGraficos();
   renderTabela();
@@ -621,14 +674,14 @@ function ordenar() {
 function renderGraficos() {
   var regMap = {};
   filtrado.forEach(function(r) {
-    var k = r['Regiao'] || 'Sem Região';
-    regMap[k] = (regMap[k] || 0) + r['Valor Atrasado (R$)'];
+    var k = r['Regiao'] || 'Sem Regiao';
+    regMap[k] = (regMap[k] || 0) + (r['Valor Atrasado (R$)'] || 0);
   });
   var regs = Object.entries(regMap).sort(function(a, b) { return b[1] - a[1]; }).slice(0, 8);
   var maxR = regs.length && regs[0][1] > 0 ? regs[0][1] : 1;
   var htmlR = '';
   var cores = ['#4f46e5','#6366f1','#818cf8','#a5b4fc','#c7d2fe','#e0e7ff','#eff6ff','#f8fafc'];
-  
+
   regs.forEach(function(item, i) {
     var pct = ((item[1] / maxR) * 100).toFixed(1);
     htmlR += '<div class="bar-row">' +
@@ -641,14 +694,14 @@ function renderGraficos() {
 
 function popularFiltros() {
   var regs = new Set(), mods = new Set(), gests = new Set(), dirs = new Set();
-  
-  DADOS.forEach(function(r) {
-    regs.add(r['Regiao'] || 'Sem Região');
+
+  CLIENTES.forEach(function(r) {
+    regs.add(r['Regiao'] || 'Sem Regiao');
     mods.add(r['Modelo de Negocio'] || 'Sem Modelo');
-    gests.add(r['Gestora'] || 'Não Informada');
-    dirs.add(r['Diretora Regional'] || 'Não Informada');
+    gests.add(r['Gestora'] || 'Nao Informada');
+    dirs.add(r['Diretora Regional'] || 'Nao Informada');
   });
-  
+
   function popular(id, setLista, defaultText) {
     var sel = document.getElementById(id);
     sel.innerHTML = '<option value="">' + defaultText + '</option>';
@@ -658,7 +711,7 @@ function popularFiltros() {
       sel.appendChild(opt);
     });
   }
-  
+
   popular('f-regiao', regs, 'Todas as regiões');
   popular('f-modelo', mods, 'Todos os modelos');
   popular('f-gestora', gests, 'Todas as gestoras');
@@ -668,23 +721,25 @@ function popularFiltros() {
 function abrirBoletosCliente(idx) {
   var r = filtrado[idx];
   var titulos = r['titulos'] || [];
-  var codigoCliente = r['codigo_cliente'] || r['Codigo Cliente'] || '';
-  
+  var codigoCliente = r['codigo_cliente'] || '';
+
   BOLETOS_MODAL = titulos.map(function(t) {
     return {
       cliente: r['Razao Social'],
       cnpj: r['CNPJ/CPF'],
       codigoCliente: codigoCliente,
       documento: t['numero_documento'] || 'N/I',
+      categoria: t['categoria'] || '',
       vencimento: t['data_vencimento'] || 'N/I',
+      status: t['status'] || '',
       dias: t['dias_atraso'] || 0,
       valor: t['valor_documento'] || 0
     };
   });
-  
+
   document.getElementById('modal-titulo').textContent = 'Boletos: ' + (r['Razao Social'] || 'Cliente');
   document.getElementById('modal-info').textContent = titulos.length + ' boleto(s) localizados | Total devido: ' + fmt(r['Valor Atrasado (R$)']);
-  
+
   renderModalBoletos();
   document.getElementById('modal-boletos').classList.add('active');
 }
@@ -692,27 +747,29 @@ function abrirBoletosCliente(idx) {
 function abrirTodosBoletos() {
   var todosBoletos = [];
   filtrado.forEach(function(r) {
-    var codigoCliente = r['codigo_cliente'] || r['Codigo Cliente'] || '';
+    var codigoCliente = r['codigo_cliente'] || '';
     (r['titulos'] || []).forEach(function(t) {
       todosBoletos.push({
         cliente: r['Razao Social'] || 'N/I',
         cnpj: r['CNPJ/CPF'] || 'N/I',
         codigoCliente: codigoCliente,
         documento: t['numero_documento'] || 'N/I',
+        categoria: t['categoria'] || '',
         vencimento: t['data_vencimento'] || 'N/I',
+        status: t['status'] || '',
         dias: t['dias_atraso'] || 0,
         valor: t['valor_documento'] || 0
       });
     });
   });
-  
+
   todosBoletos.sort(function(a, b) { return b.valor - a.valor; });
   BOLETOS_MODAL = todosBoletos;
-  
+
   var totalValor = todosBoletos.reduce(function(s, b) { return s + b.valor; }, 0);
   document.getElementById('modal-titulo').textContent = 'Todos os Boletos Filtrados';
   document.getElementById('modal-info').textContent = todosBoletos.length + ' boletos | Montante Total: ' + fmt(totalValor);
-  
+
   renderModalBoletos();
   document.getElementById('modal-boletos').classList.add('active');
 }
@@ -724,13 +781,15 @@ function renderModalBoletos() {
       '<td class="t-left" style="font-weight:600; font-size:13px; color:var(--text)">' + b.cliente + '</td>' +
       '<td class="t-left" style="font-size:12px; color:var(--muted)">' + b.cnpj + '</td>' +
       '<td class="t-left" style="font-size:13px">' + b.documento + '</td>' +
+      '<td class="t-left" style="font-size:12px; color:var(--muted)">' + (b.categoria || '-') + '</td>' +
       '<td class="t-left" style="font-size:13px">' + b.vencimento + '</td>' +
+      '<td class="t-center"><span class="tag ' + classStatus(b.status) + '">' + (b.status || '-') + '</span></td>' +
       '<td class="t-center"><span class="tag ' + classDias(b.dias) + '">' + b.dias + ' dias</span></td>' +
       '<td class="t-right" style="font-weight:800; color:var(--red); font-size:14px">' + fmt(b.valor) + '</td>' +
       '<td class="t-center"><button class="btn-omie" data-codigo="' + b.codigoCliente + '" onclick="abrirOmieBoleto(this.dataset.codigo)">Visualizar Boleto</button></td>' +
       '</tr>';
   });
-  document.getElementById('tbody-boletos').innerHTML = html || '<tr><td colspan="7" class="empty">Nenhum boleto detalhado encontrado.</td></tr>';
+  document.getElementById('tbody-boletos').innerHTML = html || '<tr><td colspan="9" class="empty">Nenhum boleto detalhado encontrado.</td></tr>';
 }
 
 function fecharModal() {
@@ -759,10 +818,10 @@ function exportarExcel() {
       'Vencimento Mais Antigo': r['Vencimento Mais Antigo'] || ''
     };
   });
-  
+
   var ws = XLSX.utils.json_to_sheet(dados);
   ws['!cols'] = [ { wch: 35 }, { wch: 25 }, { wch: 18 }, { wch: 30 }, { wch: 15 }, { wch: 20 }, { wch: 6 }, { wch: 20 }, { wch: 18 }, { wch: 18 }, { wch: 18 }, { wch: 10 }, { wch: 10 }, { wch: 18 }, { wch: 12 }, { wch: 18 } ];
-  
+
   var wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, 'Inadimplentes');
   XLSX.writeFile(wb, 'inadimplentes-clubcasa-' + new Date().toISOString().slice(0,10) + '.xlsx');
@@ -771,10 +830,10 @@ function exportarExcel() {
 function exportarBoletosExcel() {
   if (!BOLETOS_MODAL.length) { alert('Nenhum boleto para exportar'); return; }
   var dados = BOLETOS_MODAL.map(function(b) {
-    return { 'Cliente': b.cliente, 'CNPJ': b.cnpj, 'Documento': b.documento, 'Vencimento': b.vencimento, 'Dias em Atraso': b.dias, 'Valor (R$)': b.valor };
+    return { 'Cliente': b.cliente, 'CNPJ': b.cnpj, 'Documento': b.documento, 'Categoria': b.categoria, 'Vencimento': b.vencimento, 'Status': b.status, 'Dias em Atraso': b.dias, 'Valor (R$)': b.valor };
   });
   var ws = XLSX.utils.json_to_sheet(dados);
-  ws['!cols'] = [{ wch: 35 }, { wch: 18 }, { wch: 15 }, { wch: 12 }, { wch: 12 }, { wch: 15 }];
+  ws['!cols'] = [{ wch: 35 }, { wch: 18 }, { wch: 15 }, { wch: 14 }, { wch: 12 }, { wch: 12 }, { wch: 12 }, { wch: 15 }];
   var wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, 'Boletos');
   XLSX.writeFile(wb, 'boletos-' + new Date().toISOString().slice(0,10) + '.xlsx');
@@ -795,19 +854,21 @@ function iniciar() {
     })
     .then(function(json) {
       DADOS = json.inadimplentes || [];
-      filtrado = DADOS.slice();
+      CLIENTES = agregarClientes(DADOS);
+      filtrado = CLIENTES.slice();
 
-      var valorDistrato = DADOS.reduce(function(s, r) {
+      var valorTotalClientes = CLIENTES.reduce(function(s, r) { return s + (r['Valor Atrasado (R$)'] || 0); }, 0);
+      var valorDistrato = CLIENTES.reduce(function(s, r) {
         return (r['Distrato'] === 'Sim') ? (s + (r['Valor Atrasado (R$)'] || 0)) : s;
       }, 0);
 
-      document.getElementById('header-sub').textContent = 'Atualizado em ' + (json.gerado_em || 'Data Indisponível') + ' · ' + DADOS.length + ' lojistas base';
-      document.getElementById('s-valor').textContent = fmt(json.valor_total || 0);
-      document.getElementById('s-clientes').textContent = DADOS.length.toLocaleString('pt-BR');
-      document.getElementById('s-titulos').textContent = (json.total_titulos || 0).toLocaleString('pt-BR');
-      document.getElementById('s-ticket').textContent = fmt((json.valor_total || 0) / (DADOS.length || 1));
+      document.getElementById('header-sub').textContent = 'Atualizado em ' + (json.gerado_em || 'Data Indisponível') + ' · ' + CLIENTES.length + ' lojistas base';
+      document.getElementById('s-valor').textContent = fmt(valorTotalClientes);
+      document.getElementById('s-clientes').textContent = CLIENTES.length.toLocaleString('pt-BR');
+      document.getElementById('s-titulos').textContent = (json.total_titulos || DADOS.length || 0).toLocaleString('pt-BR');
+      document.getElementById('s-ticket').textContent = fmt(valorTotalClientes / (CLIENTES.length || 1));
       document.getElementById('s-distrato').textContent = fmt(valorDistrato);
-      document.getElementById('count-label').textContent = DADOS.length.toLocaleString('pt-BR') + ' lojistas';
+      document.getElementById('count-label').textContent = CLIENTES.length.toLocaleString('pt-BR') + ' lojistas';
 
       ordenar();
       popularFiltros();
