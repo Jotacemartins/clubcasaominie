@@ -1,8 +1,8 @@
 {
-  "gerado_em": "08/07/2026 11:03",
-  "total_clientes": 401,
-  "total_titulos": 2190,
-  "valor_total": 4396166.1,
+  "gerado_em": "08/07/2026 11:58",
+  "total_clientes": 400,
+  "total_titulos": 2189,
+  "valor_total": 4395554.98,
   "inadimplentes": [
     {
       "Razao Social": "VIDAL LUX MOVEIS PLANEJADOS LTDA",
@@ -48381,7 +48381,7 @@
     },
     {
       "Razao Social": "CONSTRUAL SOROCABA LTDA",
-      "Nome Fantasia": "CONSTRUAL SOROCABA LTDA",
+      "Nome Fantasia": "CONSTRUAL ALPHAVILLE",
       "CNPJ/CPF": "10.646.558/0001-00",
       "Email": "adm@construalaluminio.com.br",
       "Telefone": "99727-1924",
@@ -48406,7 +48406,7 @@
     },
     {
       "Razao Social": "CONSTRUAL SOROCABA LTDA",
-      "Nome Fantasia": "CONSTRUAL SOROCABA LTDA",
+      "Nome Fantasia": "CONSTRUAL ALPHAVILLE",
       "CNPJ/CPF": "10.646.558/0001-00",
       "Email": "adm@construalaluminio.com.br",
       "Telefone": "99727-1924",
@@ -54453,31 +54453,6 @@
       "Valor": 660.0,
       "Codigo Omie": 8868918376,
       "Tags": "Cliente, Associados, Ceará, Cariri"
-    },
-    {
-      "Razao Social": "LINEA HOME DECORACOES LTDA",
-      "Nome Fantasia": "LINEA HOME DECORACOES",
-      "CNPJ/CPF": "50.074.787/0001-04",
-      "Email": "comercial@mekonline.com.br",
-      "Telefone": "98449-0073",
-      "Cidade": "SAO PAULO (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Diretora Regional": "Nao Informada",
-      "Gestora": "Priscila Rubira",
-      "Modelo de Negocio": "Design",
-      "Distrato": "Nao",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 611.12,
-      "Dias em Atraso": 23,
-      "Vencimento Mais Antigo": "15/06/2026",
-      "Status": "Atrasado",
-      "Documento": "56336",
-      "Categoria": "Pontuação",
-      "Vencimento": "15/06/2026",
-      "Valor": 611.12,
-      "Codigo Omie": 8468258148,
-      "Tags": "Cliente, Design, Zona oeste e sul"
     },
     {
       "Razao Social": "KATIA KRASNIKOVICIUS CRESPO PAISAGISMO",
