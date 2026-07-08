@@ -164,7 +164,7 @@ except Exception as e:
     print(f'  Erro: {e}')
 
 # ----------------------------------------------------------------
-# [2b/4] CATEGORIAS — de/para codigo_categoria -> nome/descricao
+# [2b/4] CATEGORIAS
 # ----------------------------------------------------------------
 print('\n[2b/4] Buscando categorias no Omie...')
 categorias_map = {}
@@ -241,7 +241,7 @@ while p <= tp:
     time.sleep(0.6)
 
 # ----------------------------------------------------------------
-# [4/4] CRUZAMENTO — uma linha por título
+# [4/4] CRUZAMENTO
 # ----------------------------------------------------------------
 print('\n[4/4] Cruzando dados...')
 
@@ -253,7 +253,15 @@ def sort_key(t):
     except:
         return (9999, 99, 99)
 
-rows = []
+status_map = {
+    'ATRASADO':  'Atrasado',
+    'PAGO':      'Pago',
+    'ABERTO':    'A Vencer',
+    'CANCELADO': 'Cancelado',
+}
+
+rows_xlsx  = []   # 1 linha por título (pro Excel)
+rows_json  = []   # 1 linha por cliente com array titulos (pro dashboard)
 total_valor    = 0
 total_distrato = 0
 
@@ -273,37 +281,37 @@ for cod, tits in titulos.items():
     if cl['distrato'] == 'Sim':
         total_distrato += val_total
 
-    status_map = {
-        'ATRASADO':  'Atrasado',
-        'PAGO':      'Pago',
-        'ABERTO':    'A Vencer',
-        'CANCELADO': 'Cancelado',
-    }
-
+    # Monta array de títulos pro JSON
+    titulos_arr = []
     for t in tits_sorted:
         data_venc = t.get('data_vencimento') or ''
         valor_tit = float(t.get('valor_documento') or t.get('nValParcela') or 0)
-
         numero_doc = (
             t.get('numero_documento_fiscal') or
             t.get('numero_documento') or
             t.get('cNumParcela') or
-            str(t.get('nIdTitulo', '')) or
-            'N/I'
+            str(t.get('nIdTitulo', '')) or 'N/I'
         )
-
-        # categoria vem como codigo_categoria (ex: "1.01.02") — resolve nome via categorias_map
         cod_categoria = t.get('codigo_categoria') or ''
         if not cod_categoria:
             categorias_arr = t.get('categorias') or []
             if categorias_arr:
                 cod_categoria = categorias_arr[0].get('codigo_categoria', '')
-        categoria = categorias_map.get(cod_categoria, cod_categoria)
-
+        categoria   = categorias_map.get(cod_categoria, cod_categoria)
         status_raw  = (t.get('status_titulo') or t.get('cStatus') or 'ATRASADO').upper().strip()
         status_exib = status_map.get(status_raw, status_raw.capitalize())
 
-        rows.append({
+        titulos_arr.append({
+            'numero_documento': numero_doc,
+            'categoria':        categoria,
+            'data_vencimento':  data_venc,
+            'status':           status_exib,
+            'dias_atraso':      calcular_dias(data_venc),
+            'valor_documento':  valor_tit,
+        })
+
+        # Excel: 1 linha por título
+        rows_xlsx.append({
             'Razao Social':           cl['razao_social'],
             'Nome Fantasia':          cl['nome_fantasia'],
             'CNPJ/CPF':               cl['cnpj_cpf'],
@@ -329,28 +337,51 @@ for cod, tits in titulos.items():
             'Tags':                   cl['todas_tags'],
         })
 
-# Ordena por Valor Atrasado desc, depois nome e vencimento
-rows.sort(key=lambda x: (-x['Valor Atrasado (R$)'], x['Razao Social'], x['Vencimento']))
+    # JSON: 1 linha por cliente
+    rows_json.append({
+        'Razao Social':           cl['razao_social'],
+        'Nome Fantasia':          cl['nome_fantasia'],
+        'CNPJ/CPF':               cl['cnpj_cpf'],
+        'Email':                  cl['email'],
+        'Telefone':               cl['telefone'],
+        'Cidade':                 cl['cidade'],
+        'Estado':                 cl['estado'],
+        'Regiao':                 cl['regiao'],
+        'Diretora Regional':      cl['diretora_regional'],
+        'Gestora':                gestora_nome or '',
+        'Modelo de Negocio':      cl['modelo'],
+        'Distrato':               cl['distrato'],
+        'Qtd Titulos':            len(tits),
+        'Valor Atrasado (R$)':    val_total,
+        'Dias em Atraso':         calcular_dias(mais_antigo),
+        'Vencimento Mais Antigo': mais_antigo,
+        'Codigo Omie':            cl['codigo'],
+        'Tags':                   cl['todas_tags'],
+        'titulos':                titulos_arr,
+    })
+
+# Ordena
+rows_xlsx.sort(key=lambda x: (-x['Valor Atrasado (R$)'], x['Razao Social'], x['Vencimento']))
+rows_json.sort(key=lambda x: -x['Valor Atrasado (R$)'])
 
 total_valor    = round(total_valor, 2)
 total_distrato = round(total_distrato, 2)
 
 # ----------------------------------------------------------------
-# SALVAR JSON
+# SALVAR JSON — 1 linha por cliente com array de títulos
 # ----------------------------------------------------------------
 print('\nSalvando inadimplentes.json...')
-clientes_unicos = list({r['CNPJ/CPF'] for r in rows})
 with open('inadimplentes.json', 'w', encoding='utf-8') as f:
     json.dump({
         'gerado_em':      datetime.now().strftime('%d/%m/%Y %H:%M'),
-        'total_clientes': len(clientes_unicos),
+        'total_clientes': len(rows_json),
         'total_titulos':  total_tit,
         'valor_total':    total_valor,
-        'inadimplentes':  rows,
+        'inadimplentes':  rows_json,
     }, f, ensure_ascii=False, indent=2)
 
 # ----------------------------------------------------------------
-# SALVAR XLSX — UMA SÓ ABA
+# SALVAR XLSX — 1 linha por título (igual antes)
 # ----------------------------------------------------------------
 print('Salvando inadimplentes-clubcasa.xlsx...')
 
@@ -377,7 +408,6 @@ headers = [
     'Codigo Omie', 'Tags'
 ]
 
-# Cabeçalho
 for col, h in enumerate(headers, start=1):
     cell = ws.cell(row=1, column=col, value=h)
     cell.fill = roxo
@@ -386,10 +416,9 @@ for col, h in enumerate(headers, start=1):
     cell.border = borda
 ws.row_dimensions[1].height = 30
 
-# Dados — alterna cor por cliente
 prev_cnpj  = None
 usar_claro = False
-for i, r in enumerate(rows, start=2):
+for i, r in enumerate(rows_xlsx, start=2):
     if r['CNPJ/CPF'] != prev_cnpj:
         usar_claro = not usar_claro
         prev_cnpj  = r['CNPJ/CPF']
@@ -409,25 +438,23 @@ for i, r in enumerate(rows, start=2):
         cell.font   = Font(name='Arial', size=10)
         if usar_claro:
             cell.fill = roxo_claro
-        if col == 14:  # Valor Atrasado (R$)
+        if col == 14:
             cell.number_format = 'R$ #,##0.00'
-        if col == 21:  # Valor do título
+        if col == 21:
             cell.number_format = 'R$ #,##0.00'
 
-# Linha de total
-ultima = len(rows) + 2
+ultima = len(rows_xlsx) + 2
 for col in range(1, len(headers) + 1):
     cell = ws.cell(row=ultima, column=col)
     cell.fill   = roxo
     cell.border = borda
     cell.font   = branco_ft
 
-ws.cell(row=ultima, column=1,  value='TOTAL GERAL')
-ws.cell(row=ultima, column=21, value=round(sum(r['Valor'] for r in rows), 2)).number_format = 'R$ #,##0.00'
+ws.cell(row=ultima, column=1, value='TOTAL GERAL')
+ws.cell(row=ultima, column=21, value=round(sum(r['Valor'] for r in rows_xlsx), 2)).number_format = 'R$ #,##0.00'
 ws.cell(row=ultima, column=21).fill = roxo
 ws.cell(row=ultima, column=21).font = branco_ft
 
-# Larguras
 larguras = [35, 30, 18, 30, 15, 20, 8, 22, 20, 22, 20, 10, 10, 18, 12, 18, 12, 20, 22, 14, 16, 14, 30]
 for i, w in enumerate(larguras, start=1):
     ws.column_dimensions[get_column_letter(i)].width = w
@@ -437,9 +464,10 @@ ws.auto_filter.ref = f'A1:{get_column_letter(len(headers))}1'
 
 wb.save('inadimplentes-clubcasa.xlsx')
 
+clientes_unicos = len(rows_json)
 print(f'\n{"=" * 60}')
 print(f'CONCLUIDO!')
-print(f'Clientes inadimplentes: {len(clientes_unicos)}')
+print(f'Clientes inadimplentes: {clientes_unicos}')
 print(f'Total de titulos:       {total_tit}')
 print(f'Valor total atrasado:   R$ {total_valor:,.2f}')
 print(f'Valor em distrato:      R$ {total_distrato:,.2f}')
