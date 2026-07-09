@@ -1,5 +1,5 @@
 import requests, time, unicodedata, json, html as html_lib
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
@@ -10,7 +10,32 @@ OMIE_CLIENTES   = 'https://app.omie.com.br/api/v1/geral/clientes/'
 OMIE_CONTAS     = 'https://app.omie.com.br/api/v1/financas/contareceber/'
 OMIE_VENDEDORES = 'https://app.omie.com.br/api/v1/geral/vendedores/'
 OMIE_CATEGORIAS = 'https://app.omie.com.br/api/v1/geral/categorias/'
+OMIE_EXTRATO    = 'https://app.omie.com.br/api/v1/financas/extrato/'
 RPP = 100
+
+# Contas correntes que têm recebimentos reais
+CONTAS_RECEBIMENTO = [
+    (8453130413, 'CEF Conta Garantida'),
+    (8528323193, 'Omie.CASH'),
+    (8650909950, 'GETNET'),
+    (8591664847, 'Itaú Unibanco'),
+    (8591664978, 'CEF 2'),
+]
+
+# Categorias de recebimento a monitorar
+CATEGORIAS_ALVO = {
+    'mensalidade',
+    'pontuação',
+    'saldo de pontuação',
+    'ipcd',
+    'distrato - aviso prévio',
+}
+
+# Período: últimos 90 dias
+hoje     = date.today()
+d_inicio = hoje - timedelta(days=90)
+PERIODO_INICIO = d_inicio.strftime('%d/%m/%Y')
+PERIODO_FIM    = hoje.strftime('%d/%m/%Y')
 
 def norm(s):
     if not s: return ''
@@ -73,17 +98,14 @@ def calcular_dias(data_br):
     except:
         return 0
 
-def fmt_brl(v):
-    return f'R$ {v:,.2f}'.replace(',', 'X').replace('.', ',').replace('X', '.')
-
 print('=' * 60)
-print('CLUB&CASA - Gerando relatorio de inadimplentes')
+print('CLUB&CASA - Gerando relatorio de inadimplentes + recebimentos')
 print('=' * 60)
 
 # ----------------------------------------------------------------
-# [1/4] LOJISTAS
+# [1/5] LOJISTAS
 # ----------------------------------------------------------------
-print('\n[1/4] Buscando lojistas no Omie...')
+print('\n[1/5] Buscando lojistas no Omie...')
 p, tp = 1, 1
 lojistas = {}
 while p <= tp:
@@ -93,29 +115,21 @@ while p <= tp:
     })
     if not r or not r.get('clientes_cadastro'): break
     tp = r.get('total_de_paginas', 1)
-
     for c in r['clientes_cadastro']:
         if invalido(c): continue
-
         raw_tags = [t.get('tag', '') for t in c.get('tags', [])]
         nd_tags  = [norm(t) for t in raw_tags]
-
         if 'fornecedor' in nd_tags and 'cliente' not in nd_tags:
             continue
-
         caracs = extrair_caracteristicas(c.get('caracteristicas', []))
-
         regiao_tag   = next((raw_tags[i] for i, t in enumerate(nd_tags) if t in TAGS_REGIAO), '')
         modelo_tag   = next((raw_tags[i] for i, t in enumerate(nd_tags) if t in TAGS_MODELO), '')
         distrato_tag = 'distrato' in nd_tags
-
         regiao_final   = caracs['regiao']  if caracs['regiao']  else regiao_tag
         modelo_final   = caracs['modelo']  if caracs['modelo']  else modelo_tag
         distrato_final = 'Sim' if (norm(caracs['status']) == 'distrato' or distrato_tag) else 'Nao'
-
         email_raw = c.get('email', '') or ''
         codigo    = c.get('codigo_cliente_omie')
-
         lojistas[str(codigo)] = {
             'codigo':            codigo,
             'razao_social':      html_lib.unescape(c.get('razao_social', '') or ''),
@@ -133,15 +147,14 @@ while p <= tp:
             'todas_tags':        ', '.join(raw_tags),
             'codigo_vendedor':   str((c.get('recomendacoes') or {}).get('codigo_vendedor', '') or ''),
         }
-
     print(f'  Pag {p:3}/{tp} - {len(lojistas)} lojistas')
     p += 1
     time.sleep(0.3)
 
 # ----------------------------------------------------------------
-# [2/4] GESTORAS
+# [2/5] GESTORAS
 # ----------------------------------------------------------------
-print('\n[2/4] Buscando gestoras...')
+print('\n[2/5] Buscando gestoras...')
 vendedores = {}
 try:
     p, tp = 1, 1
@@ -164,9 +177,9 @@ except Exception as e:
     print(f'  Erro: {e}')
 
 # ----------------------------------------------------------------
-# [2b/4] CATEGORIAS
+# [2b/5] CATEGORIAS
 # ----------------------------------------------------------------
-print('\n[2b/4] Buscando categorias no Omie...')
+print('\n[2b/5] Buscando categorias no Omie...')
 categorias_map = {}
 try:
     p, tp = 1, 1
@@ -189,9 +202,9 @@ except Exception as e:
     print(f'  Erro: {e}')
 
 # ----------------------------------------------------------------
-# [3/4] TÍTULOS ATRASADOS
+# [3/5] TÍTULOS ATRASADOS
 # ----------------------------------------------------------------
-print('\n[3/4] Buscando titulos ATRASADOS...')
+print('\n[3/5] Buscando titulos ATRASADOS...')
 p, tp = 1, 1
 titulos   = {}
 total_tit = 0
@@ -203,47 +216,89 @@ while p <= tp:
         'call': 'ListarContasReceber', 'app_key': APP_KEY, 'app_secret': APP_SECRET,
         'param': [{'pagina': p, 'registros_por_pagina': RPP, 'filtrar_por_status': 'ATRASADO'}]
     })
-
     if not r:
         print(f'  Sem resposta na pag {p}, encerrando.')
         break
-
     if r.get('faultstring'):
         erros_consecutivos += 1
         print(f'  Aviso pag {p}: {r["faultstring"]}')
         if erros_consecutivos >= 5:
-            print('  Muitos erros consecutivos, encerrando.')
             break
         p += 1
         time.sleep(1.5)
         continue
-
     erros_consecutivos = 0
     tp   = r.get('total_de_paginas', 1)
     regs = r.get('conta_receber_cadastro') or r.get('lista_contareceber') or []
-
     for t in regs:
         cod = str(t.get('codigo_cliente_fornecedor', ''))
         if not cod: continue
-
         status_tit = (t.get('status_titulo') or '').upper().strip()
         if status_tit == 'CANCELADO':
             total_cancelados += 1
             continue
-
         if cod not in titulos:
             titulos[cod] = []
         titulos[cod].append(t)
         total_tit += 1
-
     print(f'  Pag {p:3}/{tp} - {total_tit} titulos | {len(titulos)} clientes')
     p += 1
     time.sleep(0.6)
 
 # ----------------------------------------------------------------
-# [4/4] CRUZAMENTO
+# [4/5] EXTRATO - RECEBIMENTOS REAIS (últimos 90 dias)
 # ----------------------------------------------------------------
-print('\n[4/4] Cruzando dados...')
+print(f'\n[4/5] Buscando recebimentos ({PERIODO_INICIO} a {PERIODO_FIM})...')
+recebimentos = []
+
+for nCodCC, nome_conta in CONTAS_RECEBIMENTO:
+    try:
+        r = omie_post(OMIE_EXTRATO, {
+            'call': 'ListarExtrato', 'app_key': APP_KEY, 'app_secret': APP_SECRET,
+            'param': [{'nCodCC': nCodCC, 'dPeriodoInicial': PERIODO_INICIO, 'dPeriodoFinal': PERIODO_FIM}]
+        })
+        movs = r.get('listaMovimentos', [])
+        cnt = 0
+        for m in movs:
+            # Só receitas (R) nas categorias alvo
+            if m.get('cNatureza') != 'R':
+                continue
+            cat = m.get('cDesCategoria', '').lower().strip()
+            if cat not in CATEGORIAS_ALVO:
+                continue
+            valor = float(m.get('nValorDocumento', 0))
+            if valor <= 0:
+                continue
+
+            recebimentos.append({
+                'Data':           m.get('dDataLancamento', ''),
+                'Conciliacao':    m.get('dDataConciliacao', ''),
+                'Cliente':        m.get('cDesCliente', '') or m.get('cRazCliente', ''),
+                'CNPJ':           m.get('cDocCliente', ''),
+                'Categoria':      m.get('cDesCategoria', ''),
+                'Conta Corrente': nome_conta,
+                'Documento':      m.get('cNumero', '') or m.get('cDocumentoFiscal', ''),
+                'Tipo Doc':       m.get('cTipoDocumento', ''),
+                'Situacao':       m.get('cSituacao', ''),
+                'Vendedor':       m.get('cVendedor', ''),
+                'Valor':          valor,
+                'Observacoes':    m.get('cObservacoes', ''),
+            })
+            cnt += 1
+        print(f'  {nome_conta}: {cnt} recebimentos')
+    except Exception as e:
+        print(f'  {nome_conta}: erro - {e}')
+    time.sleep(0.5)
+
+# Ordena por data desc
+recebimentos.sort(key=lambda x: x['Data'], reverse=True)
+total_recebido = round(sum(r['Valor'] for r in recebimentos), 2)
+print(f'  Total recebimentos: {len(recebimentos)} | Valor: R$ {total_recebido:,.2f}')
+
+# ----------------------------------------------------------------
+# [5/5] CRUZAMENTO INADIMPLENTES
+# ----------------------------------------------------------------
+print('\n[5/5] Cruzando dados inadimplentes...')
 
 def sort_key(t):
     dv = t.get('data_vencimento') or '99/99/9999'
@@ -260,8 +315,8 @@ status_map = {
     'CANCELADO': 'Cancelado',
 }
 
-rows_xlsx  = []   # 1 linha por título (pro Excel)
-rows_json  = []   # 1 linha por cliente com array titulos (pro dashboard)
+rows_xlsx  = []
+rows_json  = []
 total_valor    = 0
 total_distrato = 0
 
@@ -281,7 +336,6 @@ for cod, tits in titulos.items():
     if cl['distrato'] == 'Sim':
         total_distrato += val_total
 
-    # Monta array de títulos pro JSON
     titulos_arr = []
     for t in tits_sorted:
         data_venc = t.get('data_vencimento') or ''
@@ -310,7 +364,6 @@ for cod, tits in titulos.items():
             'valor_documento':  valor_tit,
         })
 
-        # Excel: 1 linha por título
         rows_xlsx.append({
             'Razao Social':           cl['razao_social'],
             'Nome Fantasia':          cl['nome_fantasia'],
@@ -337,7 +390,6 @@ for cod, tits in titulos.items():
             'Tags':                   cl['todas_tags'],
         })
 
-    # JSON: 1 linha por cliente
     rows_json.append({
         'Razao Social':           cl['razao_social'],
         'Nome Fantasia':          cl['nome_fantasia'],
@@ -360,15 +412,13 @@ for cod, tits in titulos.items():
         'titulos':                titulos_arr,
     })
 
-# Ordena
 rows_xlsx.sort(key=lambda x: (-x['Valor Atrasado (R$)'], x['Razao Social'], x['Vencimento']))
 rows_json.sort(key=lambda x: -x['Valor Atrasado (R$)'])
-
 total_valor    = round(total_valor, 2)
 total_distrato = round(total_distrato, 2)
 
 # ----------------------------------------------------------------
-# SALVAR JSON — 1 linha por cliente com array de títulos
+# SALVAR JSONs
 # ----------------------------------------------------------------
 print('\nSalvando inadimplentes.json...')
 with open('inadimplentes.json', 'w', encoding='utf-8') as f:
@@ -380,17 +430,28 @@ with open('inadimplentes.json', 'w', encoding='utf-8') as f:
         'inadimplentes':  rows_json,
     }, f, ensure_ascii=False, indent=2)
 
+print('Salvando recebimentos.json...')
+with open('recebimentos.json', 'w', encoding='utf-8') as f:
+    json.dump({
+        'gerado_em':       datetime.now().strftime('%d/%m/%Y %H:%M'),
+        'periodo_inicio':  PERIODO_INICIO,
+        'periodo_fim':     PERIODO_FIM,
+        'total_registros': len(recebimentos),
+        'valor_total':     total_recebido,
+        'recebimentos':    recebimentos,
+    }, f, ensure_ascii=False, indent=2)
+
 # ----------------------------------------------------------------
-# SALVAR XLSX — 1 linha por título (igual antes)
+# SALVAR XLSX com 2 abas
 # ----------------------------------------------------------------
 print('Salvando inadimplentes-clubcasa.xlsx...')
 
 wb = Workbook()
-ws = wb.active
-ws.title = 'Inadimplentes'
 
 roxo       = PatternFill(start_color='5B52E8', end_color='5B52E8', fill_type='solid')
 roxo_claro = PatternFill(start_color='F4F6FB', end_color='F4F6FB', fill_type='solid')
+verde      = PatternFill(start_color='10B981', end_color='10B981', fill_type='solid')
+verde_claro= PatternFill(start_color='F0FDF4', end_color='F0FDF4', fill_type='solid')
 branco_ft  = Font(color='FFFFFF', bold=True, size=11, name='Arial')
 borda = Border(
     left=Side(style='thin',   color='E2E6F0'),
@@ -399,7 +460,11 @@ borda = Border(
     bottom=Side(style='thin', color='E2E6F0')
 )
 
-headers = [
+# ── ABA 1: Inadimplentes ─────────────────────────────────────────
+ws1 = wb.active
+ws1.title = 'Inadimplentes'
+
+headers1 = [
     'Razao Social', 'Nome Fantasia', 'CNPJ/CPF', 'Email', 'Telefone',
     'Cidade', 'Estado', 'Regiao', 'Diretora Regional', 'Gestora',
     'Modelo de Negocio', 'Distrato',
@@ -408,13 +473,13 @@ headers = [
     'Codigo Omie', 'Tags'
 ]
 
-for col, h in enumerate(headers, start=1):
-    cell = ws.cell(row=1, column=col, value=h)
+for col, h in enumerate(headers1, start=1):
+    cell = ws1.cell(row=1, column=col, value=h)
     cell.fill = roxo
     cell.font = branco_ft
     cell.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
     cell.border = borda
-ws.row_dimensions[1].height = 30
+ws1.row_dimensions[1].height = 30
 
 prev_cnpj  = None
 usar_claro = False
@@ -422,7 +487,6 @@ for i, r in enumerate(rows_xlsx, start=2):
     if r['CNPJ/CPF'] != prev_cnpj:
         usar_claro = not usar_claro
         prev_cnpj  = r['CNPJ/CPF']
-
     valores = [
         r['Razao Social'], r['Nome Fantasia'], r['CNPJ/CPF'], r['Email'], r['Telefone'],
         r['Cidade'], r['Estado'], r['Regiao'], r['Diretora Regional'], r['Gestora'],
@@ -431,45 +495,82 @@ for i, r in enumerate(rows_xlsx, start=2):
         r['Status'], r['Documento'], r['Categoria'], r['Vencimento'], r['Valor'],
         r['Codigo Omie'], r['Tags']
     ]
-
     for col, v in enumerate(valores, start=1):
-        cell = ws.cell(row=i, column=col, value=v)
+        cell = ws1.cell(row=i, column=col, value=v)
         cell.border = borda
         cell.font   = Font(name='Arial', size=10)
-        if usar_claro:
-            cell.fill = roxo_claro
-        if col == 14:
-            cell.number_format = 'R$ #,##0.00'
-        if col == 21:
-            cell.number_format = 'R$ #,##0.00'
+        if usar_claro: cell.fill = roxo_claro
+        if col == 14: cell.number_format = 'R$ #,##0.00'
+        if col == 21: cell.number_format = 'R$ #,##0.00'
 
-ultima = len(rows_xlsx) + 2
-for col in range(1, len(headers) + 1):
-    cell = ws.cell(row=ultima, column=col)
-    cell.fill   = roxo
+ultima1 = len(rows_xlsx) + 2
+for col in range(1, len(headers1) + 1):
+    cell = ws1.cell(row=ultima1, column=col)
+    cell.fill = roxo; cell.border = borda; cell.font = branco_ft
+ws1.cell(row=ultima1, column=1, value='TOTAL GERAL')
+ws1.cell(row=ultima1, column=21, value=round(sum(r['Valor'] for r in rows_xlsx), 2)).number_format = 'R$ #,##0.00'
+ws1.cell(row=ultima1, column=21).fill = roxo
+ws1.cell(row=ultima1, column=21).font = branco_ft
+
+larguras1 = [35,30,18,30,15,20,8,22,20,22,20,10,10,18,12,18,12,20,22,14,16,14,30]
+for i, w in enumerate(larguras1, start=1):
+    ws1.column_dimensions[get_column_letter(i)].width = w
+ws1.freeze_panes = 'A2'
+ws1.auto_filter.ref = f'A1:{get_column_letter(len(headers1))}1'
+
+# ── ABA 2: Recebimentos ──────────────────────────────────────────
+ws2 = wb.create_sheet('Recebimentos')
+
+headers2 = [
+    'Data Lançamento', 'Data Conciliação', 'Cliente', 'CNPJ',
+    'Categoria', 'Conta Corrente', 'Documento', 'Tipo Doc',
+    'Situação', 'Vendedor/Gestora', 'Valor (R$)', 'Observações'
+]
+
+for col, h in enumerate(headers2, start=1):
+    cell = ws2.cell(row=1, column=col, value=h)
+    cell.fill = verde
+    cell.font = branco_ft
+    cell.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
     cell.border = borda
-    cell.font   = branco_ft
+ws2.row_dimensions[1].height = 30
 
-ws.cell(row=ultima, column=1, value='TOTAL GERAL')
-ws.cell(row=ultima, column=21, value=round(sum(r['Valor'] for r in rows_xlsx), 2)).number_format = 'R$ #,##0.00'
-ws.cell(row=ultima, column=21).fill = roxo
-ws.cell(row=ultima, column=21).font = branco_ft
+for i, r in enumerate(recebimentos, start=2):
+    valores = [
+        r['Data'], r['Conciliacao'], r['Cliente'], r['CNPJ'],
+        r['Categoria'], r['Conta Corrente'], r['Documento'], r['Tipo Doc'],
+        r['Situacao'], r['Vendedor'], r['Valor'], r['Observacoes']
+    ]
+    for col, v in enumerate(valores, start=1):
+        cell = ws2.cell(row=i, column=col, value=v)
+        cell.border = borda
+        cell.font   = Font(name='Arial', size=10)
+        if i % 2 == 0: cell.fill = verde_claro
+        if col == 11: cell.number_format = 'R$ #,##0.00'
 
-larguras = [35, 30, 18, 30, 15, 20, 8, 22, 20, 22, 20, 10, 10, 18, 12, 18, 12, 20, 22, 14, 16, 14, 30]
-for i, w in enumerate(larguras, start=1):
-    ws.column_dimensions[get_column_letter(i)].width = w
+ultima2 = len(recebimentos) + 2
+for col in range(1, len(headers2) + 1):
+    cell = ws2.cell(row=ultima2, column=col)
+    cell.fill = verde; cell.border = borda; cell.font = branco_ft
+ws2.cell(row=ultima2, column=1, value='TOTAL RECEBIDO')
+ws2.cell(row=ultima2, column=11, value=total_recebido).number_format = 'R$ #,##0.00'
+ws2.cell(row=ultima2, column=11).fill = verde
+ws2.cell(row=ultima2, column=11).font = branco_ft
 
-ws.freeze_panes = 'A2'
-ws.auto_filter.ref = f'A1:{get_column_letter(len(headers))}1'
+larguras2 = [14,14,35,18,20,20,18,12,16,20,14,40]
+for i, w in enumerate(larguras2, start=1):
+    ws2.column_dimensions[get_column_letter(i)].width = w
+ws2.freeze_panes = 'A2'
+ws2.auto_filter.ref = f'A1:{get_column_letter(len(headers2))}1'
 
 wb.save('inadimplentes-clubcasa.xlsx')
 
-clientes_unicos = len(rows_json)
 print(f'\n{"=" * 60}')
 print(f'CONCLUIDO!')
-print(f'Clientes inadimplentes: {clientes_unicos}')
+print(f'Clientes inadimplentes: {len(rows_json)}')
 print(f'Total de titulos:       {total_tit}')
 print(f'Valor total atrasado:   R$ {total_valor:,.2f}')
 print(f'Valor em distrato:      R$ {total_distrato:,.2f}')
+print(f'Recebimentos (90d):     {len(recebimentos)} | R$ {total_recebido:,.2f}')
 print(f'Titulos cancelados ignorados: {total_cancelados}')
-print(f'Arquivos: inadimplentes.json | inadimplentes-clubcasa.xlsx')
+print(f'Arquivos: inadimplentes.json | recebimentos.json | inadimplentes-clubcasa.xlsx')

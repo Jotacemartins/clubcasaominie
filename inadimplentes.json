@@ -1,8 +1,8 @@
 {
-  "gerado_em": "08/07/2026 12:47",
-  "total_clientes": 400,
-  "total_titulos": 2189,
-  "valor_total": 4395554.98,
+  "gerado_em": "08/07/2026 21:17",
+  "total_clientes": 399,
+  "total_titulos": 2187,
+  "valor_total": 4389859.93,
   "inadimplentes": [
     {
       "Razao Social": "VIDAL LUX MOVEIS PLANEJADOS LTDA",
@@ -112,7 +112,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "03/10/2025",
           "status": "Atrasado",
           "dias_atraso": 278,
@@ -144,7 +144,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "03/11/2025",
           "status": "Atrasado",
           "dias_atraso": 247,
@@ -176,7 +176,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "03/12/2025",
           "status": "Atrasado",
           "dias_atraso": 217,
@@ -208,7 +208,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "03/01/2026",
           "status": "Atrasado",
           "dias_atraso": 186,
@@ -216,7 +216,7 @@
         },
         {
           "numero_documento": "47722",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "12/01/2026",
           "status": "Atrasado",
           "dias_atraso": 177,
@@ -240,7 +240,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "03/02/2026",
           "status": "Atrasado",
           "dias_atraso": 155,
@@ -256,7 +256,7 @@
         },
         {
           "numero_documento": "49865",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/02/2026",
           "status": "Atrasado",
           "dias_atraso": 148,
@@ -272,7 +272,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "03/03/2026",
           "status": "Atrasado",
           "dias_atraso": 127,
@@ -304,7 +304,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "03/04/2026",
           "status": "Atrasado",
           "dias_atraso": 96,
@@ -336,7 +336,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "03/05/2026",
           "status": "Atrasado",
           "dias_atraso": 66,
@@ -360,7 +360,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "03/06/2026",
           "status": "Atrasado",
           "dias_atraso": 35,
@@ -384,7 +384,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "03/07/2026",
           "status": "Atrasado",
           "dias_atraso": 5,
@@ -486,7 +486,7 @@
         },
         {
           "numero_documento": "ENTRADA",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "12/03/2026",
           "status": "Atrasado",
           "dias_atraso": 118,
@@ -540,7 +540,7 @@
       "titulos": [
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "28/09/2025",
           "status": "Recebido",
           "dias_atraso": 283,
@@ -556,7 +556,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/05/2026",
           "status": "Recebido",
           "dias_atraso": 44,
@@ -596,7 +596,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/06/2026",
           "status": "Atrasado",
           "dias_atraso": 13,
@@ -650,7 +650,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/08/2025",
           "status": "Atrasado",
           "dias_atraso": 317,
@@ -666,7 +666,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/09/2025",
           "status": "Atrasado",
           "dias_atraso": 286,
@@ -682,7 +682,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/10/2025",
           "status": "Atrasado",
           "dias_atraso": 256,
@@ -698,7 +698,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/11/2025",
           "status": "Atrasado",
           "dias_atraso": 225,
@@ -714,7 +714,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/12/2025",
           "status": "Atrasado",
           "dias_atraso": 195,
@@ -760,7 +760,7 @@
       "titulos": [
         {
           "numero_documento": "46782",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/12/2025",
           "status": "Atrasado",
           "dias_atraso": 210,
@@ -776,7 +776,7 @@
         },
         {
           "numero_documento": "47867",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/01/2026",
           "status": "Atrasado",
           "dias_atraso": 179,
@@ -1176,7 +1176,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "30/11/2025",
           "status": "Atrasado",
           "dias_atraso": 220,
@@ -1200,7 +1200,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "30/12/2025",
           "status": "Atrasado",
           "dias_atraso": 190,
@@ -1232,7 +1232,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "30/01/2026",
           "status": "Atrasado",
           "dias_atraso": 159,
@@ -1296,7 +1296,7 @@
         },
         {
           "numero_documento": "53299",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/05/2026",
           "status": "Atrasado",
           "dias_atraso": 59,
@@ -1320,7 +1320,7 @@
         },
         {
           "numero_documento": "53299",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/06/2026",
           "status": "Atrasado",
           "dias_atraso": 28,
@@ -1366,7 +1366,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "02/01/2025",
           "status": "Atrasado",
           "dias_atraso": 552,
@@ -1374,7 +1374,7 @@
         },
         {
           "numero_documento": "32118",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "05/01/2025",
           "status": "Atrasado",
           "dias_atraso": 549,
@@ -1390,7 +1390,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "03/02/2025",
           "status": "Atrasado",
           "dias_atraso": 520,
@@ -1398,7 +1398,7 @@
         },
         {
           "numero_documento": "33890",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "05/02/2025",
           "status": "Atrasado",
           "dias_atraso": 518,
@@ -1414,7 +1414,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "03/03/2025",
           "status": "Atrasado",
           "dias_atraso": 492,
@@ -1430,7 +1430,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "03/04/2025",
           "status": "Atrasado",
           "dias_atraso": 461,
@@ -1454,7 +1454,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "03/05/2025",
           "status": "Atrasado",
           "dias_atraso": 431,
@@ -1540,7 +1540,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/06/2026",
           "status": "Atrasado",
           "dias_atraso": 13,
@@ -1578,7 +1578,7 @@
       "titulos": [
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "10/11/2025",
           "status": "Atrasado",
           "dias_atraso": 240,
@@ -1586,7 +1586,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "10/12/2025",
           "status": "Atrasado",
           "dias_atraso": 210,
@@ -1594,7 +1594,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "10/01/2026",
           "status": "Atrasado",
           "dias_atraso": 179,
@@ -1602,7 +1602,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "10/02/2026",
           "status": "Atrasado",
           "dias_atraso": 148,
@@ -1610,7 +1610,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "10/03/2026",
           "status": "Atrasado",
           "dias_atraso": 120,
@@ -1618,7 +1618,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "10/04/2026",
           "status": "Atrasado",
           "dias_atraso": 89,
@@ -1626,7 +1626,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "10/05/2026",
           "status": "Atrasado",
           "dias_atraso": 59,
@@ -1634,7 +1634,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "10/06/2026",
           "status": "Atrasado",
           "dias_atraso": 28,
@@ -1838,7 +1838,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/06/2026",
           "status": "Recebido",
           "dias_atraso": 13,
@@ -1876,7 +1876,7 @@
       "titulos": [
         {
           "numero_documento": "N/I",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/11/2025",
           "status": "Atrasado",
           "dias_atraso": 235,
@@ -1908,7 +1908,7 @@
         },
         {
           "numero_documento": "N/I",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/12/2025",
           "status": "Atrasado",
           "dias_atraso": 205,
@@ -2170,7 +2170,7 @@
         },
         {
           "numero_documento": "54738",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "12/06/2026",
           "status": "Atrasado",
           "dias_atraso": 26,
@@ -2272,7 +2272,7 @@
         },
         {
           "numero_documento": "45193",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "21/12/2025",
           "status": "Atrasado",
           "dias_atraso": 199,
@@ -2318,7 +2318,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/05/2025",
           "status": "Atrasado",
           "dias_atraso": 419,
@@ -2334,7 +2334,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/06/2025",
           "status": "Atrasado",
           "dias_atraso": 388,
@@ -2358,7 +2358,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/07/2025",
           "status": "Atrasado",
           "dias_atraso": 358,
@@ -2382,7 +2382,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/08/2025",
           "status": "Atrasado",
           "dias_atraso": 327,
@@ -2406,7 +2406,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/09/2025",
           "status": "Atrasado",
           "dias_atraso": 296,
@@ -2430,7 +2430,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/10/2025",
           "status": "Atrasado",
           "dias_atraso": 266,
@@ -2454,7 +2454,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/11/2025",
           "status": "Atrasado",
           "dias_atraso": 235,
@@ -2470,7 +2470,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/12/2025",
           "status": "Atrasado",
           "dias_atraso": 205,
@@ -2486,7 +2486,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/01/2026",
           "status": "Atrasado",
           "dias_atraso": 174,
@@ -2502,7 +2502,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/02/2026",
           "status": "Atrasado",
           "dias_atraso": 143,
@@ -2518,7 +2518,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/03/2026",
           "status": "Atrasado",
           "dias_atraso": 115,
@@ -2846,7 +2846,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/01/2026",
           "status": "Atrasado",
           "dias_atraso": 174,
@@ -2870,7 +2870,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "05/02/2026",
           "status": "Atrasado",
           "dias_atraso": 153,
@@ -2902,7 +2902,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "05/03/2026",
           "status": "Atrasado",
           "dias_atraso": 125,
@@ -2926,7 +2926,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "05/04/2026",
           "status": "Atrasado",
           "dias_atraso": 94,
@@ -2942,7 +2942,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "05/05/2026",
           "status": "Atrasado",
           "dias_atraso": 64,
@@ -3060,7 +3060,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "20/04/2026",
           "status": "Recebido",
           "dias_atraso": 79,
@@ -3084,7 +3084,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "20/05/2026",
           "status": "Atrasado",
           "dias_atraso": 49,
@@ -3108,7 +3108,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "20/06/2026",
           "status": "Atrasado",
           "dias_atraso": 18,
@@ -3138,7 +3138,7 @@
       "titulos": [
         {
           "numero_documento": "ACORDO",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/05/2025",
           "status": "Atrasado",
           "dias_atraso": 409,
@@ -3154,7 +3154,7 @@
         },
         {
           "numero_documento": "ACORDO",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/06/2025",
           "status": "Atrasado",
           "dias_atraso": 378,
@@ -3170,7 +3170,7 @@
         },
         {
           "numero_documento": "ACORDO",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/07/2025",
           "status": "Atrasado",
           "dias_atraso": 348,
@@ -3186,7 +3186,7 @@
         },
         {
           "numero_documento": "ACORDO",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/08/2025",
           "status": "Atrasado",
           "dias_atraso": 317,
@@ -3194,7 +3194,7 @@
         },
         {
           "numero_documento": "ACORDO",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/09/2025",
           "status": "Atrasado",
           "dias_atraso": 286,
@@ -3202,7 +3202,7 @@
         },
         {
           "numero_documento": "ACORDO",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/10/2025",
           "status": "Atrasado",
           "dias_atraso": 256,
@@ -3210,7 +3210,7 @@
         },
         {
           "numero_documento": "ACORDO",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/11/2025",
           "status": "Atrasado",
           "dias_atraso": 225,
@@ -3218,7 +3218,7 @@
         },
         {
           "numero_documento": "ACORDO",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/12/2025",
           "status": "Atrasado",
           "dias_atraso": 195,
@@ -3226,7 +3226,7 @@
         },
         {
           "numero_documento": "ACORDO",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/01/2026",
           "status": "Atrasado",
           "dias_atraso": 164,
@@ -3234,7 +3234,7 @@
         },
         {
           "numero_documento": "ACORDO",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/02/2026",
           "status": "Atrasado",
           "dias_atraso": 133,
@@ -3390,7 +3390,7 @@
       "titulos": [
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "01/01/2025",
           "status": "Atrasado",
           "dias_atraso": 553,
@@ -3398,7 +3398,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "01/02/2025",
           "status": "Atrasado",
           "dias_atraso": 522,
@@ -3406,7 +3406,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "01/03/2025",
           "status": "Atrasado",
           "dias_atraso": 494,
@@ -3414,7 +3414,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "01/04/2025",
           "status": "Atrasado",
           "dias_atraso": 463,
@@ -3430,7 +3430,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "01/05/2025",
           "status": "Atrasado",
           "dias_atraso": 433,
@@ -3446,7 +3446,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "01/06/2025",
           "status": "Atrasado",
           "dias_atraso": 402,
@@ -3462,7 +3462,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "01/07/2025",
           "status": "Atrasado",
           "dias_atraso": 372,
@@ -3478,7 +3478,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "01/08/2025",
           "status": "Atrasado",
           "dias_atraso": 341,
@@ -3494,7 +3494,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "01/09/2025",
           "status": "Atrasado",
           "dias_atraso": 310,
@@ -3928,7 +3928,7 @@
         },
         {
           "numero_documento": "49922",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "18/02/2026",
           "status": "Atrasado",
           "dias_atraso": 140,
@@ -3936,7 +3936,7 @@
         },
         {
           "numero_documento": "50692",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "16/03/2026",
           "status": "Atrasado",
           "dias_atraso": 114,
@@ -4264,7 +4264,7 @@
         },
         {
           "numero_documento": "IPCDG",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "08/06/2025",
           "status": "Atrasado",
           "dias_atraso": 395,
@@ -4288,7 +4288,7 @@
         },
         {
           "numero_documento": "IPCDG",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "08/07/2025",
           "status": "Atrasado",
           "dias_atraso": 365,
@@ -4304,7 +4304,7 @@
         },
         {
           "numero_documento": "IPCDG",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "08/08/2025",
           "status": "Atrasado",
           "dias_atraso": 334,
@@ -4320,7 +4320,7 @@
         },
         {
           "numero_documento": "IPCDG",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "08/09/2025",
           "status": "Atrasado",
           "dias_atraso": 303,
@@ -4720,7 +4720,7 @@
         },
         {
           "numero_documento": "43995",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/10/2025",
           "status": "Atrasado",
           "dias_atraso": 266,
@@ -4752,7 +4752,7 @@
         },
         {
           "numero_documento": "43995",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/11/2025",
           "status": "Atrasado",
           "dias_atraso": 235,
@@ -4910,7 +4910,7 @@
         },
         {
           "numero_documento": "46947",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/12/2025",
           "status": "Atrasado",
           "dias_atraso": 210,
@@ -4926,7 +4926,7 @@
         },
         {
           "numero_documento": "47894",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "12/01/2026",
           "status": "Atrasado",
           "dias_atraso": 177,
@@ -5004,7 +5004,7 @@
         },
         {
           "numero_documento": "36204",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/04/2025",
           "status": "Atrasado",
           "dias_atraso": 454,
@@ -5020,7 +5020,7 @@
         },
         {
           "numero_documento": "36204",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "12/05/2025",
           "status": "Atrasado",
           "dias_atraso": 422,
@@ -5066,7 +5066,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "13/01/2026",
           "status": "Atrasado",
           "dias_atraso": 176,
@@ -5090,7 +5090,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "13/02/2026",
           "status": "Atrasado",
           "dias_atraso": 145,
@@ -5114,7 +5114,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "13/03/2026",
           "status": "Atrasado",
           "dias_atraso": 117,
@@ -5138,7 +5138,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "13/04/2026",
           "status": "Atrasado",
           "dias_atraso": 86,
@@ -5154,7 +5154,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "13/05/2026",
           "status": "Atrasado",
           "dias_atraso": 56,
@@ -5172,7 +5172,7 @@
     },
     {
       "Razao Social": "LOR SOLUCOES IMOBILIARIAS LTDA",
-      "Nome Fantasia": "L'OR IMOVEIS",
+      "Nome Fantasia": "LOR IMOVEIS",
       "CNPJ/CPF": "52.282.909/0001-83",
       "Email": "negocios.corral@outlook.com",
       "Telefone": "99102-7690",
@@ -5446,7 +5446,7 @@
         },
         {
           "numero_documento": "42725",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "14/09/2025",
           "status": "Atrasado",
           "dias_atraso": 297,
@@ -5462,7 +5462,7 @@
         },
         {
           "numero_documento": "42725",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "14/10/2025",
           "status": "Atrasado",
           "dias_atraso": 267,
@@ -5826,7 +5826,7 @@
         },
         {
           "numero_documento": "53290",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "11/05/2026",
           "status": "Atrasado",
           "dias_atraso": 58,
@@ -5842,7 +5842,7 @@
         },
         {
           "numero_documento": "53290",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/06/2026",
           "status": "Atrasado",
           "dias_atraso": 28,
@@ -5928,7 +5928,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/03/2026",
           "status": "Atrasado",
           "dias_atraso": 115,
@@ -5952,7 +5952,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/04/2026",
           "status": "Atrasado",
           "dias_atraso": 84,
@@ -5968,7 +5968,7 @@
         },
         {
           "numero_documento": "53919",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "11/05/2026",
           "status": "Atrasado",
           "dias_atraso": 58,
@@ -5976,7 +5976,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/05/2026",
           "status": "Atrasado",
           "dias_atraso": 54,
@@ -5992,7 +5992,7 @@
         },
         {
           "numero_documento": "55537",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/06/2026",
           "status": "Atrasado",
           "dias_atraso": 28,
@@ -6000,7 +6000,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/06/2026",
           "status": "Atrasado",
           "dias_atraso": 23,
@@ -6142,7 +6142,7 @@
         },
         {
           "numero_documento": "41490",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/08/2025",
           "status": "Atrasado",
           "dias_atraso": 332,
@@ -6158,7 +6158,7 @@
         },
         {
           "numero_documento": "42318",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/09/2025",
           "status": "Atrasado",
           "dias_atraso": 301,
@@ -6260,7 +6260,7 @@
         },
         {
           "numero_documento": "36257",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/04/2025",
           "status": "Atrasado",
           "dias_atraso": 454,
@@ -6276,7 +6276,7 @@
         },
         {
           "numero_documento": "38131",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/05/2025",
           "status": "Atrasado",
           "dias_atraso": 424,
@@ -6316,7 +6316,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "12/07/2025",
           "status": "Atrasado",
           "dias_atraso": 361,
@@ -6332,7 +6332,7 @@
         },
         {
           "numero_documento": "IPCDJ",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "12/08/2025",
           "status": "Atrasado",
           "dias_atraso": 330,
@@ -6442,7 +6442,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/06/2026",
           "status": "Atrasado",
           "dias_atraso": 13,
@@ -6480,7 +6480,7 @@
       "titulos": [
         {
           "numero_documento": "49874",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/02/2026",
           "status": "Atrasado",
           "dias_atraso": 148,
@@ -6496,7 +6496,7 @@
         },
         {
           "numero_documento": "50681",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/03/2026",
           "status": "Atrasado",
           "dias_atraso": 120,
@@ -6700,7 +6700,7 @@
       "titulos": [
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "16/11/2025",
           "status": "Atrasado",
           "dias_atraso": 234,
@@ -6732,7 +6732,7 @@
         },
         {
           "numero_documento": "47730",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "12/01/2026",
           "status": "Atrasado",
           "dias_atraso": 177,
@@ -6994,7 +6994,7 @@
         },
         {
           "numero_documento": "42709",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "12/09/2025",
           "status": "Atrasado",
           "dias_atraso": 299,
@@ -7002,7 +7002,7 @@
         },
         {
           "numero_documento": "42709",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "12/10/2025",
           "status": "Atrasado",
           "dias_atraso": 269,
@@ -7096,7 +7096,7 @@
         },
         {
           "numero_documento": "46406",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/12/2025",
           "status": "Atrasado",
           "dias_atraso": 210,
@@ -7128,7 +7128,7 @@
         },
         {
           "numero_documento": "46407",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/01/2026",
           "status": "Atrasado",
           "dias_atraso": 179,
@@ -7214,7 +7214,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "24/11/2025",
           "status": "Atrasado",
           "dias_atraso": 226,
@@ -7238,7 +7238,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "24/12/2025",
           "status": "Atrasado",
           "dias_atraso": 196,
@@ -7254,7 +7254,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "24/01/2026",
           "status": "Atrasado",
           "dias_atraso": 165,
@@ -7610,7 +7610,7 @@
         },
         {
           "numero_documento": "50258",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/02/2026",
           "status": "Atrasado",
           "dias_atraso": 148,
@@ -7618,7 +7618,7 @@
         },
         {
           "numero_documento": "50990",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/03/2026",
           "status": "Atrasado",
           "dias_atraso": 120,
@@ -7798,7 +7798,7 @@
         },
         {
           "numero_documento": "33869",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/02/2025",
           "status": "Atrasado",
           "dias_atraso": 513,
@@ -7830,7 +7830,7 @@
         },
         {
           "numero_documento": "37428",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/05/2025",
           "status": "Atrasado",
           "dias_atraso": 424,
@@ -7948,7 +7948,7 @@
         },
         {
           "numero_documento": "43059",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/09/2025",
           "status": "Atrasado",
           "dias_atraso": 301,
@@ -8350,7 +8350,7 @@
         },
         {
           "numero_documento": "46818",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "05/12/2025",
           "status": "Atrasado",
           "dias_atraso": 215,
@@ -8366,7 +8366,7 @@
         },
         {
           "numero_documento": "47969",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "05/01/2026",
           "status": "Atrasado",
           "dias_atraso": 184,
@@ -8634,7 +8634,7 @@
         },
         {
           "numero_documento": "50323",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "28/02/2026",
           "status": "Atrasado",
           "dias_atraso": 130,
@@ -8642,7 +8642,7 @@
         },
         {
           "numero_documento": "50323",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "28/03/2026",
           "status": "Atrasado",
           "dias_atraso": 102,
@@ -8680,7 +8680,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/08/2025",
           "status": "Atrasado",
           "dias_atraso": 317,
@@ -8704,7 +8704,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/09/2025",
           "status": "Atrasado",
           "dias_atraso": 286,
@@ -8736,7 +8736,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/10/2025",
           "status": "Atrasado",
           "dias_atraso": 256,
@@ -8752,7 +8752,7 @@
         },
         {
           "numero_documento": "45171",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "08/11/2025",
           "status": "Atrasado",
           "dias_atraso": 242,
@@ -8760,7 +8760,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/11/2025",
           "status": "Atrasado",
           "dias_atraso": 225,
@@ -8776,7 +8776,7 @@
         },
         {
           "numero_documento": "45171",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "08/12/2025",
           "status": "Atrasado",
           "dias_atraso": 212,
@@ -8784,7 +8784,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/12/2025",
           "status": "Atrasado",
           "dias_atraso": 195,
@@ -8870,7 +8870,7 @@
         },
         {
           "numero_documento": "40733",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/07/2025",
           "status": "Atrasado",
           "dias_atraso": 363,
@@ -8894,7 +8894,7 @@
         },
         {
           "numero_documento": "40733",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "11/08/2025",
           "status": "Atrasado",
           "dias_atraso": 331,
@@ -8956,7 +8956,7 @@
       "titulos": [
         {
           "numero_documento": "49003",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "10/06/2026",
           "status": "Atrasado",
           "dias_atraso": 28,
@@ -9428,7 +9428,7 @@
         },
         {
           "numero_documento": "55298",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "05/06/2026",
           "status": "Atrasado",
           "dias_atraso": 33,
@@ -9460,7 +9460,7 @@
         },
         {
           "numero_documento": "55989",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "06/07/2026",
           "status": "Atrasado",
           "dias_atraso": 2,
@@ -9616,7 +9616,7 @@
       "titulos": [
         {
           "numero_documento": "34106",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/02/2025",
           "status": "Atrasado",
           "dias_atraso": 513,
@@ -9624,7 +9624,7 @@
         },
         {
           "numero_documento": "34999",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/03/2025",
           "status": "Atrasado",
           "dias_atraso": 485,
@@ -9718,7 +9718,7 @@
         },
         {
           "numero_documento": "42640",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "07/09/2025",
           "status": "Atrasado",
           "dias_atraso": 304,
@@ -9742,7 +9742,7 @@
         },
         {
           "numero_documento": "42640",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "07/10/2025",
           "status": "Atrasado",
           "dias_atraso": 274,
@@ -9842,7 +9842,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "20/04/2026",
           "status": "Atrasado",
           "dias_atraso": 79,
@@ -9866,7 +9866,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "20/05/2026",
           "status": "Atrasado",
           "dias_atraso": 49,
@@ -9882,7 +9882,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "20/06/2026",
           "status": "Atrasado",
           "dias_atraso": 18,
@@ -10016,7 +10016,7 @@
         },
         {
           "numero_documento": "48349",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/01/2026",
           "status": "Atrasado",
           "dias_atraso": 174,
@@ -10040,7 +10040,7 @@
         },
         {
           "numero_documento": "49754",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "18/02/2026",
           "status": "Atrasado",
           "dias_atraso": 140,
@@ -10182,7 +10182,7 @@
         },
         {
           "numero_documento": "55318",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/06/2026",
           "status": "Atrasado",
           "dias_atraso": 23,
@@ -10394,7 +10394,7 @@
         },
         {
           "numero_documento": "51415",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/03/2026",
           "status": "Atrasado",
           "dias_atraso": 120,
@@ -10410,7 +10410,7 @@
         },
         {
           "numero_documento": "51910",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "16/04/2026",
           "status": "Atrasado",
           "dias_atraso": 83,
@@ -10658,7 +10658,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "30/06/2026",
           "status": "Atrasado",
           "dias_atraso": 8,
@@ -11170,7 +11170,7 @@
         },
         {
           "numero_documento": "44849",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "30/10/2025",
           "status": "Atrasado",
           "dias_atraso": 251,
@@ -11194,7 +11194,7 @@
         },
         {
           "numero_documento": "44849",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "30/11/2025",
           "status": "Atrasado",
           "dias_atraso": 220,
@@ -11272,7 +11272,7 @@
         },
         {
           "numero_documento": "47190",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/12/2025",
           "status": "Atrasado",
           "dias_atraso": 210,
@@ -11320,7 +11320,7 @@
         },
         {
           "numero_documento": "49842",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/02/2026",
           "status": "Atrasado",
           "dias_atraso": 148,
@@ -11478,7 +11478,7 @@
         },
         {
           "numero_documento": "53304",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "16/05/2026",
           "status": "Atrasado",
           "dias_atraso": 53,
@@ -11486,7 +11486,7 @@
         },
         {
           "numero_documento": "53304",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "16/06/2026",
           "status": "Atrasado",
           "dias_atraso": 22,
@@ -11814,7 +11814,7 @@
         },
         {
           "numero_documento": "49796",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/02/2026",
           "status": "Atrasado",
           "dias_atraso": 148,
@@ -11822,7 +11822,7 @@
         },
         {
           "numero_documento": "51442",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/03/2026",
           "status": "Atrasado",
           "dias_atraso": 120,
@@ -12026,7 +12026,7 @@
         },
         {
           "numero_documento": "40181",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/07/2025",
           "status": "Atrasado",
           "dias_atraso": 363,
@@ -12050,7 +12050,7 @@
         },
         {
           "numero_documento": "41946",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "11/08/2025",
           "status": "Atrasado",
           "dias_atraso": 331,
@@ -12152,7 +12152,7 @@
         },
         {
           "numero_documento": "42706",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "12/09/2025",
           "status": "Atrasado",
           "dias_atraso": 299,
@@ -12168,7 +12168,7 @@
         },
         {
           "numero_documento": "42706",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "12/10/2025",
           "status": "Atrasado",
           "dias_atraso": 269,
@@ -12244,7 +12244,7 @@
       "titulos": [
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "10/10/2025",
           "status": "Atrasado",
           "dias_atraso": 271,
@@ -12252,7 +12252,7 @@
         },
         {
           "numero_documento": "44430",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/10/2025",
           "status": "Atrasado",
           "dias_atraso": 266,
@@ -12260,7 +12260,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "10/11/2025",
           "status": "Atrasado",
           "dias_atraso": 240,
@@ -12268,7 +12268,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "10/12/2025",
           "status": "Atrasado",
           "dias_atraso": 210,
@@ -12276,7 +12276,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "10/01/2026",
           "status": "Atrasado",
           "dias_atraso": 179,
@@ -12284,7 +12284,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "10/02/2026",
           "status": "Atrasado",
           "dias_atraso": 148,
@@ -12384,7 +12384,7 @@
         },
         {
           "numero_documento": "43299",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/09/2025",
           "status": "Atrasado",
           "dias_atraso": 301,
@@ -12408,7 +12408,7 @@
         },
         {
           "numero_documento": "44681",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/10/2025",
           "status": "Atrasado",
           "dias_atraso": 271,
@@ -12692,7 +12692,7 @@
         },
         {
           "numero_documento": "40367",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/07/2025",
           "status": "Atrasado",
           "dias_atraso": 363,
@@ -12700,7 +12700,7 @@
         },
         {
           "numero_documento": "41691",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/08/2025",
           "status": "Atrasado",
           "dias_atraso": 332,
@@ -12708,7 +12708,7 @@
         },
         {
           "numero_documento": "43961",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "04/10/2025",
           "status": "Atrasado",
           "dias_atraso": 277,
@@ -13160,7 +13160,7 @@
         },
         {
           "numero_documento": "43981",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/10/2025",
           "status": "Atrasado",
           "dias_atraso": 271,
@@ -13176,7 +13176,7 @@
         },
         {
           "numero_documento": "43981",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/11/2025",
           "status": "Atrasado",
           "dias_atraso": 240,
@@ -13246,7 +13246,7 @@
         },
         {
           "numero_documento": "48574",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/01/2026",
           "status": "Atrasado",
           "dias_atraso": 174,
@@ -13254,7 +13254,7 @@
         },
         {
           "numero_documento": "49710",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "18/02/2026",
           "status": "Atrasado",
           "dias_atraso": 140,
@@ -13284,7 +13284,7 @@
       "titulos": [
         {
           "numero_documento": "50938",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/03/2026",
           "status": "Atrasado",
           "dias_atraso": 120,
@@ -13300,7 +13300,7 @@
         },
         {
           "numero_documento": "51930",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/04/2026",
           "status": "Atrasado",
           "dias_atraso": 89,
@@ -13354,7 +13354,7 @@
       "titulos": [
         {
           "numero_documento": "N/I",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "26/12/2025",
           "status": "Atrasado",
           "dias_atraso": 194,
@@ -13362,7 +13362,7 @@
         },
         {
           "numero_documento": "N/I",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "26/01/2026",
           "status": "Atrasado",
           "dias_atraso": 163,
@@ -13370,7 +13370,7 @@
         },
         {
           "numero_documento": "N/I",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "26/02/2026",
           "status": "Atrasado",
           "dias_atraso": 132,
@@ -13378,7 +13378,7 @@
         },
         {
           "numero_documento": "N/I",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "26/03/2026",
           "status": "Atrasado",
           "dias_atraso": 104,
@@ -13464,7 +13464,7 @@
         },
         {
           "numero_documento": "40631",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/07/2025",
           "status": "Atrasado",
           "dias_atraso": 363,
@@ -13472,7 +13472,7 @@
         },
         {
           "numero_documento": "41013",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "31/07/2025",
           "status": "Atrasado",
           "dias_atraso": 342,
@@ -13550,7 +13550,7 @@
         },
         {
           "numero_documento": "43984",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/10/2025",
           "status": "Atrasado",
           "dias_atraso": 271,
@@ -13558,7 +13558,7 @@
         },
         {
           "numero_documento": "43984",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/11/2025",
           "status": "Atrasado",
           "dias_atraso": 240,
@@ -13588,7 +13588,7 @@
       "titulos": [
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "17/04/2025",
           "status": "Atrasado",
           "dias_atraso": 447,
@@ -13596,7 +13596,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "17/05/2025",
           "status": "Atrasado",
           "dias_atraso": 417,
@@ -13604,7 +13604,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "17/06/2025",
           "status": "Atrasado",
           "dias_atraso": 386,
@@ -13612,7 +13612,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "17/07/2025",
           "status": "Atrasado",
           "dias_atraso": 356,
@@ -13620,7 +13620,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "17/08/2025",
           "status": "Atrasado",
           "dias_atraso": 325,
@@ -13628,7 +13628,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "17/10/2025",
           "status": "Atrasado",
           "dias_atraso": 264,
@@ -13816,7 +13816,7 @@
         },
         {
           "numero_documento": "36209",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "13/04/2025",
           "status": "Atrasado",
           "dias_atraso": 451,
@@ -13832,7 +13832,7 @@
         },
         {
           "numero_documento": "36209",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "13/05/2025",
           "status": "Atrasado",
           "dias_atraso": 421,
@@ -14126,7 +14126,7 @@
       "titulos": [
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "28/02/2026",
           "status": "Atrasado",
           "dias_atraso": 130,
@@ -14134,7 +14134,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "30/03/2026",
           "status": "Atrasado",
           "dias_atraso": 100,
@@ -14142,7 +14142,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "30/04/2026",
           "status": "Atrasado",
           "dias_atraso": 69,
@@ -14158,7 +14158,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "30/05/2026",
           "status": "Atrasado",
           "dias_atraso": 39,
@@ -14196,7 +14196,7 @@
       "titulos": [
         {
           "numero_documento": "39861",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "16/06/2025",
           "status": "Atrasado",
           "dias_atraso": 387,
@@ -14212,7 +14212,7 @@
         },
         {
           "numero_documento": "39861",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/07/2025",
           "status": "Atrasado",
           "dias_atraso": 358,
@@ -14374,7 +14374,7 @@
       "titulos": [
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "26/12/2025",
           "status": "Atrasado",
           "dias_atraso": 194,
@@ -15234,7 +15234,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/04/2026",
           "status": "Atrasado",
           "dias_atraso": 84,
@@ -15250,7 +15250,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/05/2026",
           "status": "Atrasado",
           "dias_atraso": 54,
@@ -15266,7 +15266,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/06/2026",
           "status": "Atrasado",
           "dias_atraso": 23,
@@ -15320,7 +15320,7 @@
         },
         {
           "numero_documento": "36659",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/04/2025",
           "status": "Atrasado",
           "dias_atraso": 449,
@@ -15520,7 +15520,7 @@
       "titulos": [
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/12/2025",
           "status": "Atrasado",
           "dias_atraso": 195,
@@ -15544,7 +15544,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/01/2026",
           "status": "Atrasado",
           "dias_atraso": 164,
@@ -15590,7 +15590,7 @@
       "titulos": [
         {
           "numero_documento": "55351",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/06/2026",
           "status": "Atrasado",
           "dias_atraso": 23,
@@ -15730,7 +15730,7 @@
       "titulos": [
         {
           "numero_documento": "34310",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "17/02/2025",
           "status": "Atrasado",
           "dias_atraso": 506,
@@ -15738,7 +15738,7 @@
         },
         {
           "numero_documento": "36215",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/04/2025",
           "status": "Atrasado",
           "dias_atraso": 454,
@@ -16148,7 +16148,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/03/2025",
           "status": "Atrasado",
           "dias_atraso": 480,
@@ -16156,7 +16156,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/04/2025",
           "status": "Atrasado",
           "dias_atraso": 449,
@@ -16164,7 +16164,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/05/2025",
           "status": "Atrasado",
           "dias_atraso": 419,
@@ -16172,7 +16172,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/06/2025",
           "status": "Atrasado",
           "dias_atraso": 388,
@@ -16180,7 +16180,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/07/2025",
           "status": "Atrasado",
           "dias_atraso": 358,
@@ -16188,7 +16188,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "15/08/2025",
           "status": "Atrasado",
           "dias_atraso": 327,
@@ -16218,7 +16218,7 @@
       "titulos": [
         {
           "numero_documento": "43391",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/10/2025",
           "status": "Atrasado",
           "dias_atraso": 266,
@@ -16328,7 +16328,7 @@
         },
         {
           "numero_documento": "37758",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/05/2025",
           "status": "Atrasado",
           "dias_atraso": 424,
@@ -16336,7 +16336,7 @@
         },
         {
           "numero_documento": "40100",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "01/07/2025",
           "status": "Atrasado",
           "dias_atraso": 372,
@@ -16566,7 +16566,7 @@
         },
         {
           "numero_documento": "55706",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/06/2026",
           "status": "Atrasado",
           "dias_atraso": 23,
@@ -16696,7 +16696,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "22/06/2026",
           "status": "Atrasado",
           "dias_atraso": 16,
@@ -16780,7 +16780,7 @@
       "titulos": [
         {
           "numero_documento": "35147",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/03/2025",
           "status": "Atrasado",
           "dias_atraso": 485,
@@ -16796,7 +16796,7 @@
         },
         {
           "numero_documento": "36205",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/04/2025",
           "status": "Atrasado",
           "dias_atraso": 454,
@@ -16866,7 +16866,7 @@
         },
         {
           "numero_documento": "160",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "26/09/2025",
           "status": "Atrasado",
           "dias_atraso": 285,
@@ -16874,7 +16874,7 @@
         },
         {
           "numero_documento": "210",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "26/10/2025",
           "status": "Atrasado",
           "dias_atraso": 255,
@@ -17214,7 +17214,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "05/06/2026",
           "status": "Atrasado",
           "dias_atraso": 33,
@@ -17230,7 +17230,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "05/07/2026",
           "status": "Atrasado",
           "dias_atraso": 3,
@@ -17408,7 +17408,7 @@
         },
         {
           "numero_documento": "37432",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/05/2025",
           "status": "Atrasado",
           "dias_atraso": 419,
@@ -17416,7 +17416,7 @@
         },
         {
           "numero_documento": "37432",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "16/06/2025",
           "status": "Atrasado",
           "dias_atraso": 387,
@@ -17508,7 +17508,7 @@
       "titulos": [
         {
           "numero_documento": "45183",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "13/10/2025",
           "status": "Atrasado",
           "dias_atraso": 268,
@@ -17516,7 +17516,7 @@
         },
         {
           "numero_documento": "44634",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/10/2025",
           "status": "Atrasado",
           "dias_atraso": 266,
@@ -17734,7 +17734,7 @@
       "titulos": [
         {
           "numero_documento": "N/I",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "24/06/2026",
           "status": "Atrasado",
           "dias_atraso": 14,
@@ -17912,7 +17912,7 @@
         },
         {
           "numero_documento": "N/I",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "20/06/2026",
           "status": "Atrasado",
           "dias_atraso": 18,
@@ -18066,7 +18066,7 @@
         },
         {
           "numero_documento": "39528",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/06/2025",
           "status": "Atrasado",
           "dias_atraso": 388,
@@ -18074,7 +18074,7 @@
         },
         {
           "numero_documento": "40526",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/07/2025",
           "status": "Atrasado",
           "dias_atraso": 358,
@@ -18104,7 +18104,7 @@
       "titulos": [
         {
           "numero_documento": "35351",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/03/2025",
           "status": "Atrasado",
           "dias_atraso": 485,
@@ -18112,7 +18112,7 @@
         },
         {
           "numero_documento": "36210",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/04/2025",
           "status": "Atrasado",
           "dias_atraso": 454,
@@ -18290,7 +18290,7 @@
         },
         {
           "numero_documento": "33972",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/02/2025",
           "status": "Atrasado",
           "dias_atraso": 513,
@@ -18314,7 +18314,7 @@
         },
         {
           "numero_documento": "39865",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/07/2025",
           "status": "Atrasado",
           "dias_atraso": 363,
@@ -18422,7 +18422,7 @@
         },
         {
           "numero_documento": "55590",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/06/2026",
           "status": "Atrasado",
           "dias_atraso": 23,
@@ -18452,7 +18452,7 @@
       "titulos": [
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "08/06/2026",
           "status": "Atrasado",
           "dias_atraso": 30,
@@ -18498,7 +18498,7 @@
         },
         {
           "numero_documento": "35758",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "17/03/2025",
           "status": "Atrasado",
           "dias_atraso": 478,
@@ -18506,7 +18506,7 @@
         },
         {
           "numero_documento": "36319",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/04/2025",
           "status": "Atrasado",
           "dias_atraso": 449,
@@ -18684,7 +18684,7 @@
         },
         {
           "numero_documento": "43973",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "08/10/2025",
           "status": "Atrasado",
           "dias_atraso": 273,
@@ -18692,7 +18692,7 @@
         },
         {
           "numero_documento": "43973",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "08/11/2025",
           "status": "Atrasado",
           "dias_atraso": 242,
@@ -18792,7 +18792,7 @@
         },
         {
           "numero_documento": "37491",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/05/2025",
           "status": "Atrasado",
           "dias_atraso": 419,
@@ -18800,7 +18800,7 @@
         },
         {
           "numero_documento": "38648",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "16/06/2025",
           "status": "Atrasado",
           "dias_atraso": 387,
@@ -18846,7 +18846,7 @@
         },
         {
           "numero_documento": "50102",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/02/2026",
           "status": "Atrasado",
           "dias_atraso": 148,
@@ -18854,7 +18854,7 @@
         },
         {
           "numero_documento": "50976",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/03/2026",
           "status": "Atrasado",
           "dias_atraso": 120,
@@ -18880,7 +18880,7 @@
       "Dias em Atraso": 89,
       "Vencimento Mais Antigo": "10/04/2026",
       "Codigo Omie": 8655019516,
-      "Tags": "Cliente, Associados, Porto Velho",
+      "Tags": "Cliente, Associados, Porto Velho, Rondônia",
       "titulos": [
         {
           "numero_documento": "52541",
@@ -19009,44 +19009,6 @@
       ]
     },
     {
-      "Razao Social": "HT - EQUIPAMENTOS DE AUDIO E VIDEO LTDA",
-      "Nome Fantasia": "HT - AUDIO E VIDEO",
-      "CNPJ/CPF": "07.363.364/0001-85",
-      "Email": "carneto@ig.com.br",
-      "Telefone": "99405-2993",
-      "Cidade": "TERESINA (PI)",
-      "Estado": "PI",
-      "Regiao": "Teresina",
-      "Diretora Regional": "Nao Informada",
-      "Gestora": "Olga Bezerra",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Nao",
-      "Qtd Titulos": 2,
-      "Valor Atrasado (R$)": 5475.06,
-      "Dias em Atraso": 28,
-      "Vencimento Mais Antigo": "10/06/2026",
-      "Codigo Omie": 8433759792,
-      "Tags": "Cliente, Associados, Teresina, Piaui",
-      "titulos": [
-        {
-          "numero_documento": "48996",
-          "categoria": "Pontuação",
-          "data_vencimento": "10/06/2026",
-          "status": "Atrasado",
-          "dias_atraso": 28,
-          "valor_documento": 3975.06
-        },
-        {
-          "numero_documento": "56956",
-          "categoria": "Mensalidade",
-          "data_vencimento": "05/07/2026",
-          "status": "Atrasado",
-          "dias_atraso": 3,
-          "valor_documento": 1500.0
-        }
-      ]
-    },
-    {
       "Razao Social": "CANAN HOME DECOR LTDA",
       "Nome Fantasia": "CANAN HOME DECOR",
       "CNPJ/CPF": "55.474.383/0001-21",
@@ -19092,7 +19054,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "27/06/2026",
           "status": "Atrasado",
           "dias_atraso": 11,
@@ -19146,7 +19108,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "27/05/2026",
           "status": "Atrasado",
           "dias_atraso": 42,
@@ -19170,7 +19132,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "27/06/2026",
           "status": "Atrasado",
           "dias_atraso": 11,
@@ -19456,7 +19418,7 @@
         },
         {
           "numero_documento": "AVISO PRÉVIO",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "12/02/2025",
           "status": "Atrasado",
           "dias_atraso": 511,
@@ -19472,7 +19434,7 @@
         },
         {
           "numero_documento": "AVISO PRÉVIO",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "12/03/2025",
           "status": "Atrasado",
           "dias_atraso": 483,
@@ -19694,7 +19656,7 @@
       "titulos": [
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/07/2025",
           "status": "Atrasado",
           "dias_atraso": 348,
@@ -19702,7 +19664,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/08/2025",
           "status": "Atrasado",
           "dias_atraso": 317,
@@ -19710,7 +19672,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/09/2025",
           "status": "Atrasado",
           "dias_atraso": 286,
@@ -19718,7 +19680,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/10/2025",
           "status": "Atrasado",
           "dias_atraso": 256,
@@ -19726,7 +19688,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/11/2025",
           "status": "Atrasado",
           "dias_atraso": 225,
@@ -19734,7 +19696,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/12/2025",
           "status": "Atrasado",
           "dias_atraso": 195,
@@ -19742,7 +19704,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/01/2026",
           "status": "Atrasado",
           "dias_atraso": 164,
@@ -19750,7 +19712,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "25/02/2026",
           "status": "Atrasado",
           "dias_atraso": 133,
@@ -19780,7 +19742,7 @@
       "titulos": [
         {
           "numero_documento": "50690",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "11/03/2026",
           "status": "Atrasado",
           "dias_atraso": 119,
@@ -19788,7 +19750,7 @@
         },
         {
           "numero_documento": "50690",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "11/04/2026",
           "status": "Atrasado",
           "dias_atraso": 88,
@@ -19818,7 +19780,7 @@
       "titulos": [
         {
           "numero_documento": "ACORDO",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "30/06/2026",
           "status": "Atrasado",
           "dias_atraso": 8,
@@ -19988,7 +19950,7 @@
       "titulos": [
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "20/05/2026",
           "status": "Atrasado",
           "dias_atraso": 49,
@@ -19996,7 +19958,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "20/06/2026",
           "status": "Atrasado",
           "dias_atraso": 18,
@@ -20134,7 +20096,7 @@
         },
         {
           "numero_documento": "42710",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "28/08/2025",
           "status": "Atrasado",
           "dias_atraso": 314,
@@ -20142,7 +20104,7 @@
         },
         {
           "numero_documento": "42710",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "29/09/2025",
           "status": "Atrasado",
           "dias_atraso": 282,
@@ -20218,7 +20180,7 @@
       "titulos": [
         {
           "numero_documento": "35780",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/03/2025",
           "status": "Atrasado",
           "dias_atraso": 485,
@@ -20226,7 +20188,7 @@
         },
         {
           "numero_documento": "36989",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/04/2025",
           "status": "Atrasado",
           "dias_atraso": 454,
@@ -20272,7 +20234,7 @@
         },
         {
           "numero_documento": "39097",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "16/06/2025",
           "status": "Atrasado",
           "dias_atraso": 387,
@@ -20280,7 +20242,7 @@
         },
         {
           "numero_documento": "39887",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/07/2025",
           "status": "Atrasado",
           "dias_atraso": 358,
@@ -20318,7 +20280,7 @@
         },
         {
           "numero_documento": "40179",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/07/2025",
           "status": "Atrasado",
           "dias_atraso": 358,
@@ -20326,7 +20288,7 @@
         },
         {
           "numero_documento": "41014",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "31/07/2025",
           "status": "Atrasado",
           "dias_atraso": 342,
@@ -20364,7 +20326,7 @@
         },
         {
           "numero_documento": "49430",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/02/2026",
           "status": "Atrasado",
           "dias_atraso": 143,
@@ -20372,7 +20334,7 @@
         },
         {
           "numero_documento": "51171",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/03/2026",
           "status": "Atrasado",
           "dias_atraso": 115,
@@ -20494,7 +20456,7 @@
         },
         {
           "numero_documento": "AVISO PREVIO",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/03/2025",
           "status": "Atrasado",
           "dias_atraso": 485,
@@ -20586,7 +20548,7 @@
         },
         {
           "numero_documento": "55530",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/06/2026",
           "status": "Atrasado",
           "dias_atraso": 28,
@@ -20922,7 +20884,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "18/06/2026",
           "status": "Atrasado",
           "dias_atraso": 20,
@@ -20952,7 +20914,7 @@
       "titulos": [
         {
           "numero_documento": "37153-36544-35375",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "30/06/2025",
           "status": "Atrasado",
           "dias_atraso": 373,
@@ -21044,7 +21006,7 @@
         },
         {
           "numero_documento": "36687",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/04/2025",
           "status": "Atrasado",
           "dias_atraso": 449,
@@ -21052,7 +21014,7 @@
         },
         {
           "numero_documento": "37771",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/05/2025",
           "status": "Atrasado",
           "dias_atraso": 419,
@@ -21098,7 +21060,7 @@
         },
         {
           "numero_documento": "37456",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "25/04/2025",
           "status": "Atrasado",
           "dias_atraso": 439,
@@ -21106,7 +21068,7 @@
         },
         {
           "numero_documento": "38647",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "20/05/2025",
           "status": "Atrasado",
           "dias_atraso": 414,
@@ -21526,7 +21488,7 @@
         },
         {
           "numero_documento": "44003",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "17/11/2025",
           "status": "Atrasado",
           "dias_atraso": 233,
@@ -21858,7 +21820,7 @@
       "Dias em Atraso": 28,
       "Vencimento Mais Antigo": "10/06/2026",
       "Codigo Omie": 8586311006,
-      "Tags": "Cliente, Associados, Porto Velho",
+      "Tags": "Cliente, Associados, Porto Velho, Rondônia",
       "titulos": [
         {
           "numero_documento": "49374",
@@ -21900,7 +21862,7 @@
       "titulos": [
         {
           "numero_documento": "35002",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "28/02/2025",
           "status": "Atrasado",
           "dias_atraso": 495,
@@ -21916,7 +21878,7 @@
         },
         {
           "numero_documento": "35002",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "30/03/2025",
           "status": "Atrasado",
           "dias_atraso": 465,
@@ -21954,7 +21916,7 @@
       "titulos": [
         {
           "numero_documento": "32885",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/01/2025",
           "status": "Atrasado",
           "dias_atraso": 544,
@@ -21962,7 +21924,7 @@
         },
         {
           "numero_documento": "34177",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/02/2025",
           "status": "Atrasado",
           "dias_atraso": 513,
@@ -21992,7 +21954,7 @@
       "titulos": [
         {
           "numero_documento": "35751",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/03/2025",
           "status": "Atrasado",
           "dias_atraso": 485,
@@ -22000,7 +21962,7 @@
         },
         {
           "numero_documento": "36255",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/04/2025",
           "status": "Atrasado",
           "dias_atraso": 454,
@@ -22084,7 +22046,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "30/06/2026",
           "status": "Atrasado",
           "dias_atraso": 8,
@@ -22206,7 +22168,7 @@
       "titulos": [
         {
           "numero_documento": "36217",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/04/2025",
           "status": "Atrasado",
           "dias_atraso": 454,
@@ -22320,7 +22282,7 @@
       "titulos": [
         {
           "numero_documento": "38929",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "16/06/2025",
           "status": "Atrasado",
           "dias_atraso": 387,
@@ -22328,7 +22290,7 @@
         },
         {
           "numero_documento": "40386",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/07/2025",
           "status": "Atrasado",
           "dias_atraso": 358,
@@ -22396,7 +22358,7 @@
         },
         {
           "numero_documento": "50670",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/03/2026",
           "status": "Atrasado",
           "dias_atraso": 120,
@@ -22602,7 +22564,7 @@
         },
         {
           "numero_documento": "55801",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/06/2026",
           "status": "Atrasado",
           "dias_atraso": 23,
@@ -22628,7 +22590,7 @@
       "Dias em Atraso": 7,
       "Vencimento Mais Antigo": "01/07/2026",
       "Codigo Omie": 8868801161,
-      "Tags": "Cliente, Associados, Porto Velho",
+      "Tags": "Cliente, Associados, Porto Velho, Rondônia",
       "titulos": [
         {
           "numero_documento": "55957",
@@ -22700,7 +22662,7 @@
         },
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "27/06/2026",
           "status": "Atrasado",
           "dias_atraso": 11,
@@ -22730,7 +22692,7 @@
       "titulos": [
         {
           "numero_documento": "40092",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/07/2025",
           "status": "Atrasado",
           "dias_atraso": 358,
@@ -22798,7 +22760,7 @@
       "titulos": [
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "26/02/2026",
           "status": "Atrasado",
           "dias_atraso": 132,
@@ -22910,13 +22872,13 @@
       "Diretora Regional": "Nao Informada",
       "Gestora": "Marcia Borges",
       "Modelo de Negocio": "Associados",
-      "Distrato": "Sim",
+      "Distrato": "Nao",
       "Qtd Titulos": 2,
       "Valor Atrasado (R$)": 2713.96,
       "Dias em Atraso": 28,
       "Vencimento Mais Antigo": "10/06/2026",
       "Codigo Omie": 8100557818,
-      "Tags": "Cliente, Curitiba, Associados, Distrato",
+      "Tags": "Cliente, Curitiba, Associados",
       "titulos": [
         {
           "numero_documento": "49105",
@@ -23140,7 +23102,7 @@
       "titulos": [
         {
           "numero_documento": "32041",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "12/01/2025",
           "status": "Atrasado",
           "dias_atraso": 542,
@@ -23200,7 +23162,7 @@
       "titulos": [
         {
           "numero_documento": "53739",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/05/2026",
           "status": "Atrasado",
           "dias_atraso": 54,
@@ -23230,7 +23192,7 @@
       "titulos": [
         {
           "numero_documento": "55571",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/06/2026",
           "status": "Atrasado",
           "dias_atraso": 28,
@@ -23306,7 +23268,7 @@
         },
         {
           "numero_documento": "32686",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/01/2025",
           "status": "Atrasado",
           "dias_atraso": 544,
@@ -23420,7 +23382,7 @@
         },
         {
           "numero_documento": "IPCDF",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "18/02/2026",
           "status": "Atrasado",
           "dias_atraso": 140,
@@ -23586,7 +23548,7 @@
       "titulos": [
         {
           "numero_documento": "ICPD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "22/06/2026",
           "status": "Atrasado",
           "dias_atraso": 16,
@@ -23616,7 +23578,7 @@
       "titulos": [
         {
           "numero_documento": "47285",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/12/2025",
           "status": "Atrasado",
           "dias_atraso": 210,
@@ -23654,7 +23616,7 @@
       "titulos": [
         {
           "numero_documento": "51977",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/04/2026",
           "status": "Atrasado",
           "dias_atraso": 89,
@@ -23692,7 +23654,7 @@
         },
         {
           "numero_documento": "34007",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/02/2025",
           "status": "Atrasado",
           "dias_atraso": 508,
@@ -23880,7 +23842,7 @@
       "titulos": [
         {
           "numero_documento": "IPCD",
-          "categoria": "IPCD",
+          "categoria": "Acordo",
           "data_vencimento": "05/07/2026",
           "status": "Atrasado",
           "dias_atraso": 3,
@@ -23918,7 +23880,7 @@
         },
         {
           "numero_documento": "36608",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/04/2025",
           "status": "Atrasado",
           "dias_atraso": 449,
@@ -23926,41 +23888,11 @@
         },
         {
           "numero_documento": "37437",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "30/04/2025",
           "status": "Atrasado",
           "dias_atraso": 434,
           "valor_documento": 600.0
-        }
-      ]
-    },
-    {
-      "Razao Social": "BELEM CONCEITO PISCINA LTDA",
-      "Nome Fantasia": "IGUI CONCEITO PISCINAS",
-      "CNPJ/CPF": "53.596.853/0001-02",
-      "Email": "belem@igui.com",
-      "Telefone": "98232-0001",
-      "Cidade": "BELEM (PA)",
-      "Estado": "PA",
-      "Regiao": "Belém",
-      "Diretora Regional": "Nao Informada",
-      "Gestora": "Dani Montani",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Nao",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 1719.99,
-      "Dias em Atraso": 3,
-      "Vencimento Mais Antigo": "05/07/2026",
-      "Codigo Omie": 8483810494,
-      "Tags": "Cliente, Associados, Pará, Belém",
-      "titulos": [
-        {
-          "numero_documento": "56940",
-          "categoria": "Mensalidade",
-          "data_vencimento": "05/07/2026",
-          "status": "Atrasado",
-          "dias_atraso": 3,
-          "valor_documento": 1719.99
         }
       ]
     },
@@ -24136,7 +24068,7 @@
       "titulos": [
         {
           "numero_documento": "37386",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/05/2025",
           "status": "Atrasado",
           "dias_atraso": 419,
@@ -24166,7 +24098,7 @@
       "titulos": [
         {
           "numero_documento": "38184",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/05/2025",
           "status": "Atrasado",
           "dias_atraso": 424,
@@ -24196,7 +24128,7 @@
       "titulos": [
         {
           "numero_documento": "51927",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/04/2026",
           "status": "Atrasado",
           "dias_atraso": 89,
@@ -24504,7 +24436,7 @@
       "titulos": [
         {
           "numero_documento": "36177",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "10/04/2025",
           "status": "Atrasado",
           "dias_atraso": 454,
@@ -24534,7 +24466,7 @@
       "titulos": [
         {
           "numero_documento": "37930",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/05/2025",
           "status": "Atrasado",
           "dias_atraso": 419,
@@ -24594,7 +24526,7 @@
       "titulos": [
         {
           "numero_documento": "42732",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/08/2025",
           "status": "Atrasado",
           "dias_atraso": 327,
@@ -24744,6 +24676,36 @@
       "titulos": [
         {
           "numero_documento": "56863",
+          "categoria": "Mensalidade",
+          "data_vencimento": "05/07/2026",
+          "status": "Atrasado",
+          "dias_atraso": 3,
+          "valor_documento": 1500.0
+        }
+      ]
+    },
+    {
+      "Razao Social": "HT - EQUIPAMENTOS DE AUDIO E VIDEO LTDA",
+      "Nome Fantasia": "HT - AUDIO E VIDEO",
+      "CNPJ/CPF": "07.363.364/0001-85",
+      "Email": "carneto@ig.com.br",
+      "Telefone": "99405-2993",
+      "Cidade": "TERESINA (PI)",
+      "Estado": "PI",
+      "Regiao": "Teresina",
+      "Diretora Regional": "Nao Informada",
+      "Gestora": "Olga Bezerra",
+      "Modelo de Negocio": "Associados",
+      "Distrato": "Nao",
+      "Qtd Titulos": 1,
+      "Valor Atrasado (R$)": 1500,
+      "Dias em Atraso": 3,
+      "Vencimento Mais Antigo": "05/07/2026",
+      "Codigo Omie": 8433759792,
+      "Tags": "Cliente, Associados, Teresina, Piaui",
+      "titulos": [
+        {
+          "numero_documento": "56956",
           "categoria": "Mensalidade",
           "data_vencimento": "05/07/2026",
           "status": "Atrasado",
@@ -25340,7 +25302,7 @@
       "titulos": [
         {
           "numero_documento": "55480",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "15/06/2026",
           "status": "Atrasado",
           "dias_atraso": 23,
@@ -26038,7 +26000,7 @@
       "titulos": [
         {
           "numero_documento": "35744",
-          "categoria": "Distrato - Aviso Prévio",
+          "categoria": "Aviso Prévio",
           "data_vencimento": "25/04/2025",
           "status": "Atrasado",
           "dias_atraso": 439,
