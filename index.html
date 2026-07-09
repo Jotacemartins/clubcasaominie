@@ -208,7 +208,6 @@ a:hover{opacity:.8;text-decoration:underline}
     <table>
       <thead><tr>
         <th class="t-left" onclick="sort('Razao Social')">Cliente</th>
-        <th class="t-left" onclick="sort('CNPJ/CPF')">CNPJ / CPF</th>
         <th class="t-center" onclick="sort('Regiao')">Região</th>
         <th class="t-center" onclick="sort('Gestora')">Gestora</th>
         <th class="t-center" onclick="sort('Modelo de Negocio')">Modelo</th>
@@ -358,7 +357,7 @@ function passaAno(r){
 function renderTabela(){
   var tbody=document.getElementById('tbody');
   var slice=filtrado.slice((pagina-1)*POR_PAGINA,pagina*POR_PAGINA);
-  if(!slice.length){tbody.innerHTML='<tr><td colspan="10"><div class="empty">Nenhum resultado.</div></td></tr>';document.getElementById('paginacao').innerHTML='';return;}
+  if(!slice.length){tbody.innerHTML='<tr><td colspan="9"><div class="empty">Nenhum resultado.</div></td></tr>';document.getElementById('paginacao').innerHTML='';return;}
   var html='';
   slice.forEach(function(r,i){
     var idx=(pagina-1)*POR_PAGINA+i;
@@ -373,8 +372,7 @@ function renderTabela(){
     var dias=r['Dias em Atraso']||0;
     var valor=valorAno(r);var qtd=qtdAno(r);
     html+='<tr>'+
-      '<td class="t-left"><div class="nome-principal">'+(r['Razao Social']||'N/I')+'</div>'+nf+'</td>'+
-      '<td class="t-left" style="color:var(--muted);font-size:12px">'+(r['CNPJ/CPF']||'N/I')+'</td>'+
+      '<td class="t-left"><div class="nome-principal">'+(r['Razao Social']||'N/I')+'</div>'+nf+'<div style="font-size:11px;color:var(--muted);margin-top:2px">'+(r['CNPJ/CPF']||'')+'</div></td>'+
       '<td class="t-center">'+reg+'</td>'+
       '<td class="t-center" style="font-size:12px">'+gest+'</td>'+
       '<td class="t-center">'+mod+'</td>'+
@@ -660,7 +658,7 @@ function iniciar(){
       document.getElementById('count-label').textContent=CLIENTES.length.toLocaleString('pt-BR')+' lojistas';
       ordenar();popularFiltros();renderGraficos();renderTabela();
     })
-    .catch(function(e){document.getElementById('tbody').innerHTML='<tr><td colspan="10"><div class="error-box">'+e.message+'</div></td></tr>';});
+    .catch(function(e){document.getElementById('tbody').innerHTML='<tr><td colspan="9"><div class="error-box">'+e.message+'</div></td></tr>';});
 
   fetch('recebimentos.json')
     .then(function(r){if(!r.ok)throw new Error('recebimentos.json não encontrado.');return r.json();})
