@@ -13,7 +13,6 @@ OMIE_CATEGORIAS = 'https://app.omie.com.br/api/v1/geral/categorias/'
 OMIE_EXTRATO    = 'https://app.omie.com.br/api/v1/financas/extrato/'
 RPP = 100
 
-# Contas correntes que têm recebimentos reais
 CONTAS_RECEBIMENTO = [
     (8453130413, 'CEF Conta Garantida'),
     (8528323193, 'Omie.CASH'),
@@ -22,16 +21,11 @@ CONTAS_RECEBIMENTO = [
     (8591664978, 'CEF 2'),
 ]
 
-# Categorias de recebimento a monitorar
 CATEGORIAS_ALVO = {
-    'mensalidade',
-    'pontuação',
-    'saldo de pontuação',
-    'ipcd',
-    'distrato - aviso prévio',
+    'mensalidade', 'pontuação', 'saldo de pontuação',
+    'ipcd', 'distrato - aviso prévio',
 }
 
-# Período: últimos 90 dias
 hoje     = date.today()
 d_inicio = hoje - timedelta(days=90)
 PERIODO_INICIO = d_inicio.strftime('%d/%m/%Y')
@@ -98,8 +92,14 @@ def calcular_dias(data_br):
     except:
         return 0
 
+def extrair_ano(data_br):
+    try:
+        return int(data_br.split('/')[2])
+    except:
+        return 0
+
 print('=' * 60)
-print('CLUB&CASA - Gerando relatorio de inadimplentes + recebimentos')
+print('CLUB&CASA - Gerando relatorio inadimplentes + recebimentos')
 print('=' * 60)
 
 # ----------------------------------------------------------------
@@ -122,14 +122,22 @@ while p <= tp:
         if 'fornecedor' in nd_tags and 'cliente' not in nd_tags:
             continue
         caracs = extrair_caracteristicas(c.get('caracteristicas', []))
-        regiao_tag   = next((raw_tags[i] for i, t in enumerate(nd_tags) if t in TAGS_REGIAO), '')
-        modelo_tag   = next((raw_tags[i] for i, t in enumerate(nd_tags) if t in TAGS_MODELO), '')
         distrato_tag = 'distrato' in nd_tags
-        regiao_final   = caracs['regiao']  if caracs['regiao']  else regiao_tag
-        modelo_final   = caracs['modelo']  if caracs['modelo']  else modelo_tag
+
+        # Separa tags de região das demais
+        tags_regiao_raw  = [raw_tags[i] for i, t in enumerate(nd_tags) if t in TAGS_REGIAO]
+        tags_outras_raw  = [raw_tags[i] for i, t in enumerate(nd_tags) if t not in TAGS_REGIAO]
+
+        regiao_tag   = tags_regiao_raw[0] if tags_regiao_raw else ''
+        modelo_tag   = next((raw_tags[i] for i, t in enumerate(nd_tags) if t in TAGS_MODELO), '')
+
+        regiao_final   = caracs['regiao'] if caracs['regiao'] else regiao_tag
+        modelo_final   = caracs['modelo'] if caracs['modelo'] else modelo_tag
         distrato_final = 'Sim' if (norm(caracs['status']) == 'distrato' or distrato_tag) else 'Nao'
+
         email_raw = c.get('email', '') or ''
         codigo    = c.get('codigo_cliente_omie')
+
         lojistas[str(codigo)] = {
             'codigo':            codigo,
             'razao_social':      html_lib.unescape(c.get('razao_social', '') or ''),
@@ -144,6 +152,8 @@ while p <= tp:
             'gestora_carac':     caracs['gestora'] if caracs['gestora'] else '',
             'modelo':            modelo_final if modelo_final else 'Sem Modelo',
             'distrato':          distrato_final,
+            'tags_regiao':       ', '.join(tags_regiao_raw),
+            'tags_outras':       ', '.join(tags_outras_raw),
             'todas_tags':        ', '.join(raw_tags),
             'codigo_vendedor':   str((c.get('recomendacoes') or {}).get('codigo_vendedor', '') or ''),
         }
@@ -168,8 +178,7 @@ try:
         for v in r['cadastro']:
             cod  = str(v.get('codigo', ''))
             nome = v.get('nome', '') or ''
-            if cod and nome:
-                vendedores[cod] = nome
+            if cod and nome: vendedores[cod] = nome
         p += 1
         time.sleep(0.3)
     print(f'  {len(vendedores)} gestoras encontradas')
@@ -179,7 +188,7 @@ except Exception as e:
 # ----------------------------------------------------------------
 # [2b/5] CATEGORIAS
 # ----------------------------------------------------------------
-print('\n[2b/5] Buscando categorias no Omie...')
+print('\n[2b/5] Buscando categorias...')
 categorias_map = {}
 try:
     p, tp = 1, 1
@@ -193,8 +202,7 @@ try:
         for cat in r['categoria_cadastro']:
             cod  = cat.get('codigo', '') or cat.get('codigo_categoria', '')
             desc = cat.get('descricao', '') or ''
-            if cod and desc:
-                categorias_map[cod] = desc
+            if cod and desc: categorias_map[cod] = desc
         p += 1
         time.sleep(0.3)
     print(f'  {len(categorias_map)} categorias encontradas')
@@ -206,7 +214,7 @@ except Exception as e:
 # ----------------------------------------------------------------
 print('\n[3/5] Buscando titulos ATRASADOS...')
 p, tp = 1, 1
-titulos   = {}
+titulos = {}
 total_tit = 0
 total_cancelados = 0
 erros_consecutivos = 0
@@ -222,11 +230,8 @@ while p <= tp:
     if r.get('faultstring'):
         erros_consecutivos += 1
         print(f'  Aviso pag {p}: {r["faultstring"]}')
-        if erros_consecutivos >= 5:
-            break
-        p += 1
-        time.sleep(1.5)
-        continue
+        if erros_consecutivos >= 5: break
+        p += 1; time.sleep(1.5); continue
     erros_consecutivos = 0
     tp   = r.get('total_de_paginas', 1)
     regs = r.get('conta_receber_cadastro') or r.get('lista_contareceber') or []
@@ -237,8 +242,7 @@ while p <= tp:
         if status_tit == 'CANCELADO':
             total_cancelados += 1
             continue
-        if cod not in titulos:
-            titulos[cod] = []
+        if cod not in titulos: titulos[cod] = []
         titulos[cod].append(t)
         total_tit += 1
     print(f'  Pag {p:3}/{tp} - {total_tit} titulos | {len(titulos)} clientes')
@@ -246,7 +250,7 @@ while p <= tp:
     time.sleep(0.6)
 
 # ----------------------------------------------------------------
-# [4/5] EXTRATO - RECEBIMENTOS REAIS (últimos 90 dias)
+# [4/5] EXTRATO - RECEBIMENTOS (últimos 90 dias)
 # ----------------------------------------------------------------
 print(f'\n[4/5] Buscando recebimentos ({PERIODO_INICIO} a {PERIODO_FIM})...')
 recebimentos = []
@@ -260,16 +264,11 @@ for nCodCC, nome_conta in CONTAS_RECEBIMENTO:
         movs = r.get('listaMovimentos', [])
         cnt = 0
         for m in movs:
-            # Só receitas (R) nas categorias alvo
-            if m.get('cNatureza') != 'R':
-                continue
+            if m.get('cNatureza') != 'R': continue
             cat = m.get('cDesCategoria', '').lower().strip()
-            if cat not in CATEGORIAS_ALVO:
-                continue
+            if cat not in CATEGORIAS_ALVO: continue
             valor = float(m.get('nValorDocumento', 0))
-            if valor <= 0:
-                continue
-
+            if valor <= 0: continue
             recebimentos.append({
                 'Data':           m.get('dDataLancamento', ''),
                 'Conciliacao':    m.get('dDataConciliacao', ''),
@@ -290,15 +289,14 @@ for nCodCC, nome_conta in CONTAS_RECEBIMENTO:
         print(f'  {nome_conta}: erro - {e}')
     time.sleep(0.5)
 
-# Ordena por data desc
 recebimentos.sort(key=lambda x: x['Data'], reverse=True)
 total_recebido = round(sum(r['Valor'] for r in recebimentos), 2)
-print(f'  Total recebimentos: {len(recebimentos)} | Valor: R$ {total_recebido:,.2f}')
+print(f'  Total: {len(recebimentos)} registros | R$ {total_recebido:,.2f}')
 
 # ----------------------------------------------------------------
 # [5/5] CRUZAMENTO INADIMPLENTES
 # ----------------------------------------------------------------
-print('\n[5/5] Cruzando dados inadimplentes...')
+print('\n[5/5] Cruzando dados...')
 
 def sort_key(t):
     dv = t.get('data_vencimento') or '99/99/9999'
@@ -308,15 +306,10 @@ def sort_key(t):
     except:
         return (9999, 99, 99)
 
-status_map = {
-    'ATRASADO':  'Atrasado',
-    'PAGO':      'Pago',
-    'ABERTO':    'A Vencer',
-    'CANCELADO': 'Cancelado',
-}
+status_map = {'ATRASADO': 'Atrasado', 'PAGO': 'Pago', 'ABERTO': 'A Vencer', 'CANCELADO': 'Cancelado'}
 
-rows_xlsx  = []
-rows_json  = []
+rows_xlsx = []
+rows_json = []
 total_valor    = 0
 total_distrato = 0
 
@@ -354,16 +347,19 @@ for cod, tits in titulos.items():
         categoria   = categorias_map.get(cod_categoria, cod_categoria)
         status_raw  = (t.get('status_titulo') or t.get('cStatus') or 'ATRASADO').upper().strip()
         status_exib = status_map.get(status_raw, status_raw.capitalize())
+        ano_venc    = extrair_ano(data_venc)
 
         titulos_arr.append({
             'numero_documento': numero_doc,
             'categoria':        categoria,
             'data_vencimento':  data_venc,
+            'ano':              ano_venc,
             'status':           status_exib,
             'dias_atraso':      calcular_dias(data_venc),
             'valor_documento':  valor_tit,
         })
 
+        # Excel: 1 linha por título
         rows_xlsx.append({
             'Razao Social':           cl['razao_social'],
             'Nome Fantasia':          cl['nome_fantasia'],
@@ -373,6 +369,8 @@ for cod, tits in titulos.items():
             'Cidade':                 cl['cidade'],
             'Estado':                 cl['estado'],
             'Regiao':                 cl['regiao'],
+            'Tags Regiao':            cl['tags_regiao'],
+            'Outras Tags':            cl['tags_outras'],
             'Diretora Regional':      cl['diretora_regional'],
             'Gestora':                gestora_nome or '',
             'Modelo de Negocio':      cl['modelo'],
@@ -381,15 +379,16 @@ for cod, tits in titulos.items():
             'Valor Atrasado (R$)':    val_total,
             'Dias em Atraso':         calcular_dias(mais_antigo),
             'Vencimento Mais Antigo': mais_antigo,
+            'Ano Vencimento':         ano_venc,
             'Status':                 status_exib,
             'Documento':              numero_doc,
             'Categoria':              categoria,
             'Vencimento':             data_venc,
-            'Valor':                  valor_tit,
+            'Valor Titulo (R$)':      valor_tit,
             'Codigo Omie':            cl['codigo'],
-            'Tags':                   cl['todas_tags'],
         })
 
+    # JSON: 1 linha por cliente
     rows_json.append({
         'Razao Social':           cl['razao_social'],
         'Nome Fantasia':          cl['nome_fantasia'],
@@ -399,6 +398,8 @@ for cod, tits in titulos.items():
         'Cidade':                 cl['cidade'],
         'Estado':                 cl['estado'],
         'Regiao':                 cl['regiao'],
+        'Tags Regiao':            cl['tags_regiao'],
+        'Outras Tags':            cl['tags_outras'],
         'Diretora Regional':      cl['diretora_regional'],
         'Gestora':                gestora_nome or '',
         'Modelo de Negocio':      cl['modelo'],
@@ -408,7 +409,6 @@ for cod, tits in titulos.items():
         'Dias em Atraso':         calcular_dias(mais_antigo),
         'Vencimento Mais Antigo': mais_antigo,
         'Codigo Omie':            cl['codigo'],
-        'Tags':                   cl['todas_tags'],
         'titulos':                titulos_arr,
     })
 
@@ -447,72 +447,64 @@ with open('recebimentos.json', 'w', encoding='utf-8') as f:
 print('Salvando inadimplentes-clubcasa.xlsx...')
 
 wb = Workbook()
-
-roxo       = PatternFill(start_color='5B52E8', end_color='5B52E8', fill_type='solid')
-roxo_claro = PatternFill(start_color='F4F6FB', end_color='F4F6FB', fill_type='solid')
-verde      = PatternFill(start_color='10B981', end_color='10B981', fill_type='solid')
-verde_claro= PatternFill(start_color='F0FDF4', end_color='F0FDF4', fill_type='solid')
-branco_ft  = Font(color='FFFFFF', bold=True, size=11, name='Arial')
+roxo        = PatternFill(start_color='5B52E8', end_color='5B52E8', fill_type='solid')
+roxo_claro  = PatternFill(start_color='F4F6FB', end_color='F4F6FB', fill_type='solid')
+verde       = PatternFill(start_color='10B981', end_color='10B981', fill_type='solid')
+verde_claro = PatternFill(start_color='F0FDF4', end_color='F0FDF4', fill_type='solid')
+branco_ft   = Font(color='FFFFFF', bold=True, size=11, name='Arial')
 borda = Border(
-    left=Side(style='thin',   color='E2E6F0'),
-    right=Side(style='thin',  color='E2E6F0'),
-    top=Side(style='thin',    color='E2E6F0'),
-    bottom=Side(style='thin', color='E2E6F0')
+    left=Side(style='thin', color='E2E6F0'), right=Side(style='thin', color='E2E6F0'),
+    top=Side(style='thin', color='E2E6F0'),  bottom=Side(style='thin', color='E2E6F0')
 )
 
-# ── ABA 1: Inadimplentes ─────────────────────────────────────────
+# ── ABA 1: Inadimplentes (título a título) ───────────────────────
 ws1 = wb.active
 ws1.title = 'Inadimplentes'
 
 headers1 = [
     'Razao Social', 'Nome Fantasia', 'CNPJ/CPF', 'Email', 'Telefone',
-    'Cidade', 'Estado', 'Regiao', 'Diretora Regional', 'Gestora',
-    'Modelo de Negocio', 'Distrato',
+    'Cidade', 'Estado', 'Regiao', 'Tags Regiao', 'Outras Tags',
+    'Diretora Regional', 'Gestora', 'Modelo de Negocio', 'Distrato',
     'Qtd Titulos', 'Valor Atrasado (R$)', 'Dias em Atraso', 'Vencimento Mais Antigo',
-    'Status', 'Documento', 'Categoria', 'Vencimento', 'Valor',
-    'Codigo Omie', 'Tags'
+    'Ano Vencimento', 'Status', 'Documento', 'Categoria', 'Vencimento',
+    'Valor Titulo (R$)', 'Codigo Omie'
 ]
 
 for col, h in enumerate(headers1, start=1):
     cell = ws1.cell(row=1, column=col, value=h)
-    cell.fill = roxo
-    cell.font = branco_ft
+    cell.fill = roxo; cell.font = branco_ft
     cell.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
     cell.border = borda
 ws1.row_dimensions[1].height = 30
 
-prev_cnpj  = None
-usar_claro = False
+prev_cnpj = None; usar_claro = False
 for i, r in enumerate(rows_xlsx, start=2):
     if r['CNPJ/CPF'] != prev_cnpj:
-        usar_claro = not usar_claro
-        prev_cnpj  = r['CNPJ/CPF']
+        usar_claro = not usar_claro; prev_cnpj = r['CNPJ/CPF']
     valores = [
         r['Razao Social'], r['Nome Fantasia'], r['CNPJ/CPF'], r['Email'], r['Telefone'],
-        r['Cidade'], r['Estado'], r['Regiao'], r['Diretora Regional'], r['Gestora'],
-        r['Modelo de Negocio'], r['Distrato'],
+        r['Cidade'], r['Estado'], r['Regiao'], r['Tags Regiao'], r['Outras Tags'],
+        r['Diretora Regional'], r['Gestora'], r['Modelo de Negocio'], r['Distrato'],
         r['Qtd Titulos'], r['Valor Atrasado (R$)'], r['Dias em Atraso'], r['Vencimento Mais Antigo'],
-        r['Status'], r['Documento'], r['Categoria'], r['Vencimento'], r['Valor'],
-        r['Codigo Omie'], r['Tags']
+        r['Ano Vencimento'], r['Status'], r['Documento'], r['Categoria'], r['Vencimento'],
+        r['Valor Titulo (R$)'], r['Codigo Omie']
     ]
     for col, v in enumerate(valores, start=1):
         cell = ws1.cell(row=i, column=col, value=v)
-        cell.border = borda
-        cell.font   = Font(name='Arial', size=10)
+        cell.border = borda; cell.font = Font(name='Arial', size=10)
         if usar_claro: cell.fill = roxo_claro
-        if col == 14: cell.number_format = 'R$ #,##0.00'
-        if col == 21: cell.number_format = 'R$ #,##0.00'
+        if col == 16: cell.number_format = 'R$ #,##0.00'
+        if col == 24: cell.number_format = 'R$ #,##0.00'
 
 ultima1 = len(rows_xlsx) + 2
 for col in range(1, len(headers1) + 1):
     cell = ws1.cell(row=ultima1, column=col)
     cell.fill = roxo; cell.border = borda; cell.font = branco_ft
 ws1.cell(row=ultima1, column=1, value='TOTAL GERAL')
-ws1.cell(row=ultima1, column=21, value=round(sum(r['Valor'] for r in rows_xlsx), 2)).number_format = 'R$ #,##0.00'
-ws1.cell(row=ultima1, column=21).fill = roxo
-ws1.cell(row=ultima1, column=21).font = branco_ft
+c = ws1.cell(row=ultima1, column=24, value=round(sum(r['Valor Titulo (R$)'] for r in rows_xlsx), 2))
+c.number_format = 'R$ #,##0.00'; c.fill = roxo; c.font = branco_ft
 
-larguras1 = [35,30,18,30,15,20,8,22,20,22,20,10,10,18,12,18,12,20,22,14,16,14,30]
+larguras1 = [35,30,18,30,15,20,8,22,22,30,20,22,20,10,10,18,12,18,8,12,20,22,14,16,14]
 for i, w in enumerate(larguras1, start=1):
     ws1.column_dimensions[get_column_letter(i)].width = w
 ws1.freeze_panes = 'A2'
@@ -529,8 +521,7 @@ headers2 = [
 
 for col, h in enumerate(headers2, start=1):
     cell = ws2.cell(row=1, column=col, value=h)
-    cell.fill = verde
-    cell.font = branco_ft
+    cell.fill = verde; cell.font = branco_ft
     cell.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
     cell.border = borda
 ws2.row_dimensions[1].height = 30
@@ -543,8 +534,7 @@ for i, r in enumerate(recebimentos, start=2):
     ]
     for col, v in enumerate(valores, start=1):
         cell = ws2.cell(row=i, column=col, value=v)
-        cell.border = borda
-        cell.font   = Font(name='Arial', size=10)
+        cell.border = borda; cell.font = Font(name='Arial', size=10)
         if i % 2 == 0: cell.fill = verde_claro
         if col == 11: cell.number_format = 'R$ #,##0.00'
 
@@ -553,9 +543,8 @@ for col in range(1, len(headers2) + 1):
     cell = ws2.cell(row=ultima2, column=col)
     cell.fill = verde; cell.border = borda; cell.font = branco_ft
 ws2.cell(row=ultima2, column=1, value='TOTAL RECEBIDO')
-ws2.cell(row=ultima2, column=11, value=total_recebido).number_format = 'R$ #,##0.00'
-ws2.cell(row=ultima2, column=11).fill = verde
-ws2.cell(row=ultima2, column=11).font = branco_ft
+c = ws2.cell(row=ultima2, column=11, value=total_recebido)
+c.number_format = 'R$ #,##0.00'; c.fill = verde; c.font = branco_ft
 
 larguras2 = [14,14,35,18,20,20,18,12,16,20,14,40]
 for i, w in enumerate(larguras2, start=1):
@@ -572,5 +561,5 @@ print(f'Total de titulos:       {total_tit}')
 print(f'Valor total atrasado:   R$ {total_valor:,.2f}')
 print(f'Valor em distrato:      R$ {total_distrato:,.2f}')
 print(f'Recebimentos (90d):     {len(recebimentos)} | R$ {total_recebido:,.2f}')
-print(f'Titulos cancelados ignorados: {total_cancelados}')
+print(f'Titulos cancelados:     {total_cancelados}')
 print(f'Arquivos: inadimplentes.json | recebimentos.json | inadimplentes-clubcasa.xlsx')

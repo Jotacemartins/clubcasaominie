@@ -1,7 +1,7 @@
 {
-  "gerado_em": "08/07/2026 21:17",
-  "periodo_inicio": "09/04/2026",
-  "periodo_fim": "08/07/2026",
+  "gerado_em": "09/07/2026 20:11",
+  "periodo_inicio": "10/04/2026",
+  "periodo_fim": "09/07/2026",
   "total_registros": 562,
   "valor_total": 2111389.57,
   "recebimentos": [
@@ -6909,28 +6909,28 @@
     },
     {
       "Data": "06/07/2026",
-      "Conciliacao": "",
+      "Conciliacao": "09/07/2026",
       "Cliente": "MOVELARIA FRANCA",
       "CNPJ": "30.947.811/0001-65",
       "Categoria": "Pontuação",
       "Conta Corrente": "CEF Conta Garantida",
       "Documento": "RPS 56385",
       "Tipo Doc": "Boleto",
-      "Situacao": "Não conciliado",
+      "Situacao": "Conciliado",
       "Vendedor": "Priscila Rubira",
       "Valor": 20811.18,
       "Observacoes": "Recebimento realizado a partir da importação do arquivo de retorno da cobrança."
     },
     {
       "Data": "06/07/2026",
-      "Conciliacao": "",
+      "Conciliacao": "09/07/2026",
       "Cliente": "TESSARO HOME &amp; GARDEN",
       "CNPJ": "45.156.109/0001-50",
       "Categoria": "Mensalidade",
       "Conta Corrente": "CEF Conta Garantida",
       "Documento": "RPS 54520",
       "Tipo Doc": "Boleto",
-      "Situacao": "Não conciliado",
+      "Situacao": "Conciliado",
       "Vendedor": "Vania Velloso",
       "Valor": 1513.73,
       "Observacoes": "Recebimento realizado a partir da importação do arquivo de retorno da cobrança."
