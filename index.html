@@ -537,7 +537,7 @@ function aplicarFiltrosReceb(){
   var fCat=document.getElementById('r-categoria').value,fConta=document.getElementById('r-conta').value,fSit=document.getElementById('r-situacao').value;
   var hoje=new Date();hoje.setHours(23,59,59,999);
   recebFiltrado=RECEBIMENTOS_TODOS.filter(function(r){
-    if(diasPeriodo>0){try{var p=r['Data'].split('/');var dt=new Date(parseInt(p[2]),parseInt(p[1])-1,parseInt(p[0]));if((hoje-dt)/86400000>diasPeriodo)return false;}catch(e){}}
+    if(diasPeriodo>0){try{var p=r['Data'].split('/');if(p.length===3){var dt=new Date(parseInt(p[2]),parseInt(p[1])-1,parseInt(p[0]));if(!isNaN(dt.getTime())&&(hoje-dt)/86400000>diasPeriodo)return false;}}catch(e){}}
     if(busca){if(!ns(r['Cliente']).includes(busca)&&!ns(r['CNPJ']).includes(busca))return false;}
     if(fCat&&r['Categoria']!==fCat)return false;
     if(fConta&&r['Conta Corrente']!==fConta)return false;
