@@ -1,8 +1,8 @@
 {
-  "gerado_em": "22/07/2026 10:02",
-  "total_clientes": 538,
-  "total_titulos": 2502,
-  "valor_total": 5379699.51,
+  "gerado_em": "22/07/2026 21:08",
+  "total_clientes": 531,
+  "total_titulos": 2486,
+  "valor_total": 5342969.08,
   "inadimplentes": [
     {
       "Razao Social": "IJP COMERCIO DE MOVEIS LTDA",
@@ -13381,38 +13381,6 @@
       ]
     },
     {
-      "Razao Social": "VPC COMERCIO DE PISOS E ACABAMENTOS LTDA.",
-      "Nome Fantasia": "NERO PISOS E REVESTIMENTOS",
-      "CNPJ/CPF": "60.794.448/0003-18",
-      "Email": "viniciopinheiro@gmail.com",
-      "Telefone": "9114-2873",
-      "Cidade": "JOAO PESSOA (PB)",
-      "Estado": "PB",
-      "Regiao": "Sem Regiao",
-      "Tags Regiao": "",
-      "Outras Tags": "Cliente, Associados, Paraíba, João Pessoa",
-      "Diretora Regional": "Nao Informada",
-      "Gestora": "Olga Bezerra",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Nao",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 14248.97,
-      "Dias em Atraso": 8,
-      "Vencimento Mais Antigo": "14/07/2026",
-      "Codigo Omie": 8854631319,
-      "titulos": [
-        {
-          "numero_documento": "58032",
-          "categoria": "Pontuação",
-          "data_vencimento": "14/07/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 8,
-          "valor_documento": 14248.97
-        }
-      ]
-    },
-    {
       "Razao Social": "BARONESA COMERCIO DE PEDRAS LTDA",
       "Nome Fantasia": "BARONESA COMERCIO DE PEDRAS",
       "CNPJ/CPF": "16.933.170/0001-69",
@@ -16338,7 +16306,7 @@
       "titulos": [
         {
           "numero_documento": "N/I",
-          "categoria": "Aviso Prévio",
+          "categoria": "Saldo da Pontuação",
           "data_vencimento": "26/12/2025",
           "ano": 2025,
           "status": "Atrasado",
@@ -16347,7 +16315,7 @@
         },
         {
           "numero_documento": "N/I",
-          "categoria": "Aviso Prévio",
+          "categoria": "Saldo da Pontuação",
           "data_vencimento": "26/01/2026",
           "ano": 2026,
           "status": "Atrasado",
@@ -16356,7 +16324,7 @@
         },
         {
           "numero_documento": "N/I",
-          "categoria": "Aviso Prévio",
+          "categoria": "Saldo da Pontuação",
           "data_vencimento": "26/02/2026",
           "ano": 2026,
           "status": "Atrasado",
@@ -16365,7 +16333,7 @@
         },
         {
           "numero_documento": "N/I",
-          "categoria": "Aviso Prévio",
+          "categoria": "Saldo da Pontuação",
           "data_vencimento": "26/03/2026",
           "ano": 2026,
           "status": "Atrasado",
@@ -25104,47 +25072,6 @@
       ]
     },
     {
-      "Razao Social": "BRASIL VIDROS COMERCIO, REPRESENTACAO E PRESTACAO DE SERVICO",
-      "Nome Fantasia": "BRASIL VIDROS",
-      "CNPJ/CPF": "49.497.376/0001-42",
-      "Email": "financeirobrasilvidros@gmail.com",
-      "Telefone": "99382-0000",
-      "Cidade": "BELEM (PA)",
-      "Estado": "PA",
-      "Regiao": "Belém",
-      "Tags Regiao": "Belém",
-      "Outras Tags": "Cliente, Associados, Pará",
-      "Diretora Regional": "Nao Informada",
-      "Gestora": "Dani Montani",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Nao",
-      "Qtd Titulos": 2,
-      "Valor Atrasado (R$)": 4953.56,
-      "Dias em Atraso": 12,
-      "Vencimento Mais Antigo": "10/07/2026",
-      "Codigo Omie": 8511208367,
-      "titulos": [
-        {
-          "numero_documento": "57218",
-          "categoria": "Mensalidade",
-          "data_vencimento": "10/07/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 12,
-          "valor_documento": 1551.95
-        },
-        {
-          "numero_documento": "57998",
-          "categoria": "Pontuação",
-          "data_vencimento": "14/07/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 8,
-          "valor_documento": 3401.61
-        }
-      ]
-    },
-    {
       "Razao Social": "MASTER OFFICE DESIGN LTDA",
       "Nome Fantasia": "BORTOLINI-ES",
       "CNPJ/CPF": "38.073.073/0001-86",
@@ -25963,115 +25890,6 @@
           "status": "Atrasado",
           "dias_atraso": 499,
           "valor_documento": 1477.5
-        }
-      ]
-    },
-    {
-      "Razao Social": "MINHA CASA DECORACOES LTDA",
-      "Nome Fantasia": "MINHA CASA DECORACOES LTDA",
-      "CNPJ/CPF": "01.220.676/0001-53",
-      "Email": "luizminhacasa@yahoo.com.br",
-      "Telefone": "98244-0041",
-      "Cidade": "RIBEIRAO PRETO (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Tags Regiao": "",
-      "Outras Tags": "Cliente, Associados, Ribeirão Preto",
-      "Diretora Regional": "Nao Informada",
-      "Gestora": "Vania Velloso",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Nao",
-      "Qtd Titulos": 3,
-      "Valor Atrasado (R$)": 4561.73,
-      "Dias em Atraso": 42,
-      "Vencimento Mais Antigo": "10/06/2026",
-      "Codigo Omie": 8509409276,
-      "titulos": [
-        {
-          "numero_documento": "54942",
-          "categoria": "Mensalidade",
-          "data_vencimento": "10/06/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 42,
-          "valor_documento": 1551.95
-        },
-        {
-          "numero_documento": "57103",
-          "categoria": "Mensalidade",
-          "data_vencimento": "10/07/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 12,
-          "valor_documento": 1551.95
-        },
-        {
-          "numero_documento": "58111",
-          "categoria": "Pontuação",
-          "data_vencimento": "14/07/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 8,
-          "valor_documento": 1457.83
-        }
-      ]
-    },
-    {
-      "Razao Social": "IDEALE DECOR LTDA",
-      "Nome Fantasia": "IDEALE DECOR LTDA",
-      "CNPJ/CPF": "14.342.617/0001-08",
-      "Email": "pedro@idealedecor.com.br",
-      "Telefone": "3301-6555",
-      "Cidade": "LONDRINA (PR)",
-      "Estado": "PR",
-      "Regiao": "Paraná",
-      "Tags Regiao": "Paraná",
-      "Outras Tags": "Cliente, Associados, Londrina",
-      "Diretora Regional": "Nao Informada",
-      "Gestora": "Raffael Botta",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Nao",
-      "Qtd Titulos": 4,
-      "Valor Atrasado (R$)": 4512.62,
-      "Dias em Atraso": 43,
-      "Vencimento Mais Antigo": "09/06/2026",
-      "Codigo Omie": 8833739867,
-      "titulos": [
-        {
-          "numero_documento": "56009",
-          "categoria": "Pontuação",
-          "data_vencimento": "09/06/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 43,
-          "valor_documento": 756.31
-        },
-        {
-          "numero_documento": "55601",
-          "categoria": "Mensalidade",
-          "data_vencimento": "10/06/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 42,
-          "valor_documento": 1500.0
-        },
-        {
-          "numero_documento": "56009",
-          "categoria": "Pontuação",
-          "data_vencimento": "09/07/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 13,
-          "valor_documento": 756.31
-        },
-        {
-          "numero_documento": "56977",
-          "categoria": "Mensalidade",
-          "data_vencimento": "10/07/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 12,
-          "valor_documento": 1500.0
         }
       ]
     },
@@ -26963,38 +26781,6 @@
       ]
     },
     {
-      "Razao Social": "FERRO E ACO CANADA LTDA",
-      "Nome Fantasia": "FERRO E ACO CANADA",
-      "CNPJ/CPF": "34.665.994/0001-87",
-      "Email": "nayfaila@gmail.com",
-      "Telefone": "99108-4234",
-      "Cidade": "APUCARANA (PR)",
-      "Estado": "PR",
-      "Regiao": "Paraná",
-      "Tags Regiao": "Paraná",
-      "Outras Tags": "Cliente, Associados, Apucarana",
-      "Diretora Regional": "Nao Informada",
-      "Gestora": "Raffael Botta",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Nao",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 3941.92,
-      "Dias em Atraso": 7,
-      "Vencimento Mais Antigo": "15/07/2026",
-      "Codigo Omie": 8804696894,
-      "titulos": [
-        {
-          "numero_documento": "58424",
-          "categoria": "Pontuação",
-          "data_vencimento": "15/07/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 7,
-          "valor_documento": 3941.92
-        }
-      ]
-    },
-    {
       "Razao Social": "G2V REVESTIMENTOS LTDA",
       "Nome Fantasia": "ABC DA CONSTUCAO",
       "CNPJ/CPF": "53.344.700/0001-60",
@@ -27614,6 +27400,38 @@
       ]
     },
     {
+      "Razao Social": "BRASIL VIDROS COMERCIO, REPRESENTACAO E PRESTACAO DE SERVICO",
+      "Nome Fantasia": "BRASIL VIDROS",
+      "CNPJ/CPF": "49.497.376/0001-42",
+      "Email": "financeirobrasilvidros@gmail.com",
+      "Telefone": "99382-0000",
+      "Cidade": "BELEM (PA)",
+      "Estado": "PA",
+      "Regiao": "Belém",
+      "Tags Regiao": "Belém",
+      "Outras Tags": "Cliente, Associados, Pará",
+      "Diretora Regional": "Nao Informada",
+      "Gestora": "Dani Montani",
+      "Modelo de Negocio": "Associados",
+      "Distrato": "Nao",
+      "Qtd Titulos": 1,
+      "Valor Atrasado (R$)": 3401.61,
+      "Dias em Atraso": 8,
+      "Vencimento Mais Antigo": "14/07/2026",
+      "Codigo Omie": 8511208367,
+      "titulos": [
+        {
+          "numero_documento": "57998",
+          "categoria": "Pontuação",
+          "data_vencimento": "14/07/2026",
+          "ano": 2026,
+          "status": "Atrasado",
+          "dias_atraso": 8,
+          "valor_documento": 3401.61
+        }
+      ]
+    },
+    {
       "Razao Social": "DIAMANTINO & HOFMAN COMERCIO E REPRESENTACAO LTDA",
       "Nome Fantasia": "ELETTROMEC",
       "CNPJ/CPF": "01.704.257/0009-44",
@@ -27692,47 +27510,6 @@
           "status": "Atrasado",
           "dias_atraso": 341,
           "valor_documento": 1500.0
-        }
-      ]
-    },
-    {
-      "Razao Social": "LEGNO PISOS E DECORACAO LTDA",
-      "Nome Fantasia": "LEGNO DECOR",
-      "CNPJ/CPF": "20.809.103/0001-04",
-      "Email": "kleilton@legnodecor.com.br",
-      "Telefone": "98872-2634",
-      "Cidade": "CURITIBA (PR)",
-      "Estado": "PR",
-      "Regiao": "Paraná",
-      "Tags Regiao": "Paraná, Curitiba",
-      "Outras Tags": "Cliente, Associados",
-      "Diretora Regional": "Nao Informada",
-      "Gestora": "Marcia Borges",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Nao",
-      "Qtd Titulos": 2,
-      "Valor Atrasado (R$)": 3350.74,
-      "Dias em Atraso": 42,
-      "Vencimento Mais Antigo": "10/06/2026",
-      "Codigo Omie": 8100557818,
-      "titulos": [
-        {
-          "numero_documento": "49105",
-          "categoria": "Pontuação",
-          "data_vencimento": "10/06/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 42,
-          "valor_documento": 1813.96
-        },
-        {
-          "numero_documento": "56608",
-          "categoria": "Aviso Prévio",
-          "data_vencimento": "10/07/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 12,
-          "valor_documento": 1536.78
         }
       ]
     },
@@ -28702,38 +28479,6 @@
           "ano": 2026,
           "status": "Atrasado",
           "dias_atraso": 21,
-          "valor_documento": 3000.0
-        }
-      ]
-    },
-    {
-      "Razao Social": "FA PERSIANAS E CORTINAS LTDA",
-      "Nome Fantasia": "CIA DAS PERSIANAS",
-      "CNPJ/CPF": "23.764.413/0001-48",
-      "Email": "companhiadaspersianas@yahoo.com.br",
-      "Telefone": "9994-5397",
-      "Cidade": "RECIFE (PE)",
-      "Estado": "PE",
-      "Regiao": "Recife",
-      "Tags Regiao": "Recife",
-      "Outras Tags": "Cliente, Associados, Pernambuco",
-      "Diretora Regional": "Nao Informada",
-      "Gestora": "Olga Bezerra",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Nao",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 3000,
-      "Dias em Atraso": 5,
-      "Vencimento Mais Antigo": "17/07/2026",
-      "Codigo Omie": 8875105450,
-      "titulos": [
-        {
-          "numero_documento": "56552",
-          "categoria": "Adesão",
-          "data_vencimento": "17/07/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 5,
           "valor_documento": 3000.0
         }
       ]
@@ -30339,47 +30084,6 @@
       ]
     },
     {
-      "Razao Social": "LOJA DE COLCHOES CAMPINAS LTDA",
-      "Nome Fantasia": "CASA ORNER COLCHOES",
-      "CNPJ/CPF": "63.009.752/0001-33",
-      "Email": "contato@sleepstore.com.br",
-      "Telefone": "99521-8974",
-      "Cidade": "CAMPINAS (SP)",
-      "Estado": "SP",
-      "Regiao": "Sem Regiao",
-      "Tags Regiao": "",
-      "Outras Tags": "Cliente, Campinas, Associados Pró",
-      "Diretora Regional": "Nao Informada",
-      "Gestora": "Susi Grundner",
-      "Modelo de Negocio": "Associados Pró",
-      "Distrato": "Nao",
-      "Qtd Titulos": 2,
-      "Valor Atrasado (R$)": 2400,
-      "Dias em Atraso": 68,
-      "Vencimento Mais Antigo": "15/05/2026",
-      "Codigo Omie": 8775226117,
-      "titulos": [
-        {
-          "numero_documento": "53576",
-          "categoria": "Mensalidade",
-          "data_vencimento": "15/05/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 68,
-          "valor_documento": 1200.0
-        },
-        {
-          "numero_documento": "54320",
-          "categoria": "Mensalidade",
-          "data_vencimento": "15/06/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 37,
-          "valor_documento": 1200.0
-        }
-      ]
-    },
-    {
       "Razao Social": "REALEZA DAS PEDRAS LTDA",
       "Nome Fantasia": "REALEZA DAS PEDRAS",
       "CNPJ/CPF": "59.761.039/0001-74",
@@ -31110,6 +30814,38 @@
       ]
     },
     {
+      "Razao Social": "LEGNO PISOS E DECORACAO LTDA",
+      "Nome Fantasia": "LEGNO DECOR",
+      "CNPJ/CPF": "20.809.103/0001-04",
+      "Email": "kleilton@legnodecor.com.br",
+      "Telefone": "98872-2634",
+      "Cidade": "CURITIBA (PR)",
+      "Estado": "PR",
+      "Regiao": "Paraná",
+      "Tags Regiao": "Paraná, Curitiba",
+      "Outras Tags": "Cliente, Associados",
+      "Diretora Regional": "Nao Informada",
+      "Gestora": "Marcia Borges",
+      "Modelo de Negocio": "Associados",
+      "Distrato": "Nao",
+      "Qtd Titulos": 1,
+      "Valor Atrasado (R$)": 1813.96,
+      "Dias em Atraso": 42,
+      "Vencimento Mais Antigo": "10/06/2026",
+      "Codigo Omie": 8100557818,
+      "titulos": [
+        {
+          "numero_documento": "49105",
+          "categoria": "Pontuação",
+          "data_vencimento": "10/06/2026",
+          "ano": 2026,
+          "status": "Atrasado",
+          "dias_atraso": 42,
+          "valor_documento": 1813.96
+        }
+      ]
+    },
+    {
       "Razao Social": "VETRION ESQUADRIAS LTDA",
       "Nome Fantasia": "VETRION ESQUADRIAS",
       "CNPJ/CPF": "43.207.110/0001-31",
@@ -31644,38 +31380,6 @@
       ]
     },
     {
-      "Razao Social": "ZARZA & ZARZA DECORACOES LTDA",
-      "Nome Fantasia": "INOVARE FOR HOME",
-      "CNPJ/CPF": "04.147.426/0001-23",
-      "Email": "nicolas@nzcontabil.com.br",
-      "Telefone": "3221-0265",
-      "Cidade": "CAXIAS DO SUL (RS)",
-      "Estado": "RS",
-      "Regiao": "Sem Regiao",
-      "Tags Regiao": "",
-      "Outras Tags": "Cliente, Associados, Rio Grande do Sul, Serra Gaucha",
-      "Diretora Regional": "Nao Informada",
-      "Gestora": "Marcia Borges",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Nao",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 1700,
-      "Dias em Atraso": 1,
-      "Vencimento Mais Antigo": "21/07/2026",
-      "Codigo Omie": 8889138265,
-      "titulos": [
-        {
-          "numero_documento": "59154",
-          "categoria": "Mensalidade",
-          "data_vencimento": "21/07/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 1,
-          "valor_documento": 1700.0
-        }
-      ]
-    },
-    {
       "Razao Social": "MARMORES E GRANITOS ATIBAIA LTDA",
       "Nome Fantasia": "MARMORES E GRANITOS ATIBAIA",
       "CNPJ/CPF": "03.873.810/0001-40",
@@ -32083,47 +31787,6 @@
           "status": "Atrasado",
           "dias_atraso": 12,
           "valor_documento": 1536.78
-        }
-      ]
-    },
-    {
-      "Razao Social": "INNOVAR DECORACAO DE INTERIORES LTDA",
-      "Nome Fantasia": "INNOVAR DECORACAO DE INTERIORES",
-      "CNPJ/CPF": "23.241.752/0001-40",
-      "Email": "innovarinteriores@live.com",
-      "Telefone": "99203-1212",
-      "Cidade": "VILA VELHA (ES)",
-      "Estado": "ES",
-      "Regiao": "Sem Regiao",
-      "Tags Regiao": "",
-      "Outras Tags": "Cliente, Associados, Espírito Santo, Grande Vitória",
-      "Diretora Regional": "Nao Informada",
-      "Gestora": "Bruna Godoy",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Nao",
-      "Qtd Titulos": 2,
-      "Valor Atrasado (R$)": 1506.75,
-      "Dias em Atraso": 8,
-      "Vencimento Mais Antigo": "14/07/2026",
-      "Codigo Omie": 8427426954,
-      "titulos": [
-        {
-          "numero_documento": "58101",
-          "categoria": "Pontuação",
-          "data_vencimento": "14/07/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 8,
-          "valor_documento": 506.75
-        },
-        {
-          "numero_documento": "54719",
-          "categoria": "Eventos",
-          "data_vencimento": "20/07/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 2,
-          "valor_documento": 1000.0
         }
       ]
     },
@@ -32832,6 +32495,38 @@
       ]
     },
     {
+      "Razao Social": "MINHA CASA DECORACOES LTDA",
+      "Nome Fantasia": "MINHA CASA DECORACOES LTDA",
+      "CNPJ/CPF": "01.220.676/0001-53",
+      "Email": "luizminhacasa@yahoo.com.br",
+      "Telefone": "98244-0041",
+      "Cidade": "RIBEIRAO PRETO (SP)",
+      "Estado": "SP",
+      "Regiao": "Sem Regiao",
+      "Tags Regiao": "",
+      "Outras Tags": "Cliente, Associados, Ribeirão Preto",
+      "Diretora Regional": "Nao Informada",
+      "Gestora": "Vania Velloso",
+      "Modelo de Negocio": "Associados",
+      "Distrato": "Nao",
+      "Qtd Titulos": 1,
+      "Valor Atrasado (R$)": 1457.83,
+      "Dias em Atraso": 8,
+      "Vencimento Mais Antigo": "14/07/2026",
+      "Codigo Omie": 8509409276,
+      "titulos": [
+        {
+          "numero_documento": "58111",
+          "categoria": "Pontuação",
+          "data_vencimento": "14/07/2026",
+          "ano": 2026,
+          "status": "Atrasado",
+          "dias_atraso": 8,
+          "valor_documento": 1457.83
+        }
+      ]
+    },
+    {
       "Razao Social": "VERAS & SANTOS EIRELI",
       "Nome Fantasia": "BRASILGRANITOS MARMORES E GRANITOS",
       "CNPJ/CPF": "13.592.393/0001-11",
@@ -33202,6 +32897,38 @@
           "status": "Atrasado",
           "dias_atraso": 8,
           "valor_documento": 1212.03
+        }
+      ]
+    },
+    {
+      "Razao Social": "LOJA DE COLCHOES CAMPINAS LTDA",
+      "Nome Fantasia": "CASA ORNER COLCHOES",
+      "CNPJ/CPF": "63.009.752/0001-33",
+      "Email": "contato@sleepstore.com.br",
+      "Telefone": "99521-8974",
+      "Cidade": "CAMPINAS (SP)",
+      "Estado": "SP",
+      "Regiao": "Sem Regiao",
+      "Tags Regiao": "",
+      "Outras Tags": "Cliente, Campinas, Associados Pró",
+      "Diretora Regional": "Nao Informada",
+      "Gestora": "Susi Grundner",
+      "Modelo de Negocio": "Associados Pró",
+      "Distrato": "Nao",
+      "Qtd Titulos": 1,
+      "Valor Atrasado (R$)": 1200,
+      "Dias em Atraso": 68,
+      "Vencimento Mais Antigo": "15/05/2026",
+      "Codigo Omie": 8775226117,
+      "titulos": [
+        {
+          "numero_documento": "53576",
+          "categoria": "Mensalidade",
+          "data_vencimento": "15/05/2026",
+          "ano": 2026,
+          "status": "Atrasado",
+          "dias_atraso": 68,
+          "valor_documento": 1200.0
         }
       ]
     },
@@ -33873,38 +33600,6 @@
       ]
     },
     {
-      "Razao Social": "SDS ACABAMENTOS LTDA",
-      "Nome Fantasia": "PETRARRARA ACABAMENTOS",
-      "CNPJ/CPF": "41.454.045/0001-13",
-      "Email": "administrativo@petrarrara.com.br",
-      "Telefone": "99981-8190",
-      "Cidade": "BALNEARIO CAMBORIU (SC)",
-      "Estado": "SC",
-      "Regiao": "Santa Catarina",
-      "Tags Regiao": "Santa Catarina",
-      "Outras Tags": "Cliente, Associados, Balneário Camboriú",
-      "Diretora Regional": "Nao Informada",
-      "Gestora": "Marcia Borges",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Nao",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 689.2,
-      "Dias em Atraso": 8,
-      "Vencimento Mais Antigo": "14/07/2026",
-      "Codigo Omie": 8450735971,
-      "titulos": [
-        {
-          "numero_documento": "58205",
-          "categoria": "Pontuação",
-          "data_vencimento": "14/07/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 8,
-          "valor_documento": 689.2
-        }
-      ]
-    },
-    {
       "Razao Social": "WLP AUTOMAÇÃO E PROGRAMAÇÃO RESIDENCIAL LTDA",
       "Nome Fantasia": "WLP AUTOMAÇÃO E PROGRAMAÇÃO RESIDENCIAL LTDA",
       "CNPJ/CPF": "57.426.248/0001-36",
@@ -34029,6 +33724,38 @@
           "status": "Atrasado",
           "dias_atraso": 12,
           "valor_documento": 540.0
+        }
+      ]
+    },
+    {
+      "Razao Social": "INNOVAR DECORACAO DE INTERIORES LTDA",
+      "Nome Fantasia": "INNOVAR DECORACAO DE INTERIORES",
+      "CNPJ/CPF": "23.241.752/0001-40",
+      "Email": "innovarinteriores@live.com",
+      "Telefone": "99203-1212",
+      "Cidade": "VILA VELHA (ES)",
+      "Estado": "ES",
+      "Regiao": "Sem Regiao",
+      "Tags Regiao": "",
+      "Outras Tags": "Cliente, Associados, Espírito Santo, Grande Vitória",
+      "Diretora Regional": "Nao Informada",
+      "Gestora": "Bruna Godoy",
+      "Modelo de Negocio": "Associados",
+      "Distrato": "Nao",
+      "Qtd Titulos": 1,
+      "Valor Atrasado (R$)": 506.75,
+      "Dias em Atraso": 8,
+      "Vencimento Mais Antigo": "14/07/2026",
+      "Codigo Omie": 8427426954,
+      "titulos": [
+        {
+          "numero_documento": "58101",
+          "categoria": "Pontuação",
+          "data_vencimento": "14/07/2026",
+          "ano": 2026,
+          "status": "Atrasado",
+          "dias_atraso": 8,
+          "valor_documento": 506.75
         }
       ]
     },
@@ -34381,38 +34108,6 @@
           "status": "Atrasado",
           "dias_atraso": 7,
           "valor_documento": 245.18
-        }
-      ]
-    },
-    {
-      "Razao Social": "G S C SERRA ENGENHARIA LTDA",
-      "Nome Fantasia": "SIMPLA ENGENHARIA",
-      "CNPJ/CPF": "45.126.288/0001-83",
-      "Email": "simplaengenharia@gmail.com",
-      "Telefone": "99155-4372",
-      "Cidade": "SAO LUIS (MA)",
-      "Estado": "MA",
-      "Regiao": "Sem Regiao",
-      "Tags Regiao": "",
-      "Outras Tags": "Cliente, Associados, Maranhão",
-      "Diretora Regional": "Nao Informada",
-      "Gestora": "Olga Bezerra",
-      "Modelo de Negocio": "Associados",
-      "Distrato": "Nao",
-      "Qtd Titulos": 1,
-      "Valor Atrasado (R$)": 245.09,
-      "Dias em Atraso": 23,
-      "Vencimento Mais Antigo": "29/06/2026",
-      "Codigo Omie": 8492382134,
-      "titulos": [
-        {
-          "numero_documento": "54920",
-          "categoria": "Eventos",
-          "data_vencimento": "29/06/2026",
-          "ano": 2026,
-          "status": "Atrasado",
-          "dias_atraso": 23,
-          "valor_documento": 245.09
         }
       ]
     },
