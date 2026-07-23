@@ -304,7 +304,7 @@ a:hover{opacity:.8;text-decoration:underline}
 <script>
 var CLIENTES=[],filtrado=[],colOrdem='Valor Atrasado (R$)',crescente=false,pagina=1,POR_PAGINA=50,anoFiltro=0;
 var BOLETOS_MODAL=[],BOLETOS_FILTRADO=[];
-var RECEBIMENTOS_TODOS=[],recebFiltrado=[],colOrdemR='Data',crescenteR=false,paginaR=1;
+var RECEBIMENTOS_TODOS=[],recebFiltrado=[],diasPeriodo=0,colOrdemR='Data',crescenteR=false,paginaR=1;
 
 function fmt(v){return 'R$ '+Number(v||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});}
 function classDias(d){return d>90?'dias-alto':d>30?'dias-medio':'dias-baixo';}
@@ -528,7 +528,7 @@ function aplicarFiltrosReceb(){
   var busca=ns(document.getElementById('r-busca').value);
   var fCat=document.getElementById('r-categoria').value,fConta=document.getElementById('r-conta').value,fSit=document.getElementById('r-situacao').value;
   recebFiltrado=RECEBIMENTOS_TODOS.filter(function(r){
-    if(diasPeriodo>0){try{var p=r['Data'].split('/');var dt=new Date(parseInt(p[2]),parseInt(p[1])-1,parseInt(p[0]));if((hoje-dt)/86400000>diasPeriodo)return false;}catch(e){}}
+    
     if(busca){if(!ns(r['Cliente']).includes(busca)&&!ns(r['CNPJ']).includes(busca))return false;}
     if(fCat&&r['Categoria']!==fCat)return false;
     if(fConta&&r['Conta Corrente']!==fConta)return false;
