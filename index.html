@@ -226,7 +226,7 @@ a:hover{opacity:.8;text-decoration:underline}
 <!-- ABA RECEBIMENTOS -->
 <div class="main section-hidden" id="secao-recebimentos">
   <div class="stats">
-    <div class="stat green"><div class="stat-label">Total Recebido</div><div class="stat-value" id="r-total">...</div><div class="stat-sub" id="r-periodo">Últimos 90 dias</div></div>
+    <div class="stat green"><div class="stat-label">Total Recebido</div><div class="stat-value" id="r-total">...</div><div class="stat-sub">Janeiro a hoje</div></div>
     <div class="stat blue"><div class="stat-label">Nº de Recebimentos</div><div class="stat-value" id="r-count">...</div><div class="stat-sub">Lançamentos no período</div></div>
     <div class="stat green"><div class="stat-label">Mensalidade</div><div class="stat-value" id="r-mensalidade">...</div><div class="stat-sub">Receita de mensalidades</div></div>
     <div class="stat blue"><div class="stat-label">Pontuação / IPCD</div><div class="stat-value" id="r-outros">...</div><div class="stat-sub">Demais categorias</div></div>
@@ -238,13 +238,7 @@ a:hover{opacity:.8;text-decoration:underline}
   </div>
   <div class="controls-wrap">
     <div class="controls-row">
-      <div class="periodo-selector">
-        <span>Período:</span>
-        <button class="per-btn" id="p30" onclick="filtrarPeriodo(30)">30d</button>
-        <button class="per-btn" id="p60" onclick="filtrarPeriodo(60)">60d</button>
-        <button class="per-btn active" id="p90" onclick="filtrarPeriodo(90)">90d</button>
-        <button class="per-btn" id="p0" onclick="filtrarPeriodo(0)">Todos</button>
-      </div>
+
       <input type="text" id="r-busca" placeholder="Buscar por cliente ou CNPJ...">
       <select id="r-categoria"><option value="">Todas as categorias</option></select>
       <select id="r-conta"><option value="">Todas as contas</option></select>
@@ -310,7 +304,7 @@ a:hover{opacity:.8;text-decoration:underline}
 <script>
 var CLIENTES=[],filtrado=[],colOrdem='Valor Atrasado (R$)',crescente=false,pagina=1,POR_PAGINA=50,anoFiltro=0;
 var BOLETOS_MODAL=[],BOLETOS_FILTRADO=[];
-var RECEBIMENTOS_TODOS=[],recebFiltrado=[],colOrdemR='Data',crescenteR=false,paginaR=1,diasPeriodo=90;
+var RECEBIMENTOS_TODOS=[],recebFiltrado=[],colOrdemR='Data',crescenteR=false,paginaR=1;
 
 function fmt(v){return 'R$ '+Number(v||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});}
 function classDias(d){return d>90?'dias-alto':d>30?'dias-medio':'dias-baixo';}
@@ -525,9 +519,7 @@ function exportarBoletosExcel(){
 }
 
 // RECEBIMENTOS
-function filtrarPeriodo(dias){
-  diasPeriodo=dias;
-  ['p30','p60','p90','p0'].forEach(function(id){document.getElementById(id).classList.remove('active');});
+);
   document.getElementById('p'+(dias||0)).classList.add('active');
   aplicarFiltrosReceb();
 }
@@ -535,7 +527,6 @@ function filtrarPeriodo(dias){
 function aplicarFiltrosReceb(){
   var busca=ns(document.getElementById('r-busca').value);
   var fCat=document.getElementById('r-categoria').value,fConta=document.getElementById('r-conta').value,fSit=document.getElementById('r-situacao').value;
-  var hoje=new Date();hoje.setHours(23,59,59,999);
   recebFiltrado=RECEBIMENTOS_TODOS.filter(function(r){
     if(diasPeriodo>0){try{var p=r['Data'].split('/');var dt=new Date(parseInt(p[2]),parseInt(p[1])-1,parseInt(p[0]));if((hoje-dt)/86400000>diasPeriodo)return false;}catch(e){}}
     if(busca){if(!ns(r['Cliente']).includes(busca)&&!ns(r['CNPJ']).includes(busca))return false;}
@@ -557,7 +548,7 @@ function atualizarCardsReceb(){
   document.getElementById('r-mensalidade').textContent=fmt(mens);
   document.getElementById('r-outros').textContent=fmt(total-mens);
   document.getElementById('r-ticket').textContent=fmt(recebFiltrado.length>0?total/recebFiltrado.length:0);
-  document.getElementById('r-periodo').textContent=diasPeriodo>0?'Últimos '+diasPeriodo+' dias':'Todo o período';
+  document.getElementById('r-periodo').textContent='Janeiro a hoje';
 }
 
 function renderGraficosReceb(){
