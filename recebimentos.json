@@ -1,9 +1,9 @@
 {
-  "gerado_em": "23/07/2026 22:38",
+  "gerado_em": "31/07/2026 16:05",
   "periodo_inicio": "01/01/2026",
-  "periodo_fim": "23/07/2026",
-  "total_registros": 1711,
-  "valor_total": 5748344.6,
+  "periodo_fim": "31/07/2026",
+  "total_registros": 1714,
+  "valor_total": 5763179.610000013,
   "recebimentos": [
     {
       "Data": "31/03/2026",
@@ -1859,7 +1859,7 @@
       "Categoria": "Acordo",
       "Conta Corrente": "Caixa Econômica Federal",
       "Documento": "IPCDF",
-      "Tipo Doc": "Boleto",
+      "Tipo Doc": "Protesto",
       "Situacao": "Previsto",
       "Vendedor": "Susi Grundner",
       "Valor": 1422.04
@@ -1924,7 +1924,7 @@
       "Categoria": "Pontuação",
       "Conta Corrente": "Caixa Econômica Federal",
       "Documento": "RPS 49015",
-      "Tipo Doc": "Boleto",
+      "Tipo Doc": "Protesto",
       "Situacao": "Previsto",
       "Vendedor": "Olga Bezerra",
       "Valor": 1489.02
@@ -2171,7 +2171,7 @@
       "Categoria": "Pontuação",
       "Conta Corrente": "Caixa Econômica Federal",
       "Documento": "RPS 49015",
-      "Tipo Doc": "Boleto",
+      "Tipo Doc": "Protesto",
       "Situacao": "Previsto",
       "Vendedor": "Olga Bezerra",
       "Valor": 1444.34
@@ -3731,7 +3731,7 @@
       "Categoria": "Pontuação",
       "Conta Corrente": "Caixa Econômica Federal",
       "Documento": "RPS 47598",
-      "Tipo Doc": "Boleto",
+      "Tipo Doc": "Protesto",
       "Situacao": "Previsto",
       "Vendedor": "Susi Grundner",
       "Valor": 6553.64
@@ -3865,6 +3865,19 @@
       "Situacao": "Conciliado",
       "Vendedor": "",
       "Valor": 1640.8
+    },
+    {
+      "Data": "20/02/2026",
+      "Conciliacao": "",
+      "Cliente": "LUSITANA ESQUADRIAS DE ALUMINIO",
+      "CNPJ": "25.112.936/0001-35",
+      "Categoria": "Pontuação",
+      "Conta Corrente": "Caixa Econômica Federal",
+      "Documento": "RPS 47598",
+      "Tipo Doc": "Protesto",
+      "Situacao": "Previsto",
+      "Vendedor": "Susi Grundner",
+      "Valor": 6553.64
     },
     {
       "Data": "20/02/2026",
@@ -4177,6 +4190,19 @@
       "Situacao": "Previsto",
       "Vendedor": "Bruna Godoy",
       "Valor": 1836.86
+    },
+    {
+      "Data": "20/01/2026",
+      "Conciliacao": "",
+      "Cliente": "LUSITANA ESQUADRIAS DE ALUMINIO",
+      "CNPJ": "25.112.936/0001-35",
+      "Categoria": "Pontuação",
+      "Conta Corrente": "Caixa Econômica Federal",
+      "Documento": "RPS 47598",
+      "Tipo Doc": "Protesto",
+      "Situacao": "Previsto",
+      "Vendedor": "Susi Grundner",
+      "Valor": 6258.73
     },
     {
       "Data": "20/01/2026",
@@ -5568,19 +5594,6 @@
       "Situacao": "Conciliado",
       "Vendedor": "",
       "Valor": 1674.5
-    },
-    {
-      "Data": "19/02/2026",
-      "Conciliacao": "",
-      "Cliente": "LUSITANA ESQUADRIAS DE ALUMINIO",
-      "CNPJ": "25.112.936/0001-35",
-      "Categoria": "Mensalidade",
-      "Conta Corrente": "Caixa Econômica Federal",
-      "Documento": "RPS 48859",
-      "Tipo Doc": "Boleto",
-      "Situacao": "Previsto",
-      "Vendedor": "Susi Grundner",
-      "Valor": 2022.64
     },
     {
       "Data": "19/02/2026",
@@ -7306,10 +7319,23 @@
       "Categoria": "Mensalidade",
       "Conta Corrente": "Caixa Econômica Federal",
       "Documento": "RPS 48062",
-      "Tipo Doc": "Boleto",
+      "Tipo Doc": "Protesto",
       "Situacao": "Previsto",
       "Vendedor": "Susi Grundner",
       "Valor": 1936.31
+    },
+    {
+      "Data": "18/02/2026",
+      "Conciliacao": "",
+      "Cliente": "LUSITANA ESQUADRIAS DE ALUMINIO",
+      "CNPJ": "25.112.936/0001-35",
+      "Categoria": "Mensalidade",
+      "Conta Corrente": "Caixa Econômica Federal",
+      "Documento": "RPS 48859",
+      "Tipo Doc": "Protesto",
+      "Situacao": "Previsto",
+      "Vendedor": "Susi Grundner",
+      "Valor": 2022.64
     },
     {
       "Data": "18/02/2026",
@@ -8684,7 +8710,7 @@
       "Categoria": "Mensalidade",
       "Conta Corrente": "Caixa Econômica Federal",
       "Documento": "RPS 49517",
-      "Tipo Doc": "Boleto",
+      "Tipo Doc": "Protesto",
       "Situacao": "Previsto",
       "Vendedor": "Susi Grundner",
       "Valor": 2022.64
@@ -10491,7 +10517,7 @@
       "Categoria": "Mensalidade",
       "Conta Corrente": "Caixa Econômica Federal",
       "Documento": "RPS 50173",
-      "Tipo Doc": "Boleto",
+      "Tipo Doc": "Protesto",
       "Situacao": "Previsto",
       "Vendedor": "Susi Grundner",
       "Valor": 1936.31
@@ -10629,6 +10655,19 @@
     {
       "Data": "15/01/2026",
       "Conciliacao": "",
+      "Cliente": "HDO VIDROS",
+      "CNPJ": "37.018.656/0001-41",
+      "Categoria": "Mensalidade",
+      "Conta Corrente": "Caixa Econômica Federal",
+      "Documento": "RPS 46818",
+      "Tipo Doc": "Protesto",
+      "Situacao": "Previsto",
+      "Vendedor": "Susi Grundner",
+      "Valor": 1936.31
+    },
+    {
+      "Data": "15/01/2026",
+      "Conciliacao": "",
       "Cliente": "S&amp;S ENGENHARIA E ARQUITETURA",
       "CNPJ": "32.648.564/0001-21",
       "Categoria": "Mensalidade",
@@ -10642,12 +10681,25 @@
     {
       "Data": "15/01/2026",
       "Conciliacao": "",
+      "Cliente": "LUSITANA ESQUADRIAS DE ALUMINIO",
+      "CNPJ": "25.112.936/0001-35",
+      "Categoria": "Mensalidade",
+      "Conta Corrente": "Caixa Econômica Federal",
+      "Documento": "RPS 46988",
+      "Tipo Doc": "Protesto",
+      "Situacao": "Previsto",
+      "Vendedor": "Susi Grundner",
+      "Valor": 2022.64
+    },
+    {
+      "Data": "15/01/2026",
+      "Conciliacao": "",
       "Cliente": "CANNES MOBILIARIO",
       "CNPJ": "31.057.956/0001-53",
       "Categoria": "Mensalidade",
       "Conta Corrente": "Caixa Econômica Federal",
       "Documento": "RPS 47166",
-      "Tipo Doc": "Boleto",
+      "Tipo Doc": "Protesto",
       "Situacao": "Previsto",
       "Vendedor": "Priscila Rubira",
       "Valor": 2093.06
@@ -11691,19 +11743,6 @@
       "Situacao": "Conciliado",
       "Vendedor": "",
       "Valor": 1609.09
-    },
-    {
-      "Data": "15/01/2026",
-      "Conciliacao": "",
-      "Cliente": "HDO VIDROS",
-      "CNPJ": "37.018.656/0001-41",
-      "Categoria": "Mensalidade",
-      "Conta Corrente": "CEF Conta Garantida",
-      "Documento": "RPS 46818",
-      "Tipo Doc": "Boleto",
-      "Situacao": "Previsto",
-      "Vendedor": "Susi Grundner",
-      "Valor": 1936.31
     },
     {
       "Data": "15/01/2026",
@@ -14716,7 +14755,7 @@
       "Categoria": "Pontuação",
       "Conta Corrente": "Caixa Econômica Federal",
       "Documento": "RPS 46109",
-      "Tipo Doc": "Boleto",
+      "Tipo Doc": "Protesto",
       "Situacao": "Previsto",
       "Vendedor": "Priscila Rubira",
       "Valor": 8462.7
@@ -20605,7 +20644,7 @@
       "Categoria": "Mensalidade",
       "Conta Corrente": "Caixa Econômica Federal",
       "Documento": "RPS 49079",
-      "Tipo Doc": "Boleto",
+      "Tipo Doc": "Protesto",
       "Situacao": "Previsto",
       "Vendedor": "Olga Bezerra",
       "Valor": 1578.32
@@ -21489,7 +21528,7 @@
       "Categoria": "Acordo",
       "Conta Corrente": "Caixa Econômica Federal",
       "Documento": "IPCD",
-      "Tipo Doc": "Boleto",
+      "Tipo Doc": "Protesto",
       "Situacao": "Previsto",
       "Vendedor": "Marcia Borges",
       "Valor": 2500.0
@@ -21697,7 +21736,7 @@
       "Categoria": "Acordo",
       "Conta Corrente": "Caixa Econômica Federal",
       "Documento": "IPCD",
-      "Tipo Doc": "Boleto",
+      "Tipo Doc": "Protesto",
       "Situacao": "Previsto",
       "Vendedor": "Marcia Borges",
       "Valor": 2500.0
@@ -21799,9 +21838,9 @@
       "Cliente": "101 DECOR - NOMAD CASA EM MOVIMENTO",
       "CNPJ": "29.384.912/0001-96",
       "Categoria": "Acordo",
-      "Conta Corrente": "CEF Conta Garantida",
+      "Conta Corrente": "Caixa Econômica Federal",
       "Documento": "IPCD",
-      "Tipo Doc": "Boleto",
+      "Tipo Doc": "Protesto",
       "Situacao": "Previsto",
       "Vendedor": "Marcia Borges",
       "Valor": 2500.0
