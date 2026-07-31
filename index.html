@@ -151,7 +151,7 @@ a:hover{opacity:.8;text-decoration:underline}
       <div class="logo-sub">DESIGN</div>
     </div>
     <div class="header-divider"></div>
-    <div><div class="header-sub" id="header-sub">Carregando dados do Omie...</div></div>
+    <div><div class="header-sub" id="header-sub">Carregando...</div></div>
   </div>
   <div class="header-right">
     <div class="tab-nav">
@@ -627,8 +627,8 @@ function iniciar(){
     ?'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> Modo Escuro'
     :'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg> Modo Claro';
 
-  fetch('https://n8n.dainex.com.br/webhook/clubcasa-inadimplentes')
-    .then(function(r){if(!r.ok)throw new Error('Erro ao buscar dados. Tente novamente.');return r.json();})
+  fetch('inadimplentes.json')
+    .then(function(r){if(!r.ok)throw new Error('inadimplentes.json não encontrado.');return r.json();})
     .then(function(json){
       CLIENTES=json.inadimplentes||[];filtrado=CLIENTES.slice();
       var vt=CLIENTES.reduce(function(s,r){return s+(r['Valor Atrasado (R$)']||0);},0);
@@ -645,10 +645,10 @@ function iniciar(){
     })
     .catch(function(e){document.getElementById('tbody').innerHTML='<tr><td colspan="9"><div class="error-box">'+e.message+'</div></td></tr>';});
 
-  fetch('https://n8n.dainex.com.br/webhook/clubcasa-recebimentos')
-    .then(function(r){if(!r.ok)throw new Error('Erro ao buscar recebimentos. Tente novamente.');return r.json();})
+  fetch('recebimentos.json')
+    .then(function(r){if(!r.ok)throw new Error('recebimentos.json não encontrado.');return r.json();})
     .then(function(json){
-      RECEBIMENTOS_TODOS=(json.recebimentos||[]).map(function(r){return Object.assign({},r,{'Cliente':r['Razao Social']||r['Cliente']||'','CNPJ':r['CNPJ']||'','Valor':r['Recebido']||r['Valor']||0,'Data':r['Data Credito']||r['Data']||''});});
+      RECEBIMENTOS_TODOS=(json.recebimentos||[]).map(function(r){return Object.assign({},r,{'Cliente':r['Razao Social']||r['Cliente']||'','CNPJ':r['CNPJ']||'','Valor':r['Recebido']||r['Valor']||0,'Data':r['Data Credito']||r['Vencimento']||r['Data']||''});});
       popularFiltrosReceb();aplicarFiltrosReceb();
     })
     .catch(function(e){document.getElementById('tbody-receb').innerHTML='<tr><td colspan="9"><div class="error-box">'+e.message+'</div></td></tr>';});
